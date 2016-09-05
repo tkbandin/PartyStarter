@@ -4,11 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird').Promise;
+
+var passport = require('passport');
+var session = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// Connection to database goes here
+//mongoose.connect('mongodb://localhost/parties');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +30,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({ secret: 'WDI Rocks!',
+                  resave: true,
+                  saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Configure passport with our custom configuration code
+require('./config/passport/passport')(passport);
+
+// Routes
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
@@ -56,5 +75,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+console.log('Running in %s mode', app.get('env'));
 
 module.exports = app;
