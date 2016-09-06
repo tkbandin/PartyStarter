@@ -7,7 +7,7 @@ var Party = require('./models/party');
 var Food = require('./models/food');
 
 //Connect to DB
-//mongoose.connect('mongodb://localhost/parties');
+mongoose.connect('mongodb://localhost/partystarter');
 
 // our script will not exit until we have disconnected from the db.
 function quit() {

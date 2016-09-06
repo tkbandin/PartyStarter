@@ -10,13 +10,14 @@ mongoose.Promise = require('bluebird').Promise;
 var passport = require('passport');
 var session = require('express-session');
 
+// Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
 // Connection to database goes here
-//mongoose.connect('mongodb://localhost/parties');
+mongoose.connect('mongodb://localhost/partystarter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,7 +29,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({ secret: 'WDI Rocks!',
                   resave: true,
