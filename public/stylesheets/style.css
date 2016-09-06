@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background: url(../images/bg-images/bg1.jpeg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 
 
 /*** FLEXBOX ***/
@@ -17,30 +27,135 @@
 /*** NAV STYLING ***/
 
 nav {
-  background: skyblue;
+  background: rgba(0,0,0,.5);
   justify-content: space-between;
+  height: 50px;
 }
 
 nav a {
-  color: white;
+  color: lightgray;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: lightgray;
+  color: white;
 }
 
 .nav-left {
-  padding-left: 10px;
+  padding-left: 15px;
   align-items: center;
 }
 
 .nav-right {
-  padding-right: 10px;
+  padding-right: 15px;
   align-items: center;
 }
 
 .nav-right h2 {
   padding-left: 10px;
   font-size: 1em;
+}
+
+
+
+/*** MAIN LANDING STYLING ***/
+
+.main-landing {
+  width: 50%;
+  margin: 0 auto;
+  background: rgba(0,0,0,.5);
+  color: lightgray;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.main-landing h2 {
+  margin: 0;
+}
+
+.main-landing .md-button {
+  background-color: rgba(255,255,255,.7);;
+}
+
+
+
+/*** LOGIN LANDING STYLING ***/
+
+#login-body, #login-body .main-landing {
+  background: rgb(178,235,242);
+}
+
+#login-body .main-landing {
+  width: 70%;
+}
+
+#login-body .main-landing h2 {
+  color: black;
+  text-align: left;
+}
+
+#login-body md-input-container {
+  padding: 0 15px;
+}
+
+#login-body .footer-contact {
+  display: none;
+}
+
+#login-body .footnote {
+  padding-bottom: 5px;
+}
+
+#login-body .signup, #login-body .signin {
+  width: 50%;
+  margin: 0 5%;
+  background: white;
+  border-radius: 5px;
+}
+
+
+
+/*** FOOTER STYLING ***/
+
+footer {
+  color: lightgray;
+  background: rgba(0,0,0,.5);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position:fixed;
+  left:0px; bottom:0px;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.footnote, .footer-contact {
+  width: 100%;
+}
+
+.footnote {
+  text-align: center;
+  padding: 0 0 10px;
+}
+
+.member-contact {
+  border-top: 1px solid lightgray;
+  width: 25%;
+  margin: 0 5%;
+  text-align: center;
+}
+
+.member-contact h5 {
+  margin: 0;
+}
+
+footer h4 {
+  margin: 0;
 }

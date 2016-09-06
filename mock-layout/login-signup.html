@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/angular-material.min.css">
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
 </head>
-<body ng-app='myApp'></body>
+<body id='login-body' ng-app='myApp'></body>
 
   <header>
     <nav class='flex-container'>
@@ -22,10 +22,45 @@
     </nav>
   </header>
 
-  <div class='main-landing'>
-    <h1>PartyStarter</h1>
-    <p>This is an explanation and it is super exciting and makes you want to part and use our app.</p>
-    <md-button class='md-raised'>Get Started</button>
+  <div class='main-landing' layout='row'>
+    <div class='signup' layout='column'>
+      <h2>Sign Up</h2>
+      <md-input-container>
+        <label>First Name</label>
+        <input type="text" ng-model="user.firstName">
+      </md-input-container>
+      <md-input-container>
+        <label>Last Name</label>
+        <input type="text" ng-model="user.lastName">
+      </md-input-container>
+      <md-input-container>
+        <label>Username</label>
+        <input type="text" ng-model="user.username">
+      </md-input-container>
+      <md-input-container>
+        <label>Email Address</label>
+        <input type="text" ng-model="user.local.email">
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="user.local.password">
+      </md-input-container>
+      <md-button class='md-raised'>Sign Up</button>
+    </div>
+
+    <div class='signin' layout='column'>
+      <h3>Already have an account?</h3>
+      <h2>Sign In</h2>
+      <md-input-container>
+        <label>Username</label>
+        <input type="text" ng-model="user.username">
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="user.local.password">
+      </md-input-container>
+      <md-button class='md-raised'>Sign In</button>
+    </div>
   </div>
 
   <footer class='flex-container'>
