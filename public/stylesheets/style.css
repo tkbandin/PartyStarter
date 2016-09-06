@@ -1,8 +1,46 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*** GENERAL STYLING ***/
+
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+
+
+/*** FLEXBOX ***/
+
+.flex-container {
+  display: flex;
+}
+
+
+
+/*** NAV STYLING ***/
+
+nav {
+  background: skyblue;
+  justify-content: space-between;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: lightgray;
+}
+
+.nav-left {
+  padding-left: 10px;
+  align-items: center;
+}
+
+.nav-right {
+  padding-right: 10px;
+  align-items: center;
+}
+
+.nav-right h2 {
+  padding-left: 10px;
+  font-size: 1em;
 }
