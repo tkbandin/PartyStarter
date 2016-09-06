@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Food = require('./food');
 
-var Party = new mongoose.Schema({
+var PartySchema = new mongoose.Schema({
   name: { type: String, required: True },
   time: {
     start: { type: String, required: True },
@@ -47,4 +47,4 @@ PartySchema.methods.getUpdatedAt = function() {
 };
 
 
-module.exports = mongoose('Party', PartySchema);
+module.exports = mongoose.model('Party', PartySchema);
