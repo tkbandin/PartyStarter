@@ -37,10 +37,9 @@
       </md-input-container>
       <md-input-container>
         <label>Last Name</label>
-        <input name="lastName" ng-model="user.lastName" required md-maxlength="20" minlength="2">
+        <input name="lastName" ng-model="user.lastName" required minlength="2">
         <div ng-messages="signup.lastName.$error" ng-show="signup.lastName.$dirty">
           <div ng-message="required">This is required!</div>
-          <div ng-message="md-maxlength">That's too long!</div>
           <div ng-message="minlength">That's too short!</div>
         </div>
       </md-input-container>
