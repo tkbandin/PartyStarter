@@ -64,13 +64,14 @@ nav a:hover {
   width: 50%;
   margin: 0 auto;
   background: rgba(0,0,0,.5);
-  color: lightgray;
+  color: black;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 .main-landing h2 {
   margin: 0;
+  text-align: center;
 }
 
 .main-landing .md-button {
@@ -96,6 +97,7 @@ nav a:hover {
 
 #login-body md-input-container {
   padding: 0 15px;
+  text-align: left;
 }
 
 #login-body .footer-contact {
@@ -107,10 +109,17 @@ nav a:hover {
 }
 
 #login-body .signup, #login-body .signin {
-  width: 50%;
-  margin: 0 5%;
+  width: 70%;
+  margin: 3%;
   background: white;
   border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#login-body .signin h2, #login-body .signup h2 {
+    text-align: center;
 }
 
 
