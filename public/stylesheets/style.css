@@ -78,7 +78,12 @@ nav a:hover {
   background-color: rgba(255,255,255,.7);;
 }
 
+/*** NAV BAR STYLING ***/
 
+.navBardemoBasicUsage md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0; }
 
 /*** LOGIN LANDING STYLING ***/
 

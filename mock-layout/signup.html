@@ -72,28 +72,6 @@
     </div>
   </form>
 
-    <div class='signin' layout='column'>
-      <h3>Already have an account?</h3>
-      <h2>Sign In</h2>
-      <form name="signin">
-      <md-input-container>
-        <label>Username</label>
-        <input name="username" ng-model="user.username" required>
-        <div ng-messages="signin.username.$error">
-          <div ng-message="required">This is required!</div>
-        </div>
-      </md-input-container>
-      <md-input-container>
-        <label>Password</label>
-        <input type="password" ng-model="user.local.password" required>
-        <div ng-messages="sigin.password.$error">
-          <div ng-message="required">This is required!</div>
-        </div>
-      </md-input-container>
-      <md-button class="md-raised" input type="submit">Sign In</button>
-      </form>
-    </div>
-  </div>
 
   <footer class='flex-container'>
     <div class='footnote'>
