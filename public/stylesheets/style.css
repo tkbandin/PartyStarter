@@ -128,13 +128,15 @@ nav a:hover {
 
 /*NEW PARTY FORM */
 
-#newparty-body .new-party {
-  width: 70%;
+#new-party {
+  background-color: rgb(178,235,242);
 }
 
-#newparty-body .footer-contact {
+#new-party .footer-contact {
   display: none;
 }
+
+
 
 /*** FOOTER STYLING ***/
 

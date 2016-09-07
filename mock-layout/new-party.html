@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/angular-material.min.css">
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
 </head>
-<body id='newparty-body' ng-app='myApp'></body>
+<body id="new-party" ng-app="MyApp">
 
   <header>
     <nav class='flex-container'>
@@ -22,29 +22,87 @@
     </nav>
   </header>
 
-  <div class="new-party" layout="column">
-    <form name="newParty">
-      <md-input-container>
-        <label>Party Name</label>
-        <input name="partyName" ng-model="partyName" required md-maxlength="20">
-        <div ng-messages="newParty.partyName.$error">
-          <div ng-message="required">This is required!</div>
-          <div ng-message="md-maxlength">That's too long!</div>
+<!-- NEW PARTY FORM  -->
+    <div ng-controller="newParty" layout="column" class="md-inline-form">
+      <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding="">
+        <div>
+          <md-input-container>
+            <label>Party Starer</label>
+            <input ng-model="party.creator">
+          </md-input-container>
+
+          <md-input-container>
+            <label>Email</label>
+            <input ng-model="party.email" type="email">
+          </md-input-container>
         </div>
-      </md-input-container>
-      <md-input-container>
-        <label>Date</label>
-        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-        <div ng-messages="newParty.partyDate.$error">
-          <div ng-message="required">This is required!</div>
+      </md-content>
+
+      <md-content layout-padding="">
+        <div>
+          <form name="partyForm">
+            <div layout-gt-xs="row">
+              <md-input-container class="md-block" flex-gt-xs="">
+                <label>New Party</label>
+                <input ng-model="party.name">
+              </md-input-container>
+
+              <md-input-container>
+                <label>When?</label>
+                <md-datepicker ng-model="party.submissionDate"></md-datepicker>
+              </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+            <md-input-container class="md-block">
+              <label>Address</label>
+              <input ng-model="party.address">
+            </md-input-container>
+
+            <md-input-container md-no-float="" class="md-block">
+              <input ng-model="party.address2" placeholder="Address 2">
+            </md-input-container>
+
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm="">
+                <label>City</label>
+                <input ng-model="party.city">
+              </md-input-container>
+
+              <md-input-container class="md-block" flex-gt-sm="">
+                <label>State</label>
+                <md-select ng-model="party.state">
+                  <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                    {{state.abbrev}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+
+              <md-input-container class="md-block" flex-gt-sm="">
+                <label>Postal Code</label>
+                <input name="postalCode" ng-model="party.postalCode" placeholder="12345" required="" ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+
+                <div ng-messages="partyForm.postalCode.$error" role="alert" multiple="">
+                  <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                  <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                    code.
+                  </div>
+                  <div ng-message="md-maxlength" class="my-message">
+                    Don't use the long version silly...we don't need to be that specific...
+                  </div>
+                </div>
+              </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+              <label>Description</label>
+              <textarea ng-model="party.description" md-maxlength="150" rows="5" md-select-on-focus=""></textarea>
+            </md-input-container>
+
+          </form>
         </div>
-      </md-input-container>
-
-    </form>
-
-  </div>
-
-
+      </md-content>
+    </div>
 
     <footer class='flex-container'>
       <div class='footnote'>
@@ -82,14 +140,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+    <script src="main.js"></script>
 
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
 
     <!-- Your application bootstrap  -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       angular.module('myApp', ['ngMaterial', 'ngMessages']);
-    </script>
+    </script> -->
 
   </body>
 
