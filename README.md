@@ -58,9 +58,9 @@ There are many things we would love to change, modify, or add to this project.
 ---
 
 ##### Team 5:
-|                   |                         Email                         |                 Website                |                          GitHub                         |
-|:-----------------:|:-----------------------------------------------------:|:--------------------------------------:|:-------------------------------------------------------:|
-|    Justin Doak    | [justin@jhdoak.com](mailto:justin@jhdoak.com)         |                                        | [jhdoak](https://github.com/jhdoak)                     |
-| Kirsten Humphreys |                                                       |                                        | [kirstenhumphreys](https://github.com/kirstenhumphreys) |
-|    Sam Mershon    | [samrmershon@gmail.com](mailto:samrmershon@gmail.com) |                                        | [sammershon](https://github.com/sammershon)             |
-|    Josh Pereira   | [josh@joshp.rocks](mailto:josh@joshp.rocks)           | [www.joshp.rocks](http://joshp.rocks/) | [joshpereira](https://github.com/joshpereira)           |
+|                   |                               Email                              |                 Website                |                          GitHub                         |
+|:-----------------:|:----------------------------------------------------------------:|:--------------------------------------:|:-------------------------------------------------------:|
+|    Justin Doak    | [justin@jhdoak.com](mailto:justin@jhdoak.com)                    |                                        | [jhdoak](https://github.com/jhdoak)                     |
+| Kirsten Humphreys | [kirstenrhumphreys@gmail.com](mailto:kirstenrhumphreys@gmail.com)|                                        | [kirstenhumphreys](https://github.com/kirstenhumphreys) |
+|    Sam Mershon    | [samrmershon@gmail.com](mailto:samrmershon@gmail.com)            |                                        | [sammershon](https://github.com/sammershon)             |
+|    Josh Pereira   | [josh@joshp.rocks](mailto:josh@joshp.rocks)                      | [www.joshp.rocks](http://joshp.rocks/) | [joshpereira](https://github.com/joshpereira)           |
