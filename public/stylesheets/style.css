@@ -27,7 +27,7 @@ html, body {
 /*** NAV STYLING ***/
 
 nav {
-  background: rgba(0,0,0,.5);
+  background: rgba(100,0,0,.5);
   justify-content: space-between;
   height: 50px;
 }
@@ -114,15 +114,27 @@ nav a:hover {
   background: white;
   border-radius: 5px;
   padding: 15px;
-  display: flex;
-  justify-content: space-between;
+  /*display: flex;
+  justify-content: space-between;*/
 }
 
 #login-body .signin h2, #login-body .signup h2 {
-    text-align: center;
+  text-align: center;
 }
 
+#login-body form {
 
+}
+
+/*NEW PARTY FORM */
+
+#newparty-body .new-party {
+  width: 70%;
+}
+
+#newparty-body .footer-contact {
+  display: none;
+}
 
 /*** FOOTER STYLING ***/
 

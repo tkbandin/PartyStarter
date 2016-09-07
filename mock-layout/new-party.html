@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>PartyStarter</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/angular-material.min.css">
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+</head>
+<body id='newparty-body' ng-app='myApp'></body>
+
+  <header>
+    <nav class='flex-container'>
+      <div class='nav-left flex-container'>
+        <h1><a href="index.html">PartyStarter</a></h1>
+      </div>
+      <div class='nav-right flex-container'>
+        <h2><a href="index.html">Login</a></h2>
+        <h2><a href="index.html">Signup</a></h2>
+      </div>
+    </nav>
+  </header>
+
+  <div class="new-party" layout="column">
+    <form name="newParty">
+      <md-input-container>
+        <label>Party Name</label>
+        <input name="partyName" ng-model="partyName" required md-maxlength="20">
+        <div ng-messages="newParty.partyName.$error">
+          <div ng-message="required">This is required!</div>
+          <div ng-message="md-maxlength">That's too long!</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Date</label>
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+        <div ng-messages="newParty.partyDate.$error">
+          <div ng-message="required">This is required!</div>
+        </div>
+      </md-input-container>
+
+    </form>
+
+  </div>
+
+
+
+    <footer class='flex-container'>
+      <div class='footnote'>
+        <h4>Created by Group 5 for Project 3 of General Assembly's Web Development Immersive.</h4>
+        <h4>View our project on <a href="">GitHub</a>.</h4>
+      </div>
+      <div class='footer-contact flex-container'>
+        <div class='member-contact'>
+          <h5>Justin Doak</h5>
+          <a href="">Email</a>
+          <a href="">GitHub</a>
+        </div>
+        <div class='member-contact'>
+          <h5>Kirsten Humphreys</h5>
+          <a href="">Email</a>
+          <a href="">GitHub</a>
+        </div>
+        <div class='member-contact'>
+          <h5>Sam Mershon</h5>
+          <a href="">Email</a>
+          <a href="">GitHub</a>
+        </div>
+        <div class='member-contact'>
+          <h5>Josh Pereira</h5>
+          <a href="">Email</a>
+          <a href="">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script type="text/javascript">
+      angular.module('myApp', ['ngMaterial', 'ngMessages']);
+    </script>
+
+  </body>
+
+  </html>

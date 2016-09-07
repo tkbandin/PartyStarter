@@ -55,7 +55,7 @@
       <md-input-container>
         <label>Email Address</label>
         <input name="email" ng-model="user.local.email" required="string">
-        <div ng-messages="signup.email.$error">
+        <div ng-messages="signup.email.$error" ng-show="signup.email.$dirty">
           <div ng-message="required">This is required!</div>
         </div>
       </md-input-container>
@@ -68,7 +68,7 @@
         </div>
       </md-input-container>
       <br>
-      <md-button class="md-raised" input type="submit">Sign Up</button>
+      <md-button class="md-raised" input type="submit">Create New Account</button>
     </div>
   </form>
 
