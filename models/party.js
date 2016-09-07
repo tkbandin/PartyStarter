@@ -9,6 +9,10 @@ var PartySchema = new mongoose.Schema({
   },
   date:    { type: Date,   required: true },
   address: { type: String, required: true },
+  location: {
+    lng: { type: String, required: true },
+    lat: { type: String, required: true }
+  }
   description: { type: String, required: true },
   foodList: {
     // Boolean for choosing this option
