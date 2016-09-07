@@ -23,6 +23,22 @@ angular.module('myApp')
   .state('signup', {
     url: "/signup",
     template: "<signup></signup>"
+  })
+  .state('parties', {
+    url: "/parties",
+    template: "<parties></parties>"
+  })
+  .state('party-new', {
+    url: "/parties/new",
+    template: "<party-new></party-new>"
+  })
+  .state('party-show', {
+    url: "/parties/:id",
+    template: "<party-show></party-show>"
+  })
+  .state('party-edit', {
+    url: "/parties/edit/:id",
+    template: "<party-edit></party-edit>"
   });
 
 });
