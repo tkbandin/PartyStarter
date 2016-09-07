@@ -8,18 +8,22 @@ angular.module('myApp')
       </div>
       <div class="col-sm-12">
         <form class="form" name="form" ng-submit="$ctrl.register(form)" novalidate>
+
           <div class="form-group" ng-class="{ 'has-success': form.name.$valid && $ctrl.submitted,
                                               'has-error': form.name.$invalid && $ctrl.submitted }">
             <label>Name</label>
+
             <input type="text" name="name" class="form-control" ng-model="$ctrl.user.name"
                    required/>
             <p class="help-block" ng-show="form.name.$error.required && $ctrl.submitted">
               A name is required
             </p>
           </div>
+
           <div class="form-group" ng-class="{ 'has-success': form.email.$valid && $ctrl.submitted,
                                               'has-error': form.email.$invalid && $ctrl.submitted }">
             <label>Email</label>
+
             <input type="email" name="email" class="form-control" ng-model="$ctrl.user.email"
                    required
                    mongoose-error/>
@@ -33,9 +37,11 @@ angular.module('myApp')
               {{ $ctrl.errors.email }}
             </p>
           </div>
+
           <div class="form-group" ng-class="{ 'has-success': form.password.$valid && $ctrl.submitted,
                                               'has-error': form.password.$invalid && $ctrl.submitted }">
             <label>Password</label>
+
             <input type="password" name="password" class="form-control" ng-model="$ctrl.user.password"
                    ng-minlength="3"
                    required
@@ -48,6 +54,7 @@ angular.module('myApp')
               {{ $ctrl.errors.password }}
             </p>
           </div>
+
           <div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && $ctrl.submitted,
                                               'has-error': form.confirmPassword.$invalid && $ctrl.submitted }">
             <label>Confirm Password</label>
@@ -59,6 +66,7 @@ angular.module('myApp')
               Passwords must match.
             </p>
           </div>
+
           <div>
             <button class="btn btn-inverse btn-lg btn-register" type="submit">
               Sign up
@@ -67,6 +75,7 @@ angular.module('myApp')
               Login
             </a>
           </div>
+
         </form>
       </div>
     </div>
@@ -78,18 +87,18 @@ angular.module('myApp')
       this.submitted = true;
 
       if (form.$valid) {
-        return this.Auth.createUser({
+        return Auth.createUser({
           name: this.user.name,
           email: this.user.email,
           password: this.user.password
         })
         .then(() => {
           // Account created, redirect to home
-          this.$state.go('home');
+          $state.go('home');
         })
         .catch(err => {
           err = err.data;
-          this.errors = {};
+          errors = {};
           // Update validity of form fields that match the mongoose errors
           angular.forEach(err.errors, (error, field) => {
             form[field].$setValidity('mongoose', false);
