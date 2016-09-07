@@ -5,7 +5,7 @@ angular.module('myApp')
     return $http.get('/parties');
   };
 
-  this.getTodo = function(id) {
+  this.getParty = function(id) {
     return $http.get('/parties/' + id);
   };
 
