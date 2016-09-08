@@ -87,7 +87,7 @@ angular.module('myApp')
       });
     };
 
-    partyService.getTodo($stateParams.id)
+    partyService.getParty($stateParams.id)
     .then( res => {
       this.party = res.data;
     });
