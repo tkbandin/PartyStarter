@@ -27,7 +27,5 @@ angular.module('myApp')
     .then( res => {
       this.party = res.data;
     });
-
-
   }
 });

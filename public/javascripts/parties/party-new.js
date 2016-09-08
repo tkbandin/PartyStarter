@@ -23,7 +23,7 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="date">Date</label>
-        <input type="text"
+        <input type="date"
                class="form-control"
                name="date"
                ng-model="$ctrl.party.date">
@@ -94,6 +94,7 @@ angular.module('myApp')
     };
 
     this.save = function() {
+      console.log('DATE:', this.party.date);
       partyService.create(this.party)
       .then( res => {
         $state.go('parties');

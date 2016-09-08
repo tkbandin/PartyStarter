@@ -7,7 +7,7 @@ var PartySchema = new mongoose.Schema({
     start: { type: String, required: true },
     end:   { type: String }
   },
-  date:    { type: Date,   required: true },
+  date:    { type: String,   required: true },
   address: { type: String, required: true },
   description: { type: String, required: true },
   foodList: {

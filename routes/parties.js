@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var moment = require('moment');
 var Party = require('../models/party');
 
 function makeError(res, message, status) {
@@ -62,6 +63,7 @@ router.get('/:id', authenticate, function(req, res, next) {
     if (!party) return next(makeError(res, 'Document not found', 404));
     // if (!req.user._id.equals(party.organizer)) return next(makeError(res, 'That is not your Party!', 401));
     // This sets only the attributes of 'party' that we want sent to the client, preventing sensitive information being sent.
+    party.date = party.date;
     party.organizer = {
       local: {
         email: party.organizer.local.email
