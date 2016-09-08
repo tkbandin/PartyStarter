@@ -85,25 +85,33 @@ angular.module('myApp')
   controller: function(Auth, $state) {
     this.register = function(form) {
       this.submitted = true;
+      this.Auth = Auth;
+      this.$state = $state;
 
       if (form.$valid) {
-        return Auth.createUser({
+        return this.Auth.createUser({
           name: this.user.name,
           email: this.user.email,
           password: this.user.password
         })
         .then(() => {
-          // Account created, redirect to home
-          $state.go('home');
+          // Account created, redirect to todos
+          this.$state.go('home');  // Change this state later
         })
         .catch(err => {
-          err = err.data;
-          errors = {};
+          console.log(err);
+          // err = err.data;
+          this.errors = {};
+          err.message
+          form['email'].$setValidity('mongoose', false);
+          this.errors['email'] = err.message;
           // Update validity of form fields that match the mongoose errors
-          angular.forEach(err.errors, (error, field) => {
-            form[field].$setValidity('mongoose', false);
-            this.errors[field] = error.message;
-          });
+          // angular.forEach(err.errors, (error, field) => {
+          //   console.log('error:', error);
+          //   console.log('field:', field);
+          //   form[field].$setValidity('mongoose', false);
+          //   this.errors[field] = error.message;
+          // });
         });
       }
     };

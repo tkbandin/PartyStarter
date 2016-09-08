@@ -46,5 +46,8 @@ PartySchema.methods.getUpdatedAt = function() {
   return date2String(this.updatedAt);
 };
 
+PartySchema.methods.toString = function() {
+  return `${this.name} is being planned by ${this.organizer.username}. It's happening on ${this.date} at ${this.time.start} at ${this.address}.`;
+};
 
 module.exports = mongoose.model('Party', PartySchema);

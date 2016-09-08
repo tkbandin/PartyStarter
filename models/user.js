@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
   },
   firstName: String,
   lastName:  String,
-  username:  { type: String, required: true }
+  username:  String  // Not required for purpose of debugging
 });
 
 UserSchema.methods.encrypt = function(password) {
