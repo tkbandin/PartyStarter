@@ -17,7 +17,7 @@ angular.module('myApp')
         <label for="time.start">Start Time</label>
         <input type="text"
                class="form-control"
-               name="completed"
+               name="startTime"
                ng-model="$ctrl.party.time.start">
       </div>
 
