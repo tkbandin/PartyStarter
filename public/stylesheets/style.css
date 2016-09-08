@@ -1,7 +1,7 @@
 /*** GENERAL STYLING ***/
 
 * {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
 }
 
 html, body {
@@ -50,6 +50,7 @@ nav ul li a{
   padding: 15px;
   border: 5px solid #e0f2f1;
   border-radius: 20px;
+  margin-bottom: 50px;
 }
 
 .main-landing h2 {
@@ -65,9 +66,9 @@ nav ul li a{
 
 /*** LOGIN LANDING STYLING ***/
 
-#login-body, #login-body .main-landing {
+/*#login-body, #login-body .main-landing {
   background: rgb(178,235,242);
-  
+
 }
 
 #login-body .main-landing {
@@ -98,8 +99,8 @@ nav ul li a{
   background: white;
   border-radius: 5px;
   padding: 15px;
-  /*display: flex;
-  justify-content: space-between;*/
+  display: flex;
+  justify-content: space-between;
 }
 
 #login-body .signin h2, #login-body .signup h2 {
@@ -108,7 +109,7 @@ nav ul li a{
 
 #login-body form {
 
-}
+}*/
 
 /*NEW PARTY FORM */
 
@@ -120,14 +121,27 @@ nav ul li a{
   display: none;
 }
 
+.signup form {
+  text-align: left;
+
+}
+
+.main-landing .signup {
+  width: 70%;
+  margin: 0 auto;
+  background: #e0f2f1;
+  color: black;
+  text-align: center;
+  margin-top:;
+  padding: 10px;
+  border: 5px solid #e0f2f1;
+  border-radius: 20px;
+}
 
 
 /*** FOOTER STYLING ***/
 
 footer {
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position:fixed;
   left:0px; bottom:0px;
   width: 100%;
 }
