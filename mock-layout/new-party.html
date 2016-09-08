@@ -4,27 +4,34 @@
   <meta charset="UTF-8">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>PartyStarter</title>
+  <!-- Angular Material CDN and Links -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/angular-material.min.css">
   <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+  <!-- MaterializeCSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Domine|Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+      <nav class="teal lighten-5" role="navigation">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">PartyStarter</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+          </ul>
+        </div>
+      </nav>
 </head>
+
 <body id="new-party" ng-app="MyApp">
 
-  <header>
-    <nav class='flex-container'>
-      <div class='nav-left flex-container'>
-        <h1><a href="index.html">PartyStarter</a></h1>
-      </div>
-      <div class='nav-right flex-container'>
-        <h2><a href="index.html">Login</a></h2>
-        <h2><a href="index.html">Signup</a></h2>
-      </div>
-    </nav>
-  </header>
-
 <!-- NEW PARTY FORM  -->
+  <div class="main-landing">
     <div ng-controller="newParty" layout="column" class="md-inline-form">
-      <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding="">
+      <md-content layout-gt-sm="row" layout-padding="">
         <div>
           <md-input-container>
             <label>Party Starer</label>
@@ -46,12 +53,13 @@
                 <label>New Party</label>
                 <input ng-model="party.name">
               </md-input-container>
-
+              <br>
               <md-input-container>
                 <label>When?</label>
                 <md-datepicker ng-model="party.submissionDate"></md-datepicker>
               </md-input-container>
             </div>
+            <br>
 
             <div layout-gt-sm="row">
             <md-input-container class="md-block">
@@ -103,53 +111,54 @@
         </div>
       </md-content>
     </div>
+  </div>
+</div>
 
-    <footer class='flex-container'>
-      <div class='footnote'>
-        <h4>Created by Group 5 for Project 3 of General Assembly's Web Development Immersive.</h4>
-        <h4>View our project on <a href="">GitHub</a>.</h4>
-      </div>
-      <div class='footer-contact flex-container'>
-        <div class='member-contact'>
-          <h5>Justin Doak</h5>
-          <a href="">Email</a>
-          <a href="">GitHub</a>
+    <footer class="page-footer teal lighten-5">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="black-text">About PartyStarter</h5>
+          <p class="black-text">Created by Group 5 for Project 3 of General Assembly's Web Development Immersive.</p>
         </div>
-        <div class='member-contact'>
-          <h5>Kirsten Humphreys</h5>
-          <a href="">Email</a>
-          <a href="">GitHub</a>
-        </div>
-        <div class='member-contact'>
-          <h5>Sam Mershon</h5>
-          <a href="">Email</a>
-          <a href="">GitHub</a>
-        </div>
-        <div class='member-contact'>
-          <h5>Josh Pereira</h5>
-          <a href="">Email</a>
-          <a href="">GitHub</a>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="black-text">Contact</h5>
+          <ul>
+            <li><a class="black-text" href="#!">Justin Doak</a></li>
+            <li><a class="black-text" href="#!">Kirsten Humphreys</a></li>
+            <li><a class="black-text" href="#!">Sam Mershon</a></li>
+            <li><a class="black-text" href="#!">Josh Pereira</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      View our project on <a href="">GitHub</a>.</p>
+      <a class="black-text text-lighten-1 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
 
-
-
-
+    <!-- Angular Libraries -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
-    <script src="main.js"></script>
 
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
 
-    <!-- Your application bootstrap  -->
-    <!-- <script type="text/javascript">
-      angular.module('myApp', ['ngMaterial', 'ngMessages']);
-    </script> -->
+    <!-- MaterializeCSS  -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+    <script type="text/javascript" src="main.js">
+
+    <!-- myApp bootstrap  -->
+    <script type="text/javascript">
+      angular.module('myApp', ['ngMaterial', 'ui.materialize', 'ngMessages']);
+    </script>
 
   </body>
 

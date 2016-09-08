@@ -1,7 +1,7 @@
 // NEW PARTY FORM
 
 angular
-  .module('MyApp',['ngMaterial', 'ngMessages'])
+  .module('MyApp',['ngMaterial', 'ngMessages', 'ui.materialize'])
   .controller('newParty', function($scope) {
 
     $scope.party = {
@@ -30,16 +30,3 @@ angular
       .dark();
 
   });
-
-  // NAVBAR
-
-  (function() {
-    'use strict';
-
-    angular.module('navBarDemoBasicUsage', ['ngMaterial'])
-        .controller('AppCtrl', AppCtrl);
-
-    function AppCtrl($scope) {
-      $scope.currentNavItem = 'page1';
-    }
-  })();
