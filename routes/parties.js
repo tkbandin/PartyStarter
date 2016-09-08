@@ -54,6 +54,42 @@ router.post('/', authenticate, function(req, res, next) {
   });
 });
 
+// SHOW
+router.get('/:id', authenticate, function(req, res, next) {
+  Party.findById(req.params.id)
+  .then(function(party) {
+    if (!party) return next(makeError(res, 'Document not found', 404));
+    if (!req.user._id.equals(party.organizer)) return next(makeError(res, 'That is not your Party!', 401));
+    res.json(party);
+  }, function(err) {
+    return next(err);
+  });
+});
+
+// UPDATE
+router.put('/:id', authenticate, function(req, res, next) {
+  Party.findById(req.params.id)
+  .then(function(party) {
+    if (!party) return next(makeError(res, 'Document not found', 404));
+    if (!req.user._id.equals(party.organizer)) return next(makeError(res, 'Unauthorized', 401));
+    party.name = req.body.name,
+    party.time.start = req.body.time.start,
+    party.date = req.body.date,
+    party.address = req.body.address,
+    party.description = req.body.description,
+    party.foodList.chosen = req.body.foodList.chosen ? true : false,
+    party.playlist.chosen = req.body.playlist.chosen ? true : false,
+    party.entertainment.chosen = req.body.entertainment.chosen ? true : false,
+    party.organizer = req.user._id
+    return party.save();
+  })
+  .then(function(party) {
+    res.json(party);
+  }, function(err) {
+    return next(err);
+  });
+});
+
 // DESTROY
 router.delete('/:id', authenticate, function(req, res, next) {
   Party.findById(req.params.id)
