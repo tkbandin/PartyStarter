@@ -23,7 +23,7 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="date">Date</label>
-        <input type="date"
+        <input type="text"
                class="form-control"
                name="date"
                ng-model="$ctrl.party.date">
