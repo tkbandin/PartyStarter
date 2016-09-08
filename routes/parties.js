@@ -56,10 +56,20 @@ router.post('/', authenticate, function(req, res, next) {
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-  Party.findById(req.params.id)
+  Party.findById(req.params.id).populate('organizer')
   .then(function(party) {
+    // console.log('populated party:', party);
     if (!party) return next(makeError(res, 'Document not found', 404));
-    if (!req.user._id.equals(party.organizer)) return next(makeError(res, 'That is not your Party!', 401));
+    // if (!req.user._id.equals(party.organizer)) return next(makeError(res, 'That is not your Party!', 401));
+    // This sets only the attributes of 'party' that we want sent to the client, preventing sensitive information being sent.
+    party.organizer = {
+      local: {
+        email: party.organizer.local.email
+      },
+      firstName: party.organizer.firstName,
+      username: party.organizer.username
+    }
+    // console.log('party:', party);
     res.json(party);
   }, function(err) {
     return next(err);

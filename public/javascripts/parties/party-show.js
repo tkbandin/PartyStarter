@@ -9,7 +9,7 @@ angular.module('myApp')
     <p><b>Date: </b>{{ $ctrl.party.date }}</p>
     <p><b>Location: </b>{{ $ctrl.party.address }}</p>
     <p><b>Description: </b>{{ $ctrl.party.description }}</p>
-    <p><b>Organizer: </b>{{ $ctrl.party.Organizer }}</p>
+    <p><b>Organizer: </b>{{ $ctrl.party.organizer.username }}</p>
     <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
     <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
 
@@ -27,5 +27,7 @@ angular.module('myApp')
     .then( res => {
       this.party = res.data;
     });
+
+
   }
 });
