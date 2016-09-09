@@ -3,44 +3,45 @@
   <head>
     <title><%= title %></title>
     <!-- Angular Material CDN and Links -->
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/angular-material.min.css">
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <!-- MaterializeCSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <!-- Google Fonts and Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Domine|Shrikhand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body ng-app="myApp">
     <navbar></navbar>
     <div ui-view></div>
+    <app-footer></app-footer>
   </body>
   <!-- MaterializeCSS  -->
-  <script type="text/javascript" src="/javascripts/lib/jquery.min.js" defer></script>
-  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
-  <script type="text/javascript" src="/mock-layout/main.js">
-  <!-- Angular Material Library -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
-  <!-- Angular Libraries -->
-  <script type="text/javascript" src="/javascripts/lib/angular.min.js" defer></script>
-  <script type="text/javascript" src="/javascripts/lib/angular-animate.min.js" defer></script>
-  <script type="text/javascript" src="/javascripts/lib/angular-messages.min.js" defer></script>
-  <script type="text/javascript" src="/javascripts/lib/angular-ui-router.min.js" defer></script>
-  <!-- Components -->
-  <script type="text/javascript" src="/javascripts/client.js" defer></script>
-  <script type="text/javascript" src="/javascripts/navbar.js" defer></script>
-  <script type="text/javascript" src="/javascripts/home.js" defer></script>
-  <script type="text/javascript" src="/javascripts/about.js" defer></script>
-  <script type="text/javascript" src="/javascripts/auth.js" defer></script>
-  <script type="text/javascript" src="/javascripts/login.js" defer></script>
-  <script type="text/javascript" src="/javascripts/signup.js" defer></script>
-  <script type="text/javascript" src="/javascripts/parties/party-service.js" defer></script>
-  <script type="text/javascript" src="/javascripts/parties/parties.js" defer></script>
-  <script type="text/javascript" src="/javascripts/parties/party-show.js" defer></script>
-  <script type="text/javascript" src="/javascripts/parties/party-new.js" defer></script>
-  <script type="text/javascript" src="/javascripts/parties/party-edit.js" defer></script>
+    <script type="text/javascript" src="/javascripts/lib/jquery.min.js" defer></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <!-- Angular Material Library -->
+    <!-- Angular Libraries -->
+    <script type="text/javascript" src="/javascripts/lib/angular.min.js" defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js" defer></script>
+    <script type="text/javascript" src="/javascripts/lib/angular-animate.min.js" defer></script>
+    <script type="text/javascript" src="/javascripts/lib/angular-messages.min.js" defer></script>
+    <script type="text/javascript" src="/javascripts/lib/angular-ui-router.min.js" defer></script>
+    <!-- Components -->
+    <script type="text/javascript" src="/javascripts/client.js" defer></script>
+    <script type="text/javascript" src="/javascripts/main.js" defer></script>
+    <script type="text/javascript" src="/javascripts/navbar.js" defer></script>
+    <script type="text/javascript" src="/javascripts/footer.js" defer></script>
+    <script type="text/javascript" src="/javascripts/home.js" defer></script>
+    <script type="text/javascript" src="/javascripts/about.js" defer></script>
+    <script type="text/javascript" src="/javascripts/auth.js" defer></script>
+    <script type="text/javascript" src="/javascripts/login.js" defer></script>
+    <script type="text/javascript" src="/javascripts/signup.js" defer></script>
+    <script type="text/javascript" src="/javascripts/parties/party-service.js" defer></script>
+    <script type="text/javascript" src="/javascripts/parties/parties.js" defer></script>
+    <script type="text/javascript" src="/javascripts/parties/party-show.js" defer></script>
+    <script type="text/javascript" src="/javascripts/parties/party-new.js" defer></script>
+    <script type="text/javascript" src="/javascripts/parties/party-edit.js" defer></script>
 </html>
