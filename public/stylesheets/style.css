@@ -3,7 +3,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  background-color: #E8C547;
+  background-color: rgb(232,197,71);
 }
 
 h5 {
@@ -36,12 +36,12 @@ nav ul li a{
 .main-landing {
   width: 60%;
   margin: 0 auto;
-  background: #e0f2f1;
+  background: rgb(224,242,241);
   color: black;
   text-align: center;
   margin-top: 70px;
   padding: 15px;
-  border: 5px solid #e0f2f1;
+  border: 5px solid rgb(224,242,241);
   border-radius: 20px;
   margin-bottom: 50px;
 }
@@ -53,7 +53,7 @@ nav ul li a{
 }
 
 .main-landing .md-button {
-  background-color: #E8C547;
+  background-color: rgb(232,197,71);
 }
 
 /*** FORMS ***/
@@ -70,12 +70,12 @@ nav ul li a{
 .main-landing .signup {
   width: 70%;
   margin: 0 auto;
-  background: #e0f2f1;
+  background: rgb(224,242,241);
   color: black;
   text-align: center;
   margin-top:;
   padding: 10px;
-  border: 5px solid #e0f2f1;
+  border: 5px solid rgb(224,242,241);
   border-radius: 20px;
 }
 
