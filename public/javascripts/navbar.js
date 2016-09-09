@@ -1,8 +1,6 @@
 angular.module('myApp')
 .component('navbar', {
   template: `
-
-
     <nav class="teal lighten-5" role="navigation">
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo">PartyStarter</a>
@@ -14,7 +12,6 @@ angular.module('myApp')
         </ul>
       </div>
     </nav>
-
   `,
   controller: function(Auth, $state) {
     this.Auth = Auth;
