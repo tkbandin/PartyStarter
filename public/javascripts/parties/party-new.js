@@ -2,7 +2,7 @@ angular.module('myApp')
 .component('partyNew', {
   template: `
     <div class="main-landing">
-    <h3>NEW</h3>
+    <h3>New</h3>
 
     <form ng-submit="$ctrl.save()">
 
