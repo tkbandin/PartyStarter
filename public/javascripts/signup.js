@@ -1,10 +1,10 @@
 angular.module('myApp')
 .component('signup', {
   template: `
-  <div class="container">
+  <div class="main-landing">
     <div class="row">
       <div class="col-sm-12">
-        <h1>Sign up</h1>
+        <h2>Sign up</h2>
       </div>
       <div class="col-sm-12">
         <form class="form" name="form" ng-submit="$ctrl.register(form)" novalidate>
@@ -71,15 +71,12 @@ angular.module('myApp')
             <button class="btn btn-inverse btn-lg btn-register" type="submit">
               Sign up
             </button>
-            <a class="btn btn-default btn-lg btn-login" ui-sref="login">
-              Login
-            </a>
           </div>
 
         </form>
       </div>
     </div>
-    <hr>
+
   </div>
   `,
   controller: function(Auth, $state) {

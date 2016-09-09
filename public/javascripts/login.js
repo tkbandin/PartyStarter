@@ -1,10 +1,10 @@
 angular.module('myApp')
 .component('login', {
   template: `
-  <div class="container">
+  <div class="main-landing">
     <div class="row">
       <div class="col-sm-12">
-        <h1>Login</h1>
+        <h2>Login</h2>
       </div>
       <div class="col-sm-12">
         <form class="form" name="form" ng-submit="$ctrl.login(form)" novalidate>
@@ -43,7 +43,6 @@ angular.module('myApp')
         </form>
       </div>
     </div>
-    <hr>
   </div>
   `,
   controller: function(Auth, $state) {
@@ -68,3 +67,28 @@ angular.module('myApp')
     };
   }
 });
+
+// <div class='main-landing'>
+//   <div class='signin'>
+//     <h2>Sign In</h2>
+//     <form name="signin">
+//     <md-input-container>
+//       <label>Username</label>
+//       <input name="username" ng-model="user.username" required>
+//       <div ng-messages="signin.username.$error">
+//         <div ng-message="required">This is required!</div>
+//       </div>
+//     </md-input-container>
+//     <md-input-container>
+//       <label>Password</label>
+//       <input type="password" ng-model="user.local.password" required>
+//       <div ng-messages="sigin.password.$error">
+//         <div ng-message="required">This is required!</div>
+//       </div>
+//     </md-input-container>
+//     <br>
+//     <md-button class="md-raised" input type="submit">Sign In</button>
+//     </form>
+//   </div>
+//   <p>Don't have an account? <a href="signup.html">Create one!</a></p>
+// </div>

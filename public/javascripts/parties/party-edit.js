@@ -1,6 +1,7 @@
 angular.module('myApp')
 .component('partyEdit', {
   template: `
+    <div class="main-landing">
     <h3>EDIT</h3>
 
     <form ng-submit="$ctrl.save()">
@@ -71,6 +72,7 @@ angular.module('myApp')
       <a ng-click="$ctrl.show()" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
+    </div>
   `,
   controller: function(partyService, $state, $stateParams) {
     this.party = null;
