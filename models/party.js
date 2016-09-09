@@ -2,26 +2,26 @@ var mongoose = require('mongoose');
 var Food = require('./food');
 
 var PartySchema = new mongoose.Schema({
-  name: { type: String, required: True },
+  name: { type: String, required: true },
   time: {
-    start: { type: String, required: True },
+    start: { type: String, required: true },
     end:   { type: String }
-  }
-  date:    { type: Date,   required: True },
-  address: { type: String, required: True },
-  description: { type: String, required: True },
+  },
+  date:    { type: Date,   required: true },
+  address: { type: String, required: true },
+  description: { type: String, required: true },
   foodList: {
     // Boolean for choosing this option
-    chosen: { type: Boolean, required: True },
+    chosen: { type: Boolean, required: true },
     list: [Food.schema]
   },
   playlist: {
     // Boolean for choosing this option
-    chosen: { type: Boolean, required: True }
+    chosen: { type: Boolean, required: true }
   },
   entertainment: {
     // Boolean for choosing this option
-    chosen:   { type: Boolean, required: True },
+    chosen:   { type: Boolean, required: true },
     category: { type: String }
   },
   organizer: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -46,5 +46,8 @@ PartySchema.methods.getUpdatedAt = function() {
   return date2String(this.updatedAt);
 };
 
+PartySchema.methods.toString = function() {
+  return `${this.name} is being planned by ${this.organizer.username}. It's happening on ${this.date} at ${this.time.start} at ${this.address}.`;
+};
 
 module.exports = mongoose.model('Party', PartySchema);

@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
-var Food = new mongoose.Schema({
-  name: { type: String, required: True },
+var FoodSchema = new mongoose.Schema({
+  name: { type: String, required: true },
   amount: {
-    needed:  { type: Number, required: True },
-    claimed: { type: Number, required: True }
+    needed:  { type: Number, required: true },
+    claimed: { type: Number, required: true }
   },
   description: { type: String },
 
@@ -15,4 +15,4 @@ var Food = new mongoose.Schema({
   }]
 });
 
-module.exports = mongoose('Food', FoodSchema);
+module.exports = mongoose.model('Food', FoodSchema);

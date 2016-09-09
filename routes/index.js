@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Party App!' });
 });
 
-//RESTful JSON API Endpoints for signUp, login, logout, and me
+// =============================================================
+// RESTful JSON API Endpoints for signUp, login, logout, and me
+// =============================================================
 
 // POST /signup
 router.post('/signup', function(req, res, next) {

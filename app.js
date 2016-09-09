@@ -10,13 +10,15 @@ mongoose.Promise = require('bluebird').Promise;
 var passport = require('passport');
 var session = require('express-session');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+// Routes
+var homeRouter    = require('./routes/index');
+var usersRouter   = require('./routes/users');
+var partiesRouter = require('./routes/parties');
 
 var app = express();
 
 // Connection to database goes here
-//mongoose.connect('mongodb://localhost/parties');
+mongoose.connect('mongodb://localhost/partystarter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,7 +30,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({ secret: 'WDI Rocks!',
                   resave: true,
@@ -41,8 +42,9 @@ require('./config/passport/passport')(passport);
 
 // Routes
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', homeRouter);
+app.use('/users', usersRouter);
+app.use('/parties', partiesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
