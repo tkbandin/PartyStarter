@@ -10,8 +10,10 @@ h5 {
   font-family: 'Shrikhand', cursive;
 }
 
-.brand-logo {
+.main-logo {
   font-family: 'Shrikhand', cursive;
+  font-size: 2.1rem;
+  padding-left: 15px
 }
 
 .waves-effect.waves-brown .waves-ripple {
@@ -20,12 +22,11 @@ h5 {
 
 /*** NAV STYLING ***/
 
-
 nav ul li a{
   color: black;
 }
 
-.nav-wrapper .brand-logo {
+.nav-wrapper .main-logo {
   color: black;
 }
 
@@ -84,6 +85,6 @@ nav ul li a{
 
 footer {
   left:0px; bottom:0px;
-  /*position: fixed;*/
+  position: fixed;
   width: 100%;
 }

@@ -6,7 +6,7 @@ angular.module('myApp')
     <h2>Hey!</h2>
     <h3>Welcome to the {{ $ctrl.name }}</h3>
     <p>This is an explanation and it is super exciting and makes you want to part and use our app. It is really cool because you can do a lot of stuff.</p>
-    <a class="waves-effect waves-light btn" href="!#">Get Started</a>
+    <a class="waves-effect waves-light btn" ui-sref="signup">Get Started</a>
   </div>
   `,
   controller: function() {
