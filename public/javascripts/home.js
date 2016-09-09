@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('myApp',[ng-material])
 .component('home', {
   template: `
   <section class="container well text-center">
