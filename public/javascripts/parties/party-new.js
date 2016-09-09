@@ -1,6 +1,7 @@
 angular.module('myApp')
 .component('partyNew', {
   template: `
+    <div class="main-landing">
     <h3>NEW</h3>
 
     <form ng-submit="$ctrl.save()">
@@ -72,6 +73,7 @@ angular.module('myApp')
       <a ui-sref="parties" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
+    </div>
   `,
   controller: function(partyService, $state) {
     this.party = {

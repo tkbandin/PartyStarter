@@ -1,6 +1,7 @@
 angular.module('myApp')
 .component('parties', {
   template: `
+    <div class="main-landing">
     <h1>Parties</h1>
     <div class="parties" ng-repeat = "party in $ctrl.parties">
       <span ng-click="$ctrl.toggle(party)" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
@@ -10,6 +11,7 @@ angular.module('myApp')
     </div>
     <hr/>
     <a ui-sref="party-new" class="btn btn-primary">New</a>
+    </div>
   `,
   controller: function(partyService, $state) {
     this.parties = null;

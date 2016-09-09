@@ -1,7 +1,8 @@
 angular.module('myApp')
 .component('partyShow', {
   template: `
-    <h3>SHOW</h3>
+    <div class="main-landing">
+    <h3>Show</h3>
     <p><b>Name: </b>{{ $ctrl.party.name }}</p>
     <p><b>ID: </b>{{ $ctrl.party._id }}</p>
     <p><b>Start time: </b>{{ $ctrl.party.time.start }}</p>
@@ -15,6 +16,7 @@ angular.module('myApp')
 
     <a ui-sref="parties" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(party)" class="btn btn-warning">Edit</a>
+    </div>
   `,
   controller: function(partyService, $state, $stateParams) {
     this.party = null;
