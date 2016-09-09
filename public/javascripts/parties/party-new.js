@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('myApp',['ngMaterial'])
 .component('partyNew', {
   template: `
     <h3>NEW</h3>
@@ -23,11 +23,12 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="date">Date</label>
-        <input type="date"
-               class="form-control"
-               name="date"
-               ng-model="$ctrl.party.date">
+        <md-datepicker ng-model="formDate"
+                       md-placeholder="Enter date">
+                       </md-datepicker>
       </div>
+
+
 
       <div class="form-group">
         <label for="address">Address</label>
@@ -93,8 +94,11 @@ angular.module('myApp')
       }
     };
 
+    this.formDate = new Date();
+
     this.save = function() {
       console.log('DATE:', this.party.date);
+      this.party.date = this.formDate
       partyService.create(this.party)
       .then( res => {
         $state.go('parties');
