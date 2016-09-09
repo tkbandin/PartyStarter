@@ -1,8 +1,89 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*** GENERAL STYLING ***/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #E8C547;
 }
 
-a {
-  color: #00B7FF;
+h5 {
+  font-family: 'Shrikhand', cursive;
+}
+
+.brand-logo {
+  font-family: 'Shrikhand', cursive;
+}
+
+.waves-effect.waves-brown .waves-ripple {
+  background-color: rgba(237,106,90, 0.65);
+}
+
+/*** NAV STYLING ***/
+
+
+nav ul li a{
+  color: black;
+}
+
+.nav-wrapper .brand-logo {
+  color: black;
+}
+
+
+
+/*** MAIN LANDING STYLING ***/
+
+.main-landing {
+  width: 60%;
+  margin: 0 auto;
+  background: #e0f2f1;
+  color: black;
+  text-align: center;
+  margin-top: 70px;
+  padding: 15px;
+  border: 5px solid #e0f2f1;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.main-landing h2 {
+  margin: 0;
+  text-align: center;
+  font-family: 'Shrikhand', cursive;
+}
+
+.main-landing .md-button {
+  background-color: #E8C547;
+}
+
+/*** FORMS ***/
+
+#new-party form {
+  width: 100%;
+  max-height: 800px;
+}
+
+.signup form {
+  text-align: left;
+}
+
+.main-landing .signup {
+  width: 70%;
+  margin: 0 auto;
+  background: #e0f2f1;
+  color: black;
+  text-align: center;
+  margin-top:;
+  padding: 10px;
+  border: 5px solid #e0f2f1;
+  border-radius: 20px;
+}
+
+
+/*** FOOTER STYLING ***/
+
+footer {
+  left:0px; bottom:0px;
+  /*position: fixed;*/
+  width: 100%;
 }
