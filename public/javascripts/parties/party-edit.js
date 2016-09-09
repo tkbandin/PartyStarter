@@ -24,10 +24,9 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="date">Date</label>
-        <input type="text"
-               class="form-control"
-               name="date"
-               ng-model="$ctrl.party.date">
+        <md-datepicker ng-model="$ctrl.party.date"
+                       md-placeholder="{{$ctrl.party.date}}">
+                       </md-datepicker>
       </div>
 
       <div class="form-group">
@@ -92,6 +91,7 @@ angular.module('myApp')
     partyService.getParty($stateParams.id)
     .then( res => {
       this.party = res.data;
+      this.party.date = new Date(this.party.date);
     });
   }
 });

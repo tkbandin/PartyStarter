@@ -28,6 +28,7 @@ angular.module('myApp')
     partyService.getParty($stateParams.id)
     .then( res => {
       this.party = res.data;
+      this.party.date = moment(this.party.date).format('MM-DD-YYYY')
     });
 
 

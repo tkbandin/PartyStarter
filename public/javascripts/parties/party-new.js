@@ -24,10 +24,9 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="date">Date</label>
-        <input type="text"
-               class="form-control"
-               name="date"
-               ng-model="$ctrl.party.date">
+        <md-datepicker ng-model="$ctrl.party.date"
+                       md-placeholder="Enter date">
+                       </md-datepicker>
       </div>
 
       <div class="form-group">
