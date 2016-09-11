@@ -87,8 +87,26 @@ nav ul li a {
 
 /*** FOOTER STYLING ***/
 
-footer {
+footer.page-footer {
   left:0px; bottom:0px;
   position: fixed;
   width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+footer.page-footer p, footer.page-footer ul,
+footer.page-footer div {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+footer.page-footer .footer-copyright {
+  height: 30px;
+  line-height: 30px;
+}
+
+footer.page-footer .divider {
+  background-color: rgba(51,51,51,0.08);
 }
