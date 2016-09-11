@@ -46,27 +46,15 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
-        <label for="foodList.chosen">Food List</label>
-        <input type="checkbox"
-               class="form-control"
-               name="completed"
-               ng-model="$ctrl.party.foodList.chosen">
+        <input type="checkbox" id='foodList.chosen' class="form-control" name="foodList.chosen" ng-model="$ctrl.party.foodList.chosen"><label for="foodList.chosen">Food List</label>
       </div>
 
       <div class="form-group">
-        <label for="playlist.chosen">Playlist</label>
-        <input type="checkbox"
-               class="form-control"
-               name="completed"
-               ng-model="$ctrl.party.playlist.chosen">
+        <input type="checkbox" id='playlist.chosen' class="form-control" name="playlist.chosen" ng-model="$ctrl.party.playlist.chosen"><label for="playlist.chosen">Playlist</label>
       </div>
 
       <div class="form-group">
-        <label for="entertainment.chosen">Entertainment</label>
-        <input type="checkbox"
-               class="form-control"
-               name="completed"
-               ng-model="$ctrl.party.entertainment.chosen">
+        <input type="checkbox" id='entertainment.chosen' class="form-control" name="entertainment.chosen" ng-model="$ctrl.party.entertainment.chosen"><label for="entertainment.chosen">Entertainment</label>
       </div>
 
       <a ui-sref="parties" class="btn btn-primary">Back</a>

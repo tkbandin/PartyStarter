@@ -45,7 +45,7 @@ angular.module('myApp')
     </div>
   </div>
   `,
-  controller: function(Auth, $state) {
+  controller: function(Auth, $state, $rootScope) {
     this.errors = {};
 
     this.login = function(form) {
@@ -57,8 +57,9 @@ angular.module('myApp')
           password: this.user.password
         })
         .then(() => {
-          // Logged in, redirect to home
-          $state.go('home');
+          $rootScope.$emit('LOGIN_CHECK', 'event sent from login.js');
+          // Logged in, redirect to parties
+          $state.go('parties');
         })
         .catch(err => {
           this.errors.login = err.message;
