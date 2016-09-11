@@ -89,6 +89,6 @@ nav ul li a {
 
 footer {
   left:0px; bottom:0px;
-/*  position: fixed;*/
+  position: fixed;
   width: 100%;
 }
