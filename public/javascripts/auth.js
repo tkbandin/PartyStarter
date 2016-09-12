@@ -18,8 +18,8 @@ angular.module('myApp')
     return currentUser;
   };
 
-  this.getCurrentUserParties = function() {
-    return $http.get('/mypartydata')
+  this.getCurrentUserParties = function(partyId) {
+    return $http.get('/mypartydata/' + partyId)
     .then(res => {
       return res.data;
     })

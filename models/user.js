@@ -9,7 +9,7 @@ var UserSchema = new mongoose.Schema({
   firstName: String,
   lastName:  String,
   username:  String,  // Not required for purpose of debugging
-  foodClaimed: [{
+  foodLists: [{
     party: { type: mongoose.Schema.Types.ObjectId, ref: 'Party' },
     food: [{ name: String, amountBringing: Number }]
   }]

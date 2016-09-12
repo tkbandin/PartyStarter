@@ -59,12 +59,18 @@ router.get('/me', function(req, res, next) {
 });
 
 // GET /mypartydata
-router.get('/mypartydata', function(req, res, next) {
+router.get('/mypartydata/:partyid', function(req, res, next) {
+  var foodToBring = null;
   var thisUser = User.findOne({ 'local.email': req.user.local.email })
   .then(function(thisUser){
     console.log('thisUser:', thisUser);
+    thisUser.foodLists.forEach( list => {
+      if (list.party == req.params.partyid) {
+        foodToBring = list.food;
+      }
+    })
     res.json( { email: thisUser.local.email,
-                foodClaimed: thisUser.foodClaimed } );
+                foodToBring: foodToBring } );
   });
 });
 

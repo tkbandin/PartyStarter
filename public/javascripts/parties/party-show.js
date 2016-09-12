@@ -29,16 +29,15 @@ angular.module('myApp')
       </table>
     </div>
 
-    <div class='user-food-list' ng-if='$ctrl.currentUser.foodClaimed.length > 0'>
+    <div class='user-food-list' ng-if='$ctrl.currentUser.foodToBring.length > 0'>
       <table>
         <tr>
           <th>Food</th>
           <th>Amount you're bringing</th>
         </tr>
-        <tr ng-if='$ctrl.party._id === ' ng-repeat='food in $ctrl.currentUser.foodClaimed.length'>
-          <td>{{ food.name }} <button>Claim one!</button></td>
-          <td>{{ food.amount.claimed }} </td>
-          <td>{{ food.amount.needed - food.amount.claimed }} </td>
+        <tr ng-repeat='food in $ctrl.currentUser.foodToBring'>
+          <td>{{ food.name }} </td>
+          <td>{{ food.amountBringing }} </td>
         </tr>
       </table>
     </div>
@@ -62,7 +61,7 @@ angular.module('myApp')
       console.log('This party:', this.party);
     });
 
-    Auth.getCurrentUserParties()
+    Auth.getCurrentUserParties($stateParams.id)
     .then( res => {
       console.log('User party res:', res);
       this.currentUser = res;
