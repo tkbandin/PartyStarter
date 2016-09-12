@@ -7,7 +7,7 @@ var FoodSchema = new mongoose.Schema({
     claimed: { type: Number, required: true }
   },
   description: { type: String },
-
+  party: { type: mongoose.Schema.Types.ObjectId, ref: 'Party' },
   // How do we accomplish this??
   bringers: [{
     user:   { type: mongoose.Schema.Types.ObjectId, ref: 'User' },

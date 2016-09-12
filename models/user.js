@@ -8,7 +8,11 @@ var UserSchema = new mongoose.Schema({
   },
   firstName: String,
   lastName:  String,
-  username:  String  // Not required for purpose of debugging
+  username:  String,  // Not required for purpose of debugging
+  foodClaimed: [{
+    party: { type: mongoose.Schema.Types.ObjectId, ref: 'Party' },
+    food: [{ name: String, amountBringing: Number }]
+  }]
 });
 
 UserSchema.methods.encrypt = function(password) {

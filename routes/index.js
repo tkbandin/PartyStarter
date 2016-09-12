@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var User = require('../models/user');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -51,8 +52,20 @@ router.get('/logout', function(req, res, next) {
   res.sendStatus(200);
 });
 
+
+// GET /me (respond with user's identity)
 router.get('/me', function(req, res, next) {
   res.json( { email: req.user ? req.user.local.email : '' } );
+});
+
+// GET /mypartydata
+router.get('/mypartydata', function(req, res, next) {
+  var thisUser = User.find({ 'local.email': req.user.local.email})
+  .then(function(thisUser){
+    console.log('thisUser:', thisUser);
+    res.json( { email: thisUser.local.email,
+                foodClaimed: thisUser.foodClaimed } );
+  });
 });
 
 module.exports = router;

@@ -18,6 +18,17 @@ angular.module('myApp')
     return currentUser;
   };
 
+  this.getCurrentUserParties = function() {
+    return $http.get('/mypartydata')
+    .then(res => {
+      currentUser = res.data;
+    })
+    .catch(err => {
+      console.log('ERROR:', err);
+      return $q.reject(err.data);
+    });
+  };
+
   this.isLoggedIn = function() {
     return currentUser ? currentUser.email !== '' : false;
   };
