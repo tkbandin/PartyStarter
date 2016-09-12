@@ -1,7 +1,7 @@
 angular.module('myApp')
 .component('partyShow', {
   template: `
-    <div id="party-show" class="container">
+    <div id="party-show">
       <div class="party-header">
         <i class="fa fa-birthday-cake" aria-hidden="true"></i>
         <i class="fa fa-heart" aria-hidden="true"></i>
@@ -13,8 +13,7 @@ angular.module('myApp')
       <div class="party-body">
 
         <div class="party-info">
-          <p><b>Start time: </b>{{ $ctrl.party.time.start }}</p>
-          <p><b>End time: </b>{{ $ctrl.party.time.end }}</p>
+          <p><i class="fa fa-clock-o" aria-hidden="true"></i><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
             <div class="party-location">
               <p><b>Location: </b>{{ $ctrl.party.address }}</p>
               <p>Google Map snapshot will go here</p>
