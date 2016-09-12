@@ -87,7 +87,7 @@ angular.module('myApp')
 
       if (form.$valid) {
         return this.Auth.createUser({
-          name: this.user.name,
+          firstName: this.user.name,
           email: this.user.email,
           password: this.user.password
         })

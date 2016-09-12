@@ -15,10 +15,12 @@ var strategy = new LocalStrategy({
         return callback(null, false, { message: 'This email is already taken.' });
       }
       else {
+        console.log('req:', req);
         // Create a new user
         var newUser            = new User();
         newUser.local.email    = email;
         newUser.local.password = newUser.encrypt(password);
+        newUser.firstName      = req.body.firstName;
 
         newUser.save(function(err) {
           return callback(err, newUser);

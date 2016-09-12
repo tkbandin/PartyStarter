@@ -22,7 +22,7 @@ angular.module('myApp')
           <th>Still Needed</th>
         </tr>
         <tr ng-repeat='food in $ctrl.party.foodList.list'>
-          <td>{{ food.name }} <button>Claim one!</button></td>
+          <td>{{ food.name }} <button ng-click="$ctrl.claimOneFood(food)">Claim one!</button></td>
           <td>{{ food.amount.claimed }} </td>
           <td>{{ food.amount.needed - food.amount.claimed }} </td>
         </tr>
@@ -52,6 +52,13 @@ angular.module('myApp')
 
     this.edit = function() {
       $state.go('party-edit', { id: this.party._id });
+    };
+
+    this.claimOneFood = function(food) {
+      console.log("I Fired!");
+      // console.log('before add:', this.party.foodList.list.find(food._id).amount.claimed);
+      this.party.foodList.list.find(food._id).amount.claimed += 1;
+      // console.log('after add:', this.party.foodList.list.find(food._id).amount.claimed);
     };
 
     partyService.getParty($stateParams.id)
