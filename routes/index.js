@@ -60,7 +60,7 @@ router.get('/me', function(req, res, next) {
 
 // GET /mypartydata
 router.get('/mypartydata', function(req, res, next) {
-  var thisUser = User.find({ 'local.email': req.user.local.email})
+  var thisUser = User.findOne({ 'local.email': req.user.local.email })
   .then(function(thisUser){
     console.log('thisUser:', thisUser);
     res.json( { email: thisUser.local.email,

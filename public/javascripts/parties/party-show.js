@@ -65,7 +65,7 @@ angular.module('myApp')
     Auth.getCurrentUserParties()
     .then( res => {
       console.log('User party res:', res);
-      this.currentUser = res.data;
+      this.currentUser = res;
       console.log('Current User:', this.currentUser);
       // currentUser.p
     });

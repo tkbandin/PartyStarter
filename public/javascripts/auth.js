@@ -21,7 +21,7 @@ angular.module('myApp')
   this.getCurrentUserParties = function() {
     return $http.get('/mypartydata')
     .then(res => {
-      currentUser = res.data;
+      return res.data;
     })
     .catch(err => {
       console.log('ERROR:', err);
