@@ -3,7 +3,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  background-color: rgb(17,19,68);
+  /*background-color: rgb(17,19,68);*/
 }
 
 h5 {
@@ -84,6 +84,40 @@ nav ul li a {
   border-radius: 20px;
 }
 
+/*** PARTY SHOW PAGE ***/
+
+#party-show .party-body {
+  display: flex;
+  flex-direction: row;
+}
+
+#party-show .party-header {
+  background-color: rgb(239,233,231);
+  height: 250px;
+  padding-top: 20px;
+}
+
+#party-show .party-header i {
+  padding: 10px;
+}
+
+#party-show .party-info {
+  background-color: rgb(239, 233, 231);
+  width: 70%;
+}
+
+#party-show .party-location {
+  background-color: rgba(232, 197, 71, 0.5);
+  height: 150px;
+  width: 400px;
+}
+
+#party-show .party-people {
+  background-color: rgba(232, 197, 71, 0.5);
+  width: 30%;
+
+}
+
 
 /*** FOOTER STYLING ***/
 
@@ -93,6 +127,7 @@ footer.page-footer {
   width: 100%;
   margin: 0;
   padding: 0;
+
 }
 
 footer.page-footer p, footer.page-footer ul,

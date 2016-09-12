@@ -1,18 +1,33 @@
 angular.module('myApp')
 .component('partyShow', {
   template: `
-    <div class="main-landing">
-    <h3>Show</h3>
-    <p><b>Name: </b>{{ $ctrl.party.name }}</p>
-    <p><b>ID: </b>{{ $ctrl.party._id }}</p>
-    <p><b>Start time: </b>{{ $ctrl.party.time.start }}</p>
-    <p><b>End time: </b>{{ $ctrl.party.time.end }}</p>
-    <p><b>Date: </b>{{ $ctrl.party.date }}</p>
-    <p><b>Location: </b>{{ $ctrl.party.address }}</p>
-    <p><b>Description: </b>{{ $ctrl.party.description }}</p>
-    <p><b>Organizer: </b>{{ $ctrl.party.organizer.username }}</p>
-    <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
-    <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
+    <div id="party-show" class="container">
+      <div class="party-header">
+        <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        <h3>Party Name: {{ $ctrl.party.name }}</h3>
+        <p><b>Date: </b>{{ $ctrl.party.date }}</p>
+        <p><b>Description: </b>{{ $ctrl.party.description }}</p>
+      </div>
+      <div class="party-body">
+
+        <div class="party-info">
+          <p><b>Start time: </b>{{ $ctrl.party.time.start }}</p>
+          <p><b>End time: </b>{{ $ctrl.party.time.end }}</p>
+            <div class="party-location">
+              <p><b>Location: </b>{{ $ctrl.party.address }}</p>
+              <p>Google Map snapshot will go here</p>
+            </div>
+        </div>
+
+        <div class="party-people">
+          <i class="fa fa-user" aria-hidden="true">people attending</i>
+          <p><b>Organizer: </b>{{ $ctrl.party.organizer.username }}</p>
+          <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
+          <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
+        </div>
+      </div>
 
     <div id="showmap"></div>
 
