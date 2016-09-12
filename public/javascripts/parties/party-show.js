@@ -14,6 +14,8 @@ angular.module('myApp')
     <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
     <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
 
+    <div id="showmap"></div>
+
     <a ui-sref="parties" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(party)" class="btn btn-warning">Edit</a>
     </div>
@@ -31,6 +33,13 @@ angular.module('myApp')
       this.party.date = moment(this.party.date).format('MM-DD-YYYY')
     });
 
+    var mapOptions = {
+        zoom: 12,
+        center: new google.maps.LatLng(33.7490,-84.3880),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    this.map = new google.maps.Map(document.getElementById('showmap'), mapOptions);
 
   }
 });

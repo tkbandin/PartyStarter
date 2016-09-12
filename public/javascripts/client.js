@@ -39,6 +39,9 @@ angular.module('myApp')
   .state('party-edit', {
     url: "/parties/edit/:id",
     template: "<party-edit></party-edit>"
+  })
+  .state('map', {
+    url: "/map",
+    template: "<map></map>"
   });
-
 });
