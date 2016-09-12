@@ -40,15 +40,17 @@ nav ul li a {
 
 .main-landing {
   width: 60%;
+  height: 80vh;
   margin: 0 auto;
   background: rgb(224,242,241);
   color: black;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 15px;
   padding: 15px;
   border: 5px solid rgb(224,242,241);
   border-radius: 20px;
   margin-bottom: 50px;
+  overflow-y: scroll;
 }
 
 .main-landing h2 {
@@ -83,6 +85,25 @@ nav ul li a {
   border: 5px solid rgb(224,242,241);
   border-radius: 20px;
 }
+
+
+/*** FOOD LIST STYLING ***/
+
+.food-list {
+  background: white;
+  text-align: left;
+  width: 50%;
+  min-width: 225px;
+}
+
+.food-list table, .food-list th,
+.food-list td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 0;
+}
+
 
 
 /*** FOOTER STYLING ***/

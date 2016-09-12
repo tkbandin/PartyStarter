@@ -14,12 +14,30 @@ angular.module('myApp')
     <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
     <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
 
+    <div class='food-list' ng-if='$ctrl.party.foodList.chosen'>
+
+      <table>
+        <tr>
+          <th>Food</th>
+          <th>Accounted For</th>
+          <th>Still Needed</th>
+        </tr>
+        <tr ng-repeat='food in $ctrl.party.foodList.list'>
+          <td>{{ food.name }}</td>
+          <td>{{ food.amount.claimed }}</td>
+          <td>{{ food.amount.needed }}</td>
+        </tr>
+      </table>
+
+    </div>
+
     <a ui-sref="parties" class="btn btn-primary">Back</a>
     <a ng-click="$ctrl.edit(party)" class="btn btn-warning">Edit</a>
     </div>
   `,
   controller: function(partyService, $state, $stateParams) {
     this.party = null;
+    this.foodListChosen = false;
 
     this.edit = function() {
       $state.go('party-edit', { id: this.party._id });
@@ -28,7 +46,8 @@ angular.module('myApp')
     partyService.getParty($stateParams.id)
     .then( res => {
       this.party = res.data;
-      this.party.date = moment(this.party.date).format('MM-DD-YYYY')
+      this.party.date = moment(this.party.date).format('MM-DD-YYYY');
+      console.log('This party:', this.party);
     });
 
 
