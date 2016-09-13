@@ -12,7 +12,16 @@ var UserSchema = new mongoose.Schema({
   foodLists: [{
     party: { type: mongoose.Schema.Types.ObjectId, ref: 'Party' },
     food: [{ name: String, amountBringing: Number }]
+  }],
+  parties: [{
+    name: String,
+    host: String,
+    foodBringing: [{
+      name: String,
+      amount: Number
+    }]
   }]
+
 });
 
 UserSchema.methods.encrypt = function(password) {

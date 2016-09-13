@@ -61,15 +61,21 @@ angular.module('myApp')
       console.log('FilteredFood:', filterFilter(this.party.foodList.list, food._id));
       filterFilter(this.party.foodList.list, food._id)[0].amount.claimed += 1;
       console.log('this.currentUser.foodLists:', this.currentUser.foodLists);
-      if (!this.currentUser.foodLists) {
+      console.log(filterFilter);
+      console.log(filterFilter());
+
+      if (angular.isDefined(this.currentUser.foodLists)) {
         console.log('1st'); // If the user has no food list for this party
         this.currentUser.foodLists.push( { party: this.party._id, food: [{ name: food.name, amountBringing: 1 }] } );
-      } else if (this.currentUser.foodLists && (!this.currentUser.foodLists[0] || !this.currentUser.foodLists[0].food)) {
+
+      } else if (angular.isDefined(this.currentUser.foodLists) && (!this.currentUser.foodLists[0].food)) {
         console.log('2nd'); // If the user has a food list for this party but is not yet bringing any food to this party
         this.currentUser.foodLists[0] = { party: this.party._id, food: [{ name: food.name, amountBringing: 1 }] };
+
       } else if (this.currentUser.foodLists && !filterFilter(this.currentUser.foodLists[0].food, food.name)) {
         console.log('3rd'); // If the user has a food list for this party but is not yet bringing this food
         this.currentUser.foodLists[0].food.push( { name: food.name, amountBringing: 1 } );
+
       } else {
         console.log('4th'); // If the user is already bringing some of this food to this party
         filterFilter(this.currentUser.foodLists[0].food, food.name).amountBringing += 1
