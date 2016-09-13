@@ -35,11 +35,19 @@ Party.remove({})
 .then(function() {
   console.log('creating new users');
   let joe = new User();
-  joe.local = { email: 'joe@ga.co', password: joe.encrypt('test1234') };
-  joe.username = 'joe';
+  joe = {
+    local: { email: 'joe@ga.co', password: joe.encrypt('test1234') },
+    firstName: 'Joe',
+    lastName: 'Schmoe',
+    username: 'joester5',
+  };
   let sue = new User();
-  sue.local = { email: 'sue@ga.co', password: sue.encrypt('test1234') };
-  sue.username = 'sue';
+  sue = {
+    local: { email: 'sue@ga.co', password: sue.encrypt('test1234') },
+    firstName: 'Sue',
+    lastName: 'Fisher',
+    username: 'sueshiroll',
+  };
   return [User.create(joe), User.create(sue)];
 })
 .spread(function(joe, sue) {
