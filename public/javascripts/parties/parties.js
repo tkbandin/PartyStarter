@@ -1,16 +1,16 @@
 angular.module('myApp')
 .component('parties', {
   template: `
-    <div class="main-landing z-depth-1">
+    <div class="party-page z-depth-1">
     <h3>Parties</h3>
     <div class="parties" ng-repeat = "party in $ctrl.parties">
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <a ng-click="$ctrl.show(party)">{{ party.name }}</a>
-      <button ng-click="$ctrl.delete(party)">x</button>
+      <i class="fa fa-times" aria-hidden="true" ng-click="$ctrl.delete(party)"></i>
     </div>
     <hr/>
-    <a ui-sref="party-new" class="btn btn yellow lighten-2 black-text">New</a>
+    <a ui-sref="party-new" class="btn btn indigo">New</a>
     </div>
   `,
   controller: function(partyService, $state) {

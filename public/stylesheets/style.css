@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   margin: 0;
   /*background-color: rgb(17,19,68);*/
-  background-image: url('/img/pineapples.jpeg');
+  /*background-image: url('/img/pineapples.jpeg');*/
   background-size: cover;
 }
 
@@ -96,6 +96,12 @@ nav ul li a {
 /*** HOME PAGE ***/
 
 
+
+/*** PARTY LIST PAGE ***/
+
+.party-page {
+
+}
 
 /*** PARTY SHOW PAGE ***/
 
