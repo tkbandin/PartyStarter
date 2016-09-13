@@ -37,6 +37,13 @@ angular.module('myApp')
                ng-model="$ctrl.party.address">
       </div>
 
+      <div id="geocoder">
+        <input id="address" type="textbox" value="Atlanta, GA">
+        <input id="geocodeSubmit" type="button" value="Geocode">
+      </div>
+
+      <div id="geocodeMap"></div>
+
       <div class="form-group">
         <label for="description">Description</label>
         <input type="text"
@@ -88,5 +95,41 @@ angular.module('myApp')
         $state.go('parties');
       });
     };
+
+     initMap = function() {
+        var map = new google.maps.Map(document.getElementById('geocodeMap'), {
+          zoom: 11,
+          center: {lat: 33.7490, lng: -84.3880}
+        });
+        var geocoder = new google.maps.Geocoder();
+
+        document.getElementById('geocodeSubmit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+      geocodeAddress = function (geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        //var loc = [];
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            //this.party.location.lat = results[0].geometry.location.lat();
+            //this.party.location.lng = results[0].geometry.location.lng();
+            /*loc[0]=results[0].geometry.location.lat();
+            loc[1]=results[0].geometry.location.lng();
+            console.log(loc);*/
+            console.log(this);
+            //console.log(this.party.location.lat);
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    initMap();
   }
 });
