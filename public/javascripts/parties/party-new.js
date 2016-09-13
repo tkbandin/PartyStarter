@@ -29,30 +29,6 @@ angular.module('myApp')
                        </md-datepicker>
       </div>
 
-      <div class="form-group">
-        <label for="address">Address</label>
-        <input type="text"
-               class="form-control"
-               name="address"
-               ng-model="$ctrl.party.location.address">
-      </div>
-
-      <div class="form-group">
-        <label for="lat">Latitude</label>
-        <input type="text"
-               class="form-control"
-               name="lat"
-               ng-model="$ctrl.party.location.lat">
-      </div>
-
-      <div class="form-group">
-        <label for="lng">Longitude</label>
-        <input type="text"
-               class="form-control"
-               name="lng"
-               ng-model="$ctrl.party.location.lng">
-      </div>
-
       <div id="geocoder">
         <input id="address" type="textbox" value="Atlanta, GA">
         <input id="geocodeSubmit" type="button" value="Geocode">
@@ -86,7 +62,9 @@ angular.module('myApp')
     </div>
   `,
   controller: function(partyService, $state) {
-    this.party = {
+    var newPartyController = this;
+
+    newPartyController.party = {
       name: '',
       time: {
         start: ''
@@ -109,47 +87,46 @@ angular.module('myApp')
       }
     };
 
-    this.save = function() {
-      partyService.create(this.party)
+    newPartyController.save = function() {
+      console.log()
+      partyService.create(newPartyController.party)
       .then( res => {
         $state.go('parties');
       });
     };
 
-     initMap = function() {
-        var map = new google.maps.Map(document.getElementById('geocodeMap'), {
-          zoom: 11,
-          center: {lat: 33.7490, lng: -84.3880}
-        });
-        var geocoder = new google.maps.Geocoder();
+    newPartyController.initMap = function() {
+      var map = new google.maps.Map(document.getElementById('geocodeMap'), {
+        zoom: 11,
+        center: {lat: 33.7490, lng: -84.3880}
+      });
+      var geocoder = new google.maps.Geocoder();
 
-        document.getElementById('geocodeSubmit').addEventListener('click', function() {
-          geocodeAddress(geocoder, map);
-        });
-      }
+      document.getElementById('geocodeSubmit').addEventListener('click', function() {
+        newPartyController.geocodeAddress(geocoder, map);
+      });
+    };
 
-      geocodeAddress = function (geocoder, resultsMap) {
-        var address = document.getElementById('address').value;
-        geocoder.geocode({'address': address}, function(results, status) {
-          if (status === 'OK') {
-            var loc = [];
-            //this.party.location.lat = results[0].geometry.location.lat();
-            //this.party.location.lng = results[0].geometry.location.lng();
-            loc[0]=results[0].geometry.location.lat();
-            loc[1]=results[0].geometry.location.lng();
-            console.log(loc);
-            //console.log(this.party.location.lat);
-            resultsMap.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-              map: resultsMap,
-              position: results[0].geometry.location
-            });
-          } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-          }
-        });
-      }
-    initMap();
-    console.log(loc);
+    newPartyController.geocodeAddress = function (geocoder, resultsMap) {
+      var address = document.getElementById('address').value;
+      geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+          var loc = [];
+          console.log("RESULTS:", results);
+          newPartyController.party.location.address = results[0].formatted_address;
+          newPartyController.party.location.lat = results[0].geometry.location.lat();
+          newPartyController.party.location.lng = results[0].geometry.location.lng();
+          console.log("Party location:", newPartyController.party.location);
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    };
+    newPartyController.initMap();
   }
 });
