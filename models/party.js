@@ -8,7 +8,11 @@ var PartySchema = new mongoose.Schema({
     end:   { type: String }
   },
   date:    { type: Date,   required: true },
-  address: { type: String, required: true },
+  location: {
+    address: { type: String, required: true },
+    lat: { type: String, required: false },
+    lng: { type: String, required: false }
+   },
   description: { type: String, required: true },
   foodList: {
     // Boolean for choosing this option
@@ -47,7 +51,7 @@ PartySchema.methods.getUpdatedAt = function() {
 };
 
 PartySchema.methods.toString = function() {
-  return `${this.name} is being planned by ${this.organizer.username}. It's happening on ${this.date} at ${this.time.start} at ${this.address}.`;
+  return `${this.name} is being planned by ${this.organizer.username}. It's happening on ${this.date} at ${this.time.start} at ${this.location.address}.`;
 };
 
 module.exports = mongoose.model('Party', PartySchema);

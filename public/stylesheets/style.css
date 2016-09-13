@@ -41,7 +41,6 @@ nav ul li a {
 
 
 
-
 /*** MAIN LANDING STYLING ***/
 
 .main-landing {
@@ -61,11 +60,6 @@ nav ul li a {
   margin: 0;
   text-align: center;
   font-family: 'Shrikhand', cursive;
-}
-
-.main-landing p {
-  text-align: center;
-  padding-top: 10px;
 }
 
 .main-landing .md-button {
@@ -97,6 +91,8 @@ nav ul li a {
 
 }
 
+<<<<<<< HEAD
+=======
 
 /*** HOME PAGE ***/
 
@@ -108,6 +104,7 @@ nav ul li a {
 
 }
 
+>>>>>>> b389fdab92ceb2e1f0852c956d84bdee9df955e8
 /*** PARTY SHOW PAGE ***/
 
 #party-show .party-body {
@@ -136,9 +133,9 @@ nav ul li a {
 }
 
 #party-show .party-location {
-  background-color: rgb(232, 197, 71);
-  height: 450px;
-  width: 450px;
+  background-color: rgba(232, 197, 71, 0.5);
+  height: 400px;
+  width: 400px;
 }
 
 #party-show .food-list {
@@ -148,12 +145,12 @@ nav ul li a {
 }
 
 #party-show .party-people {
-  background-color: rgb(232, 197, 71);
+  background-color: rgba(232, 197, 71, 0.5);
   width: 30%;
 }
 
 #party-show .party-music {
-  background-color: rgb(232, 197, 71);
+  background-color: rgba(232, 197, 71, 0.5);
   width: 30%;
 }
 
@@ -229,4 +226,10 @@ footer.page-footer .divider {
 
 #names {
   cursor: pointer;
+}
+
+#geocodeMap {
+  height: 200px;
+  width: 200px;
+  margin: 0px auto;
 }

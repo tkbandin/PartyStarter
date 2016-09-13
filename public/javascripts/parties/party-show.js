@@ -16,7 +16,7 @@ angular.module('myApp')
           <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i><p><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
             <div class="party-location">
               <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-              <p><b>Location: </b>{{ $ctrl.party.address }}</p>
+              <p><b>Location: </b>{{ $ctrl.party.location.address }}</p>
               <div id="showmap"></div>
             </div>
         </div>
@@ -80,16 +80,22 @@ angular.module('myApp')
     partyService.getParty($stateParams.id)
     .then( res => {
       this.party = res.data;
-      this.party.date = moment(this.party.date).format('MM-DD-YYYY')
-    });
+      this.party.date = moment(this.party.date).format('MM-DD-YYYY');
 
-    var mapOptions = {
+      var mapOptions = {
         zoom: 12,
-        center: new google.maps.LatLng(33.7490,-84.3880),
+        center: new google.maps.LatLng(this.party.location.lat, this.party.location.lng),
         mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
+      };
 
-    this.map = new google.maps.Map(document.getElementById('showmap'), mapOptions);
+      this.map = new google.maps.Map(document.getElementById('showmap'), mapOptions);
+
+      var marker = new google.maps.Marker({
+        map: this.map,
+        position: new google.maps.LatLng(this.party.location.lat, this.party.location.lng)
+      });
+
+    });
 
   }
 });
