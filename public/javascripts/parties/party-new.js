@@ -34,7 +34,23 @@ angular.module('myApp')
         <input type="text"
                class="form-control"
                name="address"
-               ng-model="$ctrl.party.address">
+               ng-model="$ctrl.party.location.address">
+      </div>
+
+      <div class="form-group">
+        <label for="lat">Latitude</label>
+        <input type="text"
+               class="form-control"
+               name="lat"
+               ng-model="$ctrl.party.location.lat">
+      </div>
+
+      <div class="form-group">
+        <label for="lng">Longitude</label>
+        <input type="text"
+               class="form-control"
+               name="lng"
+               ng-model="$ctrl.party.location.lng">
       </div>
 
       <div id="geocoder">
@@ -114,15 +130,14 @@ angular.module('myApp')
 
       geocodeAddress = function (geocoder, resultsMap) {
         var address = document.getElementById('address').value;
-        //var loc = [];
         geocoder.geocode({'address': address}, function(results, status) {
           if (status === 'OK') {
+            var loc = [];
             //this.party.location.lat = results[0].geometry.location.lat();
             //this.party.location.lng = results[0].geometry.location.lng();
-            /*loc[0]=results[0].geometry.location.lat();
+            loc[0]=results[0].geometry.location.lat();
             loc[1]=results[0].geometry.location.lng();
-            console.log(loc);*/
-            console.log(this);
+            console.log(loc);
             //console.log(this.party.location.lat);
             resultsMap.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
@@ -135,5 +150,6 @@ angular.module('myApp')
         });
       }
     initMap();
+    console.log(loc);
   }
 });
