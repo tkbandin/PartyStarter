@@ -23,6 +23,14 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
+        <label for="time.start">End Time</label>
+        <input type="text"
+               class="form-control"
+               name="endTime"
+               ng-model="$ctrl.party.time.end">
+      </div>
+
+      <div class="form-group">
         <label for="date">Date</label>
         <md-datepicker ng-model="$ctrl.party.date"
                        md-placeholder="Enter date">
@@ -68,7 +76,8 @@ angular.module('myApp')
     newPartyController.party = {
       name: '',
       time: {
-        start: ''
+        start: '',
+        end: ''
       },
       date: '',
       location: {
