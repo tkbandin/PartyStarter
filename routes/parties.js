@@ -88,6 +88,7 @@ router.put('/:id', authenticate, function(req, res, next) {
     party.address = req.body.address,
     party.description = req.body.description,
     party.foodList.chosen = req.body.foodList.chosen ? true : false,
+    party.foodList.list = req.body.foodList.list,
     party.playlist.chosen = req.body.playlist.chosen ? true : false,
     party.entertainment.chosen = req.body.entertainment.chosen ? true : false,
     party.organizer = req.user._id

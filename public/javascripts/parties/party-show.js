@@ -59,9 +59,7 @@ angular.module('myApp')
       console.log('Food:', foodId);
       console.log('FilteredFood:', filterFilter(this.party.foodList.list, foodId));
       filterFilter(this.party.foodList.list, foodId)[0].amount.claimed += 1;
-      // console.log('before add:', this.party.foodList.list.find(foodId).amount.claimed);
-      // this.party.foodList.list.find(foodId).amount.claimed += 1;
-      // console.log('after add:', this.party.foodList.list.find(foodId).amount.claimed);
+      partyService.update(this.party);
     };
 
     partyService.getParty($stateParams.id)
