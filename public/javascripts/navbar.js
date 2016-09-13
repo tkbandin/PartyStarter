@@ -40,11 +40,11 @@ angular.module('myApp')
     // console.log(vmNavbar.isLoggedIn);
 
     $rootScope.$on('LOGIN_CHECK', function(res){
-      console.log('Triggered Event');
-      console.log(vmNavbar.isLoggedIn);
+      // console.log('Triggered Event');
+      // console.log(vmNavbar.isLoggedIn);
       vmNavbar.isLoggedIn = Auth.isLoggedIn();
       vmNavbar.getUser = Auth.getCurrentUserSync();
-      console.log('getUser:', vmNavbar.getUser);
+      // console.log('getUser:', vmNavbar.getUser);
     });
 
     vmNavbar.logout = function() {
