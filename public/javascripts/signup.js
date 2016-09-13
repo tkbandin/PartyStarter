@@ -1,7 +1,7 @@
 angular.module('myApp')
 .component('signup', {
   template: `
-  <div class="main-landing">
+  <div class="main-landing z-depth-1">
     <div class="row">
       <div class="col-sm-12">
         <h2>Sign up</h2>

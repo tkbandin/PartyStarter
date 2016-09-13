@@ -4,13 +4,13 @@ angular.module('myApp')
     <div class="main-landing">
     <h1>Parties</h1>
     <div class="parties" ng-repeat = "party in $ctrl.parties">
-      <span ng-click="$ctrl.toggle(party)" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-      <span ng-click="$ctrl.toggle(party)" class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+      <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
+      <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <a ng-click="$ctrl.show(party)">{{ party.name }}</a>
-      <button ng-click="$ctrl.delete(party)">X</button>
+      <button ng-click="$ctrl.delete(party)">x</button>
     </div>
     <hr/>
-    <a ui-sref="party-new" class="btn btn-primary">New</a>
+    <a ui-sref="party-new" class="btn btn yellow">New</a>
     </div>
   `,
   controller: function(partyService, $state) {

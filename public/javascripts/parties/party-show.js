@@ -17,7 +17,7 @@ angular.module('myApp')
             <div class="party-location">
               <i class="fa fa-map-marker" aria-hidden="true"></i>
               <p><b>Location: </b>{{ $ctrl.party.address }}</p>
-              <p>Google Map snapshot will go here</p>
+              <div id="showmap"></div>
             </div>
         </div>
 
@@ -36,27 +36,25 @@ angular.module('myApp')
               <table>
                 <thead>
                   <tr>
-                      <th data-field="id">Name</th>
+
                       <th data-field="name">Item Name</th>
                       <th data-field="have">Accounted For</th>
                       <th data-field="need">Still Need</th>
+                      <th data-field="claim">Claim</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Ali</td>
                     <td>Chips</td>
                     <td>2</td>
                     <td>4</td>
                   </tr>
                   <tr>
-                    <td>Brad</td>
                     <td>Beer (12 pack)</td>
                     <td>2</td>
                     <td>2</td>
                   </tr>
                   <tr>
-                    <td>Chris</td>
                     <td>Ice Cream</td>
                     <td>1</td>
                     <td>2</td>
@@ -75,7 +73,7 @@ angular.module('myApp')
     <a ng-click="$ctrl.edit(party)" class="btn btn-warning">Edit</a>
     </div>
 
-    <div id="showmap"></div>
+
   `,
   controller: function(partyService, $state, $stateParams) {
     this.party = null;

@@ -1,12 +1,13 @@
 angular.module('myApp')
 .component('home', {
   template: `
-  <div class='main-landing'>
-    <i class="material-icons">insert_emoticon</i>
-    <h2>Hey!</h2>
-    <h3>Welcome to the {{ $ctrl.name }}</h3>
-    <p>This is an explanation and it is super exciting and makes you want to part and use our app. It is really cool because you can do a lot of stuff.</p>
-    <a class="waves-effect waves-light btn" ui-sref="signup">Get Started</a>
+  <div id="home-page">
+    <div class='main-landing z-depth-1'>
+      <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
+      <h2>Hey, Party Planner!</h2>
+      <p>This is an explanation and it is super exciting and makes you want to part and use our app. It is really cool because you can do a lot of stuff.</p>
+      <a class="waves-effect waves-light btn yellow lighten-2 black-text" ui-sref="signup">Get Started</a>
+    </div>
   </div>
   `,
   controller: function() {
