@@ -85,16 +85,16 @@ angular.module('myApp')
     partyService.getParty($stateParams.id)
     .then( res => {
       this.party = res.data;
-      this.party.date = moment(this.party.date).format('MM-DD-YYYY')
-    });
+      this.party.date = moment(this.party.date).format('MM-DD-YYYY');
 
-    var mapOptions = {
+      var mapOptions = {
         zoom: 12,
-        center: new google.maps.LatLng(33.7490,-84.3880),
+        center: new google.maps.LatLng(this.party.location.lat, this.party.location.lng),
         mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
+      };
 
-    this.map = new google.maps.Map(document.getElementById('showmap'), mapOptions);
+      this.map = new google.maps.Map(document.getElementById('showmap'), mapOptions);
+    });
 
   }
 });
