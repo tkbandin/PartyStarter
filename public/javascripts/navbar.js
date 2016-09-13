@@ -13,14 +13,14 @@ angular.module('myApp')
           </ul>
 
           <ul id="nav-mobile" ng-if="vmNavbar.isLoggedIn" class="right hide-on-med-and-down">
-            <li><a disabled >Signed in as {{ vmNavbar.getUser.email }}</a></li>
+            <li><a ui-sref="parties" >Signed in as {{ vmNavbar.getUser.email }}</a></li>
             <li><a ng-click="vmNavbar.logout()">Logout</a></li>
           </ul>
 
           <ul id="mobile-demo" class="side-nav">
             <li ng-hide="vmNavbar.Auth.isLoggedIn()" ng-class="{ active: vmNavbar.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
             <li ng-hide="vmNavbar.Auth.isLoggedIn()" ng-class="{ active: vmNavbar.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
-            <li ng-show="vmNavbar.Auth.isLoggedIn()" ><a disabled >Signed in as {{ vmNavbar.getUser.email }}</a></li>
+            <li ng-show="vmNavbar.Auth.isLoggedIn()" ><a ui-sref="parties" >Signed in as {{ vmNavbar.getUser.email }}</a></li>
             <li ng-show="vmNavbar.Auth.isLoggedIn()" ><a ng-click="vmNavbar.logout()">Logout</a></li>
           </ul>
 
