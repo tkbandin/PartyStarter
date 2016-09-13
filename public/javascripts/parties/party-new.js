@@ -63,6 +63,7 @@ angular.module('myApp')
   `,
   controller: function(partyService, $state) {
     var newPartyController = this;
+    newPartyController.marker = undefined;
 
     newPartyController.party = {
       name: '',
@@ -102,6 +103,11 @@ angular.module('myApp')
       });
       var geocoder = new google.maps.Geocoder();
 
+      newPartyController.marker = new google.maps.Marker({
+            map: map,
+            // position: {lat: 33.7490, lng: -84.3880}
+          });
+
       document.getElementById('geocodeSubmit').addEventListener('click', function() {
         newPartyController.geocodeAddress(geocoder, map);
       });
@@ -111,14 +117,12 @@ angular.module('myApp')
       var address = document.getElementById('address').value;
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
-          var loc = [];
-          console.log("RESULTS:", results);
+          newPartyController.marker.setMap(null);
           newPartyController.party.location.address = results[0].formatted_address;
           newPartyController.party.location.lat = results[0].geometry.location.lat();
           newPartyController.party.location.lng = results[0].geometry.location.lng();
-          console.log("Party location:", newPartyController.party.location);
           resultsMap.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
+          newPartyController.marker = new google.maps.Marker({
             map: resultsMap,
             position: results[0].geometry.location
           });
