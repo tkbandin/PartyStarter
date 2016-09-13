@@ -6,8 +6,11 @@ angular.module('myApp')
     <div class="parties" ng-repeat = "party in $ctrl.parties">
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
-      <a ng-click="$ctrl.show(party)">{{ party.name }}</a>
-      <i class="fa fa-times" aria-hidden="true" ng-click="$ctrl.delete(party)"></i>
+      <div ng-click="$ctrl.show(party)">
+      <h4> {{ party.name }} </h4> <i class="fa fa-times" aria-hidden="true" ng-click="$ctrl.delete(party)"></i>
+      <p> {{ party.description }} </p>
+      </div>
+      <hr>
     </div>
     <hr/>
     <a ui-sref="party-new" class="btn btn indigo">New</a>
