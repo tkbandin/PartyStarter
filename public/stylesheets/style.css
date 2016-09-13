@@ -4,6 +4,8 @@ html, body {
   height: 100%;
   margin: 0;
   /*background-color: rgb(17,19,68);*/
+  /*background-image: url('/img/pineapples.jpeg');*/
+  background-size: cover;
 }
 
 h5 {
@@ -84,6 +86,20 @@ nav ul li a {
   border-radius: 20px;
 }
 
+<<<<<<< HEAD
+=======
+
+/*** HOME PAGE ***/
+
+
+
+/*** PARTY LIST PAGE ***/
+
+.party-page {
+
+}
+
+>>>>>>> b389fdab92ceb2e1f0852c956d84bdee9df955e8
 /*** PARTY SHOW PAGE ***/
 
 #party-show .party-body {

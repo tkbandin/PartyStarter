@@ -34,7 +34,7 @@ angular.module('myApp')
           </div>
 
           <div>
-            <button class="waves-effect waves-light btn btn-login yellow lighten-2 black-text" type="submit">
+            <button class="waves-effect waves-light btn btn-login indigo" type="submit">
               Login
             </button>
 

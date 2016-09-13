@@ -2,7 +2,7 @@ angular.module('myApp')
 .component('partyShow', {
   template: `
     <div id="party-show">
-      <div class="party-header">
+      <div class="party-header z-depth-1">
         <i class="fa fa-birthday-cake" aria-hidden="true"></i>
         <i class="fa fa-heart" aria-hidden="true"></i>
         <i class="fa fa-hand-o-right" aria-hidden="true"></i>
@@ -13,16 +13,16 @@ angular.module('myApp')
       <div class="party-body">
 
         <div class="party-info">
-          <i class="fa fa-clock-o" aria-hidden="true"></i><p><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
+          <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i><p><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
             <div class="party-location">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
               <p><b>Location: </b>{{ $ctrl.party.address }}</p>
               <div id="showmap"></div>
             </div>
         </div>
 
         <div class="party-people">
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i>
           <p><b>Organizer: </b>{{ $ctrl.party.organizer.username }}</p>
           <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
           <p><b>Guest Attending: </b> {{ $ctrl.party.usersAttending }}</p>
@@ -31,7 +31,7 @@ angular.module('myApp')
       </div>
 
           <div class="food-list">
-            <i class="fa fa-cutlery" aria-hidden="true"></i>
+            <i class="fa fa-cutlery fa-2x" aria-hidden="true"></i>
             <p> food list will be displayed here</p>
               <table>
                 <thead>
@@ -64,13 +64,13 @@ angular.module('myApp')
           </div>
 
           <div class="party-music">
-          <i class="fa fa-music" aria-hidden="true"></i>
+          <i class="fa fa-music fa-2x" aria-hidden="true"></i>
           <p>Spotify Playlist here?</p>
           </div>
       </div>
 
-    <a ui-sref="parties" class="btn btn-primary">Back</a>
-    <a ng-click="$ctrl.edit(party)" class="btn btn-warning">Edit</a>
+    <a ui-sref="parties" class="btn btn indigo">Back</a>
+    <a ng-click="$ctrl.edit(party)" class="btn indigo">Edit</a>
     </div>
 
 
