@@ -76,7 +76,11 @@ angular.module('myApp')
         start: ''
       },
       date: '',
-      address: '',
+      location: {
+        address: '',
+        lat: '',
+        lng: ''
+      },
       description: '',
       foodList: {
         chosen: false

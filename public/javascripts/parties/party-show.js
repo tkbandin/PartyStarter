@@ -16,7 +16,7 @@ angular.module('myApp')
           <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i><p><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
             <div class="party-location">
               <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-              <p><b>Location: </b>{{ $ctrl.party.address }}</p>
+              <p><b>Location: </b>{{ $ctrl.party.location.address }}</p>
               <div id="showmap"></div>
             </div>
         </div>

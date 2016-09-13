@@ -34,7 +34,7 @@ angular.module('myApp')
         <input type="text"
                class="form-control"
                name="address"
-               ng-model="$ctrl.party.address">
+               ng-model="$ctrl.party.location.address">
       </div>
 
       <div class="form-group">
