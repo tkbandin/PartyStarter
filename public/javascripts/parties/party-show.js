@@ -62,11 +62,6 @@ angular.module('myApp')
                 </tbody>
               </table>
           </div>
-
-          <div class="party-music">
-          <i class="fa fa-music fa-2x" aria-hidden="true"></i>
-          <p>Spotify Playlist here?</p>
-          </div>
       </div>
 
     <a ui-sref="parties" class="btn btn indigo">Back</a>
