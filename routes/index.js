@@ -60,17 +60,21 @@ router.get('/me', function(req, res, next) {
 
 // GET /mypartydata
 router.get('/mypartydata/:partyid', function(req, res, next) {
-  var foodToBring = null;
+  var thisPartyFoodList = [];
   var thisUser = User.findOne({ 'local.email': req.user.local.email })
   .then(function(thisUser){
     console.log('thisUser:', thisUser);
     thisUser.foodLists.forEach( list => {
       if (list.party == req.params.partyid) {
-        foodToBring = list.food;
+        thisPartyFoodList = list;
       }
     })
+    console.log( { email: thisUser.local.email,
+                foodLists: [{ party: thisPartyFoodList.party ? thisPartyFoodList.party : '',
+                             food: thisPartyFoodList.food ? thisPartyFoodList.food : [] }] } );
     res.json( { email: thisUser.local.email,
-                foodToBring: foodToBring } );
+                foodLists: [{ party: thisPartyFoodList.party ? thisPartyFoodList.party : '',
+                             food: thisPartyFoodList.food ? thisPartyFoodList.food : [] }] } );
   });
 });
 

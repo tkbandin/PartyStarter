@@ -62,5 +62,9 @@ angular.module('myApp')
     });
   };
 
+  this.updateUser = function(user) {
+    return $http.put('/' + user._id, user);
+  };
+
   this.getCurrentUser();
 });

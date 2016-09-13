@@ -15,7 +15,7 @@ var strategy = new LocalStrategy({
         return callback(null, false, { message: 'This email is already taken.' });
       }
       else {
-        console.log('req:', req);
+        // console.log('req:', req.body);
         // Create a new user
         var newUser            = new User();
         newUser.local.email    = email;
