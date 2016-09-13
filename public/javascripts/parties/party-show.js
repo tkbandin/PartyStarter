@@ -94,6 +94,12 @@ angular.module('myApp')
       };
 
       this.map = new google.maps.Map(document.getElementById('showmap'), mapOptions);
+
+      var marker = new google.maps.Marker({
+        map: this.map,
+        position: new google.maps.LatLng(this.party.location.lat, this.party.location.lng)
+      });
+
     });
 
   }
