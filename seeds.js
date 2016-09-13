@@ -52,9 +52,9 @@ Party.remove({})
 })
 .spread(function(joe, sue) {
   console.log('creating some new parties...');
-  var pool      = new Party({ name: 'Pool party', 'time.start': '12', 'time.end': '5', date: '11/2/16' , address: '123 my street', description: 'its a party!', 'foodList.chosen': false, 'playlist.chosen': false, 'entertainment.chosen': false, organizer: joe._id });
-  var bonfire   = new Party({ name: 'Bonfire', 'time.start': '12', 'time.end': '5', date: '9/20/16' , address: '321 some avenue', description: 'another party!', 'foodList.chosen': true, 'playlist.chosen': false, 'entertainment.chosen': false, organizer: joe._id });
-  var house     = new Party({ name: 'House party',  'time.start': '12', 'time.end': '5', date: '10/5/16' , address: '1212 Ponce de Leone Ave', description: 'house party!', 'foodList.chosen': false, 'playlist.chosen': false, 'entertainment.chosen': false, organizer: sue._id });
+  var pool      = new Party({ name: 'Pool party', 'time.start': '12', 'time.end': '5', date: '11/2/16' , 'location.address': '123 my street', description: 'its a party!', 'foodList.chosen': false, 'playlist.chosen': false, 'entertainment.chosen': false, organizer: joe._id });
+  var bonfire   = new Party({ name: 'Bonfire', 'time.start': '12', 'time.end': '5', date: '9/20/16' , 'location.address': '321 some avenue', description: 'another party!', 'foodList.chosen': true, 'playlist.chosen': false, 'entertainment.chosen': false, organizer: joe._id });
+  var house     = new Party({ name: 'House party',  'time.start': '12', 'time.end': '5', date: '10/5/16' , 'location.address': '1212 Ponce de Leone Ave', description: 'house party!', 'foodList.chosen': false, 'playlist.chosen': false, 'entertainment.chosen': false, organizer: sue._id });
   return Party.create([pool, bonfire, house]);
 })
 .then(function(savedParties) {

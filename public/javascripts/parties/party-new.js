@@ -29,13 +29,12 @@ angular.module('myApp')
                        </md-datepicker>
       </div>
 
-      <div class="form-group">
-        <label for="address">Address</label>
-        <input type="text"
-               class="form-control"
-               name="address"
-               ng-model="$ctrl.party.address">
+      <div id="geocoder">
+        <input id="address" type="textbox" value="Atlanta, GA">
+        <input id="geocodeSubmit" type="button" value="Geocode">
       </div>
+
+      <div id="geocodeMap"></div>
 
       <div class="form-group">
         <label for="description">Description</label>
@@ -63,13 +62,20 @@ angular.module('myApp')
     </div>
   `,
   controller: function(partyService, $state) {
-    this.party = {
+    var newPartyController = this;
+    newPartyController.marker = undefined;
+
+    newPartyController.party = {
       name: '',
       time: {
         start: ''
       },
       date: '',
-      address: '',
+      location: {
+        address: '',
+        lat: '',
+        lng: ''
+      },
       description: '',
       foodList: {
         chosen: false
@@ -82,11 +88,49 @@ angular.module('myApp')
       }
     };
 
-    this.save = function() {
-      partyService.create(this.party)
+    newPartyController.save = function() {
+      console.log()
+      partyService.create(newPartyController.party)
       .then( res => {
         $state.go('parties');
       });
     };
+
+    newPartyController.initMap = function() {
+      var map = new google.maps.Map(document.getElementById('geocodeMap'), {
+        zoom: 11,
+        center: {lat: 33.7490, lng: -84.3880}
+      });
+      var geocoder = new google.maps.Geocoder();
+
+      newPartyController.marker = new google.maps.Marker({
+            map: map,
+            // position: {lat: 33.7490, lng: -84.3880}
+          });
+
+      document.getElementById('geocodeSubmit').addEventListener('click', function() {
+        newPartyController.geocodeAddress(geocoder, map);
+      });
+    };
+
+    newPartyController.geocodeAddress = function (geocoder, resultsMap) {
+      var address = document.getElementById('address').value;
+      geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+          newPartyController.marker.setMap(null);
+          newPartyController.party.location.address = results[0].formatted_address;
+          newPartyController.party.location.lat = results[0].geometry.location.lat();
+          newPartyController.party.location.lng = results[0].geometry.location.lng();
+          resultsMap.setCenter(results[0].geometry.location);
+          newPartyController.marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    };
+    newPartyController.initMap();
   }
 });

@@ -1,7 +1,7 @@
 angular.module('myApp')
 .component('login', {
   template: `
-  <div class="main-landing">
+  <div class="main-landing z-depth-1">
     <div class="row">
       <div class="col-sm-12">
         <h2>Login</h2>
@@ -13,6 +13,7 @@ angular.module('myApp')
             <label>Email</label>
 
             <input type="email" name="email" class="form-control" ng-model="$ctrl.user.email" required>
+
           </div>
 
           <div class="form-group">
@@ -33,12 +34,11 @@ angular.module('myApp')
           </div>
 
           <div>
-            <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            <button class="waves-effect waves-light btn btn-login indigo" type="submit">
               Login
             </button>
-            <a class="btn btn-default btn-lg btn-register" ui-sref="signup">
-              Register
-            </a>
+
+            <p>Don't have an account? <a ui-sref="signup">Create one!</a></p>
           </div>
         </form>
       </div>

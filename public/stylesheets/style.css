@@ -4,6 +4,11 @@ html, body {
   height: 100%;
   margin: 0;
   background-color: rgb(17,19,68);
+  background-image: url('/img/pineapples.jpeg');
+  background-size: cover;
+  /*display: flex;
+  min-height: 100vh;
+  flex-direction: column;*/
 }
 
 h5 {
@@ -15,8 +20,8 @@ nav .brand-logo {
   padding-left: 15px;
 }
 
-.waves-effect.waves-brown .waves-ripple {
-  background-color: rgba(237,106,90, 0.65);
+main {
+  flex: 1 0 auto;
 }
 
 /*** NAV STYLING ***/
@@ -49,8 +54,7 @@ nav ul li a {
   padding: 15px;
   border: 5px solid rgb(224,242,241);
   border-radius: 20px;
-  margin-bottom: 50px;
-  overflow-y: scroll;
+  margin-bottom: 100px;
 }
 
 .main-landing h2 {
@@ -82,8 +86,72 @@ nav ul li a {
   text-align: center;
   margin-top:;
   padding: 10px;
+  padding-bottom: 50px;
   border: 5px solid rgb(224,242,241);
   border-radius: 20px;
+
+}
+
+
+
+/*** HOME PAGE ***/
+
+
+
+/*** PARTY LIST PAGE ***/
+
+.party-page {
+
+}
+
+
+/*** PARTY SHOW PAGE ***/
+
+#party-show .party-body {
+  display: flex;
+  flex-direction: row;
+  padding: 0, 20px, 0, 20px;
+  margin: 10px;
+
+}
+
+#party-show .party-header {
+  background-color: rgb(239,233,231);
+  height: 250px;
+  padding: 20px;
+
+}
+
+#party-show i {
+  padding: 10px;
+  position: static;
+}
+
+#party-show .party-info {
+  background-color: rgb(239, 233, 231);
+  width: 70%;
+}
+
+#party-show .party-location {
+  background-color: rgba(232, 197, 71, 0.5);
+  height: 400px;
+  width: 400px;
+}
+
+#party-show .food-list {
+  background-color: rgb(239,233,231);
+  height: auto;
+  width: 70%;
+}
+
+#party-show .party-people {
+  background-color: rgba(232, 197, 71, 0.5);
+  width: 30%;
+}
+
+#party-show .party-music {
+  background-color: rgba(232, 197, 71, 0.5);
+  width: 30%;
 }
 
 
@@ -108,15 +176,24 @@ nav ul li a {
 
 /*** FOOTER STYLING ***/
 
-footer.page-footer {
-  left:0px; bottom:0px;
+footer {
   position: fixed;
+}
+
+footer a {
+
+}
+
+footer.page-footer {
+  left:0px; bottom:0px; right:0px;
   width: 100%;
   margin: 0;
   padding: 0;
+  position: fixed;
+  padding: 1rem;
 }
 
-footer.page-footer p, footer.page-footer ul,
+/*footer.page-footer p, footer.page-footer ul,
 footer.page-footer div {
   text-align: center;
   margin: 0;
@@ -130,4 +207,52 @@ footer.page-footer .footer-copyright {
 
 footer.page-footer .divider {
   background-color: rgba(51,51,51,0.08);
+}*/
+
+/*** MAP STYLING ***/
+
+#map{
+  height: 600px;
+  width: 800px;
+  margin: 30px auto;
+  box-shadow: 3px 3px 10px gray;
+}
+
+#showmap{
+  height: 300px;
+  width: 300px;
+  margin: 30px auto;
+  box-shadow: 3px 3px 10px gray;
+}
+
+#repeat{
+  display: inline;
+}
+
+#party_container {
+  margin: 8px 2px 2px 0px;
+  text-align: center;
+  width: 90px;
+  padding: 5px;
+  color: white;
+  background-color: gray;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#party_container:hover {
+  box-shadow: 0px 0px 10px blue;
+  background-color: gray;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+#names {
+  cursor: pointer;
+}
+
+#geocodeMap {
+  height: 300px;
+  width: 600px;
+  margin: 0px auto;
 }

@@ -1,6 +1,6 @@
 angular.module('myApp')
 .component('partyEdit', {
-  template: `
+template: `
     <div class="main-landing">
     <h3>Edit</h3>
 
@@ -25,17 +25,16 @@ angular.module('myApp')
       <div class="form-group">
         <label for="date">Date</label>
         <md-datepicker ng-model="$ctrl.party.date"
-                       md-placeholder="{{$ctrl.party.date}}">
+                       md-placeholder="Enter date">
                        </md-datepicker>
       </div>
 
-      <div class="form-group">
-        <label for="address">Address</label>
-        <input type="text"
-               class="form-control"
-               name="address"
-               ng-model="$ctrl.party.address">
+      <div id="geocoder">
+        <input id="address" type="textbox" value="{{$ctrl.party.location.address}}">
+        <input id="geocodeSubmit" type="button" value="Geocode">
       </div>
+
+      <div id="geocodeMap"></div>
 
       <div class="form-group">
         <label for="description">Description</label>
@@ -46,43 +45,34 @@ angular.module('myApp')
       </div>
 
       <div class="form-group">
-        <label for="foodList.chosen">Food List</label>
-        <input type="checkbox"
-               class="form-control"
-               name="completed"
-               ng-model="$ctrl.party.foodList.chosen">
+        <input type="checkbox" id='foodList.chosen' class="form-control" name="foodList.chosen" ng-model="$ctrl.party.foodList.chosen"><label for="foodList.chosen">Food List</label>
       </div>
 
       <div class="form-group">
-        <label for="playlist.chosen">Playlist</label>
-        <input type="checkbox"
-               class="form-control"
-               name="completed"
-               ng-model="$ctrl.party.playlist.chosen">
+        <input type="checkbox" id='playlist.chosen' class="form-control" name="playlist.chosen" ng-model="$ctrl.party.playlist.chosen"><label for="playlist.chosen">Playlist</label>
       </div>
 
       <div class="form-group">
-        <label for="entertainment.chosen">Entertainment</label>
-        <input type="checkbox"
-               class="form-control"
-               name="completed"
-               ng-model="$ctrl.party.entertainment.chosen">
+        <input type="checkbox" id='entertainment.chosen' class="form-control" name="entertainment.chosen" ng-model="$ctrl.party.entertainment.chosen"><label for="entertainment.chosen">Entertainment</label>
       </div>
 
-      <a ng-click="$ctrl.show()" class="btn btn-primary">Back</a>
+      <a ui-sref="parties" class="btn btn-primary">Back</a>
       <button type="submit" class="btn btn-success">Save</button>
     </form>
     </div>
   `,
   controller: function(partyService, $state, $stateParams) {
-    this.party = null;
+    var editPartyController = this;
+    editPartyController.party = null;
+    editPartyController.marker = undefined;
+    // editPartyController.markers = [];
 
-    this.show = function() {
-      $state.go('party-show', { id: this.party._id });
+    editPartyController.show = function() {
+      $state.go('party-show', { id: editPartyController.party._id });
     };
 
-    this.save = function() {
-      partyService.update(this.party)
+    editPartyController.save = function() {
+      partyService.update(editPartyController.party)
       .then( res => {
         $state.go('parties');
       });
@@ -90,8 +80,52 @@ angular.module('myApp')
 
     partyService.getParty($stateParams.id)
     .then( res => {
-      this.party = res.data;
-      this.party.date = new Date(this.party.date);
+      editPartyController.party = res.data;
+      editPartyController.party.date = new Date(editPartyController.party.date);
+
+      editPartyController.initMap();
     });
+
+    editPartyController.initMap = function() {
+      var map = new google.maps.Map(document.getElementById('geocodeMap'), {
+        zoom: 11,
+        center: new google.maps.LatLng(editPartyController.party.location.lat, editPartyController.party.location.lng)
+      });
+      var geocoder = new google.maps.Geocoder();
+
+      editPartyController.marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(editPartyController.party.location.lat, editPartyController.party.location.lng)
+          });
+      // editPartyController.markers.push(editPartyController.marker);
+
+      document.getElementById('geocodeSubmit').addEventListener('click', function() {
+        editPartyController.geocodeAddress(geocoder, map);
+      });
+    };
+
+    editPartyController.geocodeAddress = function (geocoder, resultsMap) {
+      var address = document.getElementById('address').value;
+      geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+          editPartyController.marker.setMap(null);
+          console.log("RESULTS:", results);
+          editPartyController.party.location.address = results[0].formatted_address;
+          editPartyController.party.location.lat = results[0].geometry.location.lat();
+          editPartyController.party.location.lng = results[0].geometry.location.lng();
+          console.log("Party location:", editPartyController.party.location);
+          resultsMap.setCenter(results[0].geometry.location);
+          editPartyController.marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+          // editPartyController.markers.push(editPartyController.marker);
+          // console.log('Party Controller Markers:', editPartyController.markers);
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    };
+
   }
 });
