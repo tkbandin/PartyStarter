@@ -1,9 +1,13 @@
 {
   "name": "project3",
   "version": "0.0.0",
+  "engines": {
+    "node": "6.5.0"
+  },
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
