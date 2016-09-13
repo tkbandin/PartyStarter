@@ -22,7 +22,7 @@ angular.module('myApp')
           <th>Still Needed</th>
         </tr>
         <tr ng-repeat='food in $ctrl.party.foodList.list'>
-          <td>{{ food.name }} <button ng-click="$ctrl.claimOneFood(food)">Claim one!</button></td>
+          <td>{{ food.name }} <button ng-click="$ctrl.claimOneFood(food._id)">Claim one!</button></td>
           <td>{{ food.amount.claimed }} </td>
           <td>{{ food.amount.needed - food.amount.claimed }} </td>
         </tr>
@@ -46,7 +46,7 @@ angular.module('myApp')
     <a ng-click="$ctrl.edit(party)" class="btn btn-warning">Edit</a>
     </div>
   `,
-  controller: function(Auth, partyService, $state, $stateParams) {
+  controller: function(Auth, partyService, $state, $stateParams, filterFilter) {
     this.party = null;
     this.foodListChosen = false;
 
@@ -54,11 +54,14 @@ angular.module('myApp')
       $state.go('party-edit', { id: this.party._id });
     };
 
-    this.claimOneFood = function(food) {
+    this.claimOneFood = function(foodId) {
       console.log("I Fired!");
-      // console.log('before add:', this.party.foodList.list.find(food._id).amount.claimed);
-      this.party.foodList.list.find(food._id).amount.claimed += 1;
-      // console.log('after add:', this.party.foodList.list.find(food._id).amount.claimed);
+      console.log('Food:', foodId);
+      console.log('FilteredFood:', filterFilter(this.party.foodList.list, foodId));
+      filterFilter(this.party.foodList.list, foodId)[0].amount.claimed += 1;
+      // console.log('before add:', this.party.foodList.list.find(foodId).amount.claimed);
+      // this.party.foodList.list.find(foodId).amount.claimed += 1;
+      // console.log('after add:', this.party.foodList.list.find(foodId).amount.claimed);
     };
 
     partyService.getParty($stateParams.id)
