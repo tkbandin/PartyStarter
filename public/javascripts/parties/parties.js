@@ -1,8 +1,8 @@
 angular.module('myApp')
 .component('parties', {
   template: `
-    <div class="main-landing">
-    <h1>Parties</h1>
+    <div class="main-landing z-depth-1">
+    <h3>Parties</h3>
     <div class="parties" ng-repeat = "party in $ctrl.parties">
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
@@ -10,7 +10,7 @@ angular.module('myApp')
       <button ng-click="$ctrl.delete(party)">x</button>
     </div>
     <hr/>
-    <a ui-sref="party-new" class="btn btn yellow">New</a>
+    <a ui-sref="party-new" class="btn btn yellow lighten-2 black-text">New</a>
     </div>
   `,
   controller: function(partyService, $state) {

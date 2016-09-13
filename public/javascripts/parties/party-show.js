@@ -2,7 +2,7 @@ angular.module('myApp')
 .component('partyShow', {
   template: `
     <div id="party-show">
-      <div class="party-header">
+      <div class="party-header z-depth-1">
         <i class="fa fa-birthday-cake" aria-hidden="true"></i>
         <i class="fa fa-heart" aria-hidden="true"></i>
         <i class="fa fa-hand-o-right" aria-hidden="true"></i>
