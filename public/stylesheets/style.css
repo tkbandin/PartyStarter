@@ -195,14 +195,12 @@ footer.page-footer .divider {
   height: 600px;
   width: 800px;
   margin: 30px auto;
-  box-shadow: 3px 3px 10px gray;
 }
 
 #showmap{
   height: 300px;
   width: 300px;
   margin: 30px auto;
-  box-shadow: 3px 3px 10px gray;
 }
 
 #repeat{
@@ -221,7 +219,6 @@ footer.page-footer .divider {
 }
 
 #party_container:hover {
-  box-shadow: 0px 0px 10px blue;
   background-color: gray;
   border: 1px solid gray;
   cursor: pointer;
