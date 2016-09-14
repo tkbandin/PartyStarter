@@ -4,7 +4,8 @@ angular.module('myApp')
     <div ng-cloak class='navbar-fixed'>
       <nav class="teal lighten-5" role="navigation">
         <div class="nav-wrapper">
-          <a ui-sref="home" class="brand-logo">PartyStarter</a>
+          <a ng-if="!vmNavbar.isLoggedIn" ui-sref="home" class="brand-logo">PartyStarter</a>
+          <a ng-if="vmNavbar.isLoggedIn" ui-sref="parties" class="brand-logo">PartyStarter</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
           <ul id="nav-mobile" ng-if="!vmNavbar.isLoggedIn" class="right hide-on-med-and-down">
@@ -54,7 +55,7 @@ angular.module('myApp')
       Auth.logout()
       .then( res => {
         vmNavbar.isLoggedIn = Auth.isLoggedIn();
-        $state.go('login');
+        $state.go('home');
       });
     };
 

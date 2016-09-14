@@ -38,7 +38,7 @@ angular.module('myApp')
               Login
             </button>
 
-            <p>Don't have an account? <a ui-sref="signup">Create one!</a></p>
+            <p style="text-align: center">Don't have an account? <a ui-sref="signup">Create one!</a></p>
           </div>
         </form>
       </div>
