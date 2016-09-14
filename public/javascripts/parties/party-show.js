@@ -9,6 +9,7 @@ angular.module('myApp')
         <h3>Party Name: {{ $ctrl.party.name }}</h3>
         <p><b>Date: </b>{{ $ctrl.party.date }}</p>
         <p><b>Description: </b>{{ $ctrl.party.description }}</p>
+        <a ng-click="$ctrl.edit(party)" class="btn yellow lighten-2 black-text">Edit Party</a>
       </div>
       <div class="party-body">
 
@@ -64,8 +65,8 @@ angular.module('myApp')
           </div>
       </div>
 
-    <a ui-sref="parties" class="btn btn indigo">Back</a>
-    <a ng-click="$ctrl.edit(party)" class="btn indigo">Edit</a>
+    <a ui-sref="parties" class="btn btn yellow lighten-2 black-text">Back</a>
+    <a ng-click="$ctrl.edit(party)" class="btn yellow lighten-2 black-text">Edit</a>
     </div>
 
 

@@ -56,8 +56,8 @@ angular.module('myApp')
         <input type="checkbox" id='entertainment.chosen' class="form-control" name="entertainment.chosen" ng-model="$ctrl.party.entertainment.chosen"><label for="entertainment.chosen">Entertainment</label>
       </div>
 
-      <a ui-sref="parties" class="btn btn-primary">Back</a>
-      <button type="submit" class="btn btn-success">Save</button>
+      <a ui-sref="parties" class="btn yellow lighten-2 black-text">Back</a>
+      <button type="submit" class="btn yellow lighten-2 black-text">Save</button>
     </form>
     </div>
   `,
