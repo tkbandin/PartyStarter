@@ -74,19 +74,11 @@ angular.module('myApp')
         </div>
 
         <div class="detail-choice-box">
-          <input type="checkbox" id='details.dancing' class="form-control" name="details.dancing" ng-model="$ctrl.party.details.dancing"><label for="details.dancing">Dancing</label>
-        </div>
-
-        <div class="detail-choice-box">
           <input type="checkbox" id='details.music' class="form-control" name="details.music" ng-model="$ctrl.party.details.music"><label for="details.music">Music</label>
         </div>
 
         <div class="detail-choice-box">
           <input type="checkbox" id='details.outdoors' class="form-control" name="details.outdoors" ng-model="$ctrl.party.details.outdoors"><label for="details.outdoors">Outdoors</label>
-        </div>
-
-        <div class="detail-choice-box">
-          <input type="checkbox" id='details.swimming' class="form-control" name="details.swimming" ng-model="$ctrl.party.details.swimming"><label for="details.swimming">Swimming</label>
         </div>
 
         <div class="detail-choice-box">
@@ -140,15 +132,15 @@ angular.module('myApp')
         byoBeer: false,
         byoFood: false,
         movie: false,
-        dancing: false,
+        // dancing: false,
         music: false,
         outdoors: false,
-        swimming: false,
-        birthday: false,
-        attire: {
-          formal: false,
-          casual: false
-        }
+        // swimming: false,
+        birthday: false
+        // attire: {
+        //   formal: false,
+        //   casual: false
+        // }
       },
     };
 

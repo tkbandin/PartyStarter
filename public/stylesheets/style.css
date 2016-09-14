@@ -187,6 +187,9 @@ nav ul li a {
   width: 30%;
 }
 
+.party-header span {
+  padding: 0 5px 0;
+}
 
 /*** FOOTER STYLING ***/
 

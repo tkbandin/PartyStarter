@@ -4,9 +4,14 @@ angular.module('myApp')
     <div id="party-show">
       <div class="party-header z-depth-1 indigo-text">
         <div class="icons indigo-text">
-            <i class="fa fa-birthday-cake" aria-hidden="true"></i>
-            <i class="fa fa-heart" aria-hidden="true"></i>
-            <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+            <i title="18 and up only"><span ng-if="$ctrl.party.details.over18">18+</span></i>
+            <i title="21 and up only"><span ng-if="$ctrl.party.details.over21">21+</span></i>
+            <i ng-if="$ctrl.party.details.byoBeer" class="fa fa-beer" aria-hidden="true" title="Bring your own beer"></i>
+            <i ng-if="$ctrl.party.details.byoFood" class="fa fa-cutlery" aria-hidden="true" title="Bring your own food"></i>
+            <i ng-if="$ctrl.party.details.movie" class="fa fa-film" aria-hidden="true" title="Movie party"></i>
+            <i ng-if="$ctrl.party.details.music" class="fa fa-music" aria-hidden="true" title="Music"></i>
+            <i ng-if="$ctrl.party.details.outdoors" class="fa fa-sun-o" aria-hidden="true" title="Outdoor party"></i>
+            <i ng-if="$ctrl.party.details.birthday" class="fa fa-birthday-cake" aria-hidden="true" title="Birthday party"></i>
         </div>
         <h3>{{ $ctrl.party.name }}</h3>
         <p><b>Organized by: </b>{{ $ctrl.party.organizer.username }}</p>

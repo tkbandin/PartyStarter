@@ -34,15 +34,15 @@ var PartySchema = new mongoose.Schema({
     byoBeer: { type: Boolean },
     byoFood: { type: Boolean },
     movie: { type: Boolean },
-    dancing: { type: Boolean },
+    // dancing: { type: Boolean },
     music: { type: Boolean },
     outdoors: { type: Boolean },
-    swimming: { type: Boolean },
-    birthday: { type: Boolean },
-    attire: {
-      formal: { type: Boolean },
-      casual: { type: Boolean }
-    }
+    // swimming: { type: Boolean },
+    birthday: { type: Boolean }
+    // attire: {
+    //   formal: { type: Boolean },
+    //   casual: { type: Boolean }
+    // }
   },
   organizer: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   guests:   [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
