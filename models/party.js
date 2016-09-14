@@ -28,6 +28,21 @@ var PartySchema = new mongoose.Schema({
     chosen:   { type: Boolean, required: true },
     category: { type: String }
   },
+  details: {
+    over18: { type: Boolean },
+    over21: { type: Boolean },
+    byoBeer: { type: Boolean },
+    byoFood: { type: Boolean },
+    movie: { type: Boolean },
+    music: { type: Boolean },
+    outdoors: { type: Boolean },
+    swimming: { type: Boolean },
+    birthday: { type: Boolean },
+    dress: {
+      fancy: { type: Boolean },
+      casual: { type: Boolean }
+    }
+  },
   organizer: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   guests:   [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 },

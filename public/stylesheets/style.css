@@ -12,7 +12,7 @@ html, body {
 }
 
 .ui-view-wrapper {
-  margin-bottom: 41px;
+  margin-bottom: 50px;
 }
 
 h5 {
@@ -52,7 +52,7 @@ nav ul li a {
   background: rgb(224,242,241);
   color: black;
   text-align: center;
-  margin: 70px auto 0;
+  margin: 20px auto 0;
   padding: 15px;
   border: 5px solid rgb(224,242,241);
   border-radius: 20px;
@@ -71,10 +71,10 @@ nav ul li a {
 
 /*** NEW/EDIT LANDING STYLING ***/
 
-.new-landing, .edit-landing {
+/*.new-landing, .edit-landing {
   height: 70vh;
   overflow-y: scroll;
-}
+}*/
 
 /*** FORMS ***/
 
