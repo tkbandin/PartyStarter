@@ -7,8 +7,8 @@ angular.module('myApp')
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <div ng-click="$ctrl.show(party)">
-      <h4> {{ party.name }} </h4> <i class="fa fa-times" aria-hidden="true" ng-click="$ctrl.delete(party)"></i>
-      <p> {{ party.description }} </p>
+      <h4 class="indigo-text"> {{ party.name }} </h4>
+      <p class="indigo-text"> {{ party.description }} </p>
       </div>
       <hr>
     </div>
