@@ -236,6 +236,7 @@ footer.page-footer .divider {
 
 #geocodeMap {
   height: 300px;
-  width: 600px;
+  width: 80%;
+  min-width: 250px;
   margin: 20px auto;
 }
