@@ -168,8 +168,12 @@ nav ul li a {
   background-color: rgb(239,233,231);
 }
 
-.party-page .parties {
+.party-page .parties h4 {
   cursor: pointer;
+}
+
+.party-page .parties .icons i {
+  padding: 0 5px;
 }
 
 

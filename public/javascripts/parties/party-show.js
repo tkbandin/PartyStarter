@@ -4,8 +4,8 @@ angular.module('myApp')
     <div id="party-show">
       <div class="party-header z-depth-1 indigo-text">
         <div class="icons indigo-text">
-            <i class='icon-span' title="18 and up only"><span ng-if="$ctrl.party.details.over18">18+</span></i>
-            <i class='icon-span' title="21 and up only"><span ng-if="$ctrl.party.details.over21">21+</span></i>
+            <i ng-if="$ctrl.party.details.over18" class='icon-span' title="18 and up only"><span>18+</span></i>
+            <i ng-if="$ctrl.party.details.over21" class='icon-span' title="21 and up only"><span>21+</span></i>
             <i ng-if="$ctrl.party.details.byoBeer" class="fa fa-beer" aria-hidden="true" title="Bring your own beer"></i>
             <i ng-if="$ctrl.party.details.byoFood" class="fa fa-cutlery" aria-hidden="true" title="Bring your own food"></i>
             <i ng-if="$ctrl.party.details.movie" class="fa fa-film" aria-hidden="true" title="Movie party"></i>
