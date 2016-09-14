@@ -18,11 +18,14 @@ angular.module('myApp')
           </ul>
 
           <ul id="mobile-demo" class="side-nav">
-            <li ng-hide="vmNavbar.Auth.isLoggedIn()" ng-class="{ active: vmNavbar.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
-            <li ng-hide="vmNavbar.Auth.isLoggedIn()" ng-class="{ active: vmNavbar.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
-            <li ng-show="vmNavbar.Auth.isLoggedIn()" ><a ui-sref="parties" >Signed in as {{ vmNavbar.getUser.email }}</a></li>
-            <li ng-show="vmNavbar.Auth.isLoggedIn()" ><a ng-click="vmNavbar.logout()">Logout</a></li>
+            <li ng-if="!vmNavbar.isLoggedIn" ng-class="{ active: vmNavbar.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
+            <li ng-if="!vmNavbar.isLoggedIn" ng-class="{ active: vmNavbar.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
+            <li ng-if="vmNavbar.isLoggedIn" ><a ui-sref="parties" >Signed in as {{ vmNavbar.getUser.email }}</a></li>
+            <li ng-if="vmNavbar.isLoggedIn" ><a ng-click="vmNavbar.logout()">Logout</a></li>
           </ul>
+
+
+
 
         </div>
       </nav>
@@ -85,3 +88,13 @@ angular.module('myApp')
 //     </div>
 //   </div>
 // </nav>
+
+// <ul id="mobile-demo" ng-if="!vmNavbar.isLoggedIn" class="side-nav">
+//             <li ng-class="{active: vmNavbar.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
+//             <li ng-class="{active: vmNavbar.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
+//           </ul>
+
+//           <ul id="mobile-demo" ng-if="vmNavbar.isLoggedIn" class="side-nav">
+//             <li><a ui-sref="parties" >Signed in as {{ vmNavbar.getUser.email }}</a></li>
+//             <li><a ng-click="vmNavbar.logout()">Logout</a></li>
+//           </ul>
