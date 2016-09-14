@@ -85,14 +85,6 @@ template: `
           <input type="checkbox" id='details.birthday' class="form-control" name="details.birthday" ng-model="$ctrl.party.details.birthday"><label for="details.birthday">Birthday Party</label>
         </div>
 
-        <div class="detail-choice-box">
-          <input type="checkbox" id='details.attire.formal' class="form-control" name="details.attire.formal" ng-model="$ctrl.party.details.attire.formal"><label for="details.attire.formal">Formal Attire</label>
-        </div>
-
-        <div class="detail-choice-box">
-          <input type="checkbox" id='details.attire.casual' class="form-control" name="details.attire.casual" ng-model="$ctrl.party.details.attire.casual"><label for="details.attire.casual">Casual Attire</label>
-        </div>
-
       </div>
 
       <a ui-sref="parties" class="btn yellow lighten-2 black-text">Back</a>
