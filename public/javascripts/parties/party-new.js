@@ -32,9 +32,10 @@ angular.module('myApp')
 
       <div class="form-group">
         <label for="date">Date</label>
-        <md-datepicker ng-model="$ctrl.party.date"
-                       md-placeholder="Enter date">
-                       </md-datepicker>
+        <datepicker>
+          <input ng-model="$ctrl.party.date" type="text"
+                 md-placeholder="Enter date"/>
+        </datepicker>
       </div>
 
       <div id="geocoder">

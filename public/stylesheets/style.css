@@ -83,6 +83,10 @@ nav ul li a {
   max-height: 800px;
 }
 
+.date-picker-format {
+  width: 200px;
+}
+
 .signup form {
   text-align: left;
 }
@@ -164,6 +168,12 @@ nav ul li a {
 
 /*** PARTY LIST PAGE ***/
 
+.party-page-title {
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
 .party-page {
   background-color: rgb(239,233,231);
 }
@@ -173,7 +183,7 @@ nav ul li a {
 }
 
 .party-page .parties {
-  padding: 0 50px;
+  padding: 0 30px;
 }
 
 .party-page .parties h4 {

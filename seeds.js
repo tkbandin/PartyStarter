@@ -86,7 +86,7 @@ Party.remove({})
     },
     organizer: joe._id });
   var bonfire   = new Party({
-    name: 'Bonfire',
+    name: 'Going Away Bonfire Party',
     time: {
       start: '12',
       end: '5'
@@ -97,7 +97,7 @@ Party.remove({})
       lat: 36.9244357,
       lng: -86.0049938
     },
-    description: 'another party!',
+    description: "Hey everyone! I'd love to see you all one last time before I move away. Come hang out in my family's back yard for a bonfire and hang time. Bring your favorite drinks, I'll have pizza and stuff for s'mores.",
     details: {
       over18: false,
       over21: true,

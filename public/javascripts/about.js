@@ -7,8 +7,8 @@ angular.module('myApp')
         <i class="fa fa-asterisk" aria-hidden="true"></i>
         <i class="fa fa-star-o" aria-hidden="true"></i>
         <h2>Hi!</h2>
-        <h5>PartyStarter was created for our third project by four of General Assembly's Web Development Immersive Students in Atlanta, GA.</h5>
-        <p>We created a web app using the MEAN stack and at least two models created with Mongoose. We chose to create an application to help users organize parties.</p>
+        <h5>PartyStarter was created for project three of General Assembly's Web Development Immersive by three students in Atlanta, GA.</h5>
+        <p>We created a web app using the MEAN stack and two models created with Mongoose. We chose to create an application to help users organize parties.</p>
         <a class="indigo-text" href="https://github.com/sammershon/Project3">View our project on GitHub!</a></li>
 
       </div>
@@ -24,8 +24,8 @@ angular.module('myApp')
           <li><b>ODM:</b> Mongoose</li>
           <li><b>Security:</b> PassportJS, bcrypt-nodejs</li>
           <li><b>Mockups:</b> Pen and Paper</li>
-          <li><b>Project Planning & User Stories: - Trello</li>
-          <li><b>API:</b>Google Maps</li>
+          <li><b>Project Planning & User Stories:</b> Trello</li>
+          <li><b>API:</b> Google Maps</li>
           </ul>
         </div>
 
@@ -36,7 +36,6 @@ angular.module('myApp')
           <li><a class="red-text accent2" href="https://github.com/jhdoak">Justin Doak</a></li>
           <li><a class="red-text accent2" href="https://github.com/kirstenhumphreys">Kirsten Humphreys</a></li>
           <li><a class="red-text accent2" href="https://github.com/sammershon">Sam Mershon</a></li>
-          <li><a class="red-text accent2" href="https://github.com/joshpereira">Josh Pereira</a></li>
           </ul>
         </div>
       </div>
