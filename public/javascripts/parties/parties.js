@@ -2,17 +2,26 @@ angular.module('myApp')
 .component('parties', {
   template: `
     <div class="party-page z-depth-1">
-    <h3>Parties</h3>
+    <h4 class="">All of the Parties ever created: </h4>
     <div class="parties" ng-repeat = "party in $ctrl.parties">
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <span ng-click="$ctrl.toggle(party)" aria-hidden="true"></span>
       <div ng-click="$ctrl.show(party)">
       <h4 class="indigo-text"> {{ party.name }} </h4>
-      <p class="indigo-text"> {{ party.description }} </p>
+      <div class="icons indigo-text">
+          <i title="18 and up only"><span ng-if="party.details.over18">18+</span></i>
+          <i title="21 and up only"><span ng-if="party.details.over21">21+</span></i>
+          <i ng-if="party.details.byoBeer" class="fa fa-beer" aria-hidden="true" title="Bring your own beer"></i>
+          <i ng-if="party.details.byoFood" class="fa fa-cutlery" aria-hidden="true" title="Bring your own food"></i>
+          <i ng-if="party.details.movie" class="fa fa-film" aria-hidden="true" title="Movie party"></i>
+          <i ng-if="party.details.music" class="fa fa-music" aria-hidden="true" title="Music"></i>
+          <i ng-if="party.details.outdoors" class="fa fa-sun-o" aria-hidden="true" title="Outdoor party"></i>
+          <i ng-if="party.details.birthday" class="fa fa-birthday-cake" aria-hidden="true" title="Birthday party"></i>
+      </div>
+      <p class="indigo-text"> {{ party.description }}</p>
       </div>
       <hr>
     </div>
-    <hr/>
     <a ui-sref="party-new" class="btn btn yellow lighten-2 black-text">New</a>
     </div>
   `,
