@@ -13,7 +13,7 @@ angular.module('myApp')
       <hr>
     </div>
     <hr/>
-    <a ui-sref="party-new" class="btn btn indigo">New</a>
+    <a ui-sref="party-new" class="btn btn yellow lighten-2 black-text">New</a>
     </div>
   `,
   controller: function(partyService, $state) {

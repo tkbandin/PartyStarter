@@ -103,8 +103,8 @@ angular.module('myApp')
 
       </div>
 
-      <a ui-sref="parties" class="btn btn-primary">Back</a>
-      <button type="submit" class="btn btn-success">Save</button>
+      <a ui-sref="parties" class="btn yellow lighten-2 black-text">Back</a>
+      <button type="submit" class="btn yellow lighten-2 black-text">Save</button>
     </form>
     </div>
   `,
