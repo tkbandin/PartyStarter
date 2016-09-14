@@ -169,7 +169,12 @@ nav ul li a {
 }
 
 .party-page .parties {
+  padding:0 50px;
   cursor: pointer;
+}
+
+.newButton {
+  padding: 30px;
 }
 
 
@@ -188,7 +193,7 @@ nav ul li a {
   background-color: rgb(239,233,231);
   height: 250px;
   padding: 20px;
-
+  font-size: 15px;
 }
 
 #party-show i {
@@ -198,13 +203,14 @@ nav ul li a {
 
 #party-show .party-info {
   /*background-color: rgb(239, 233, 231);*/
-  width: 70%;
+  width: 60%;
+  font-size: 20px;
+  padding-left: 20px;
 }
 
 #party-show .party-location {
   /*background-color: rgb(239,233,231);*/
   height: 450px;
-
 }
 
 #party-show .food-list {
@@ -215,7 +221,8 @@ nav ul li a {
 
 #party-show .party-people {
   background-color: rgb(239,233,231);
-  width: 30%;
+  width: 40%;
+  font-size: 20px;
 }
 
 #party-show .party-music {
@@ -225,6 +232,10 @@ nav ul li a {
 
 #party-show .party-header .icon-span {
   padding: 9px 5px;
+}
+
+.showButton {
+  margin-left: 20px;
 }
 
 /*** FOOTER STYLING ***/
@@ -268,8 +279,9 @@ footer.page-footer .divider {
 
 #showmap{
   height: 300px;
-  width: 300px;
-  margin: 30px auto;
+  width: 100%;
+  margin: 0 auto;
+
 }
 
 #repeat{

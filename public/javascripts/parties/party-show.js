@@ -33,51 +33,13 @@ angular.module('myApp')
           <i class="fa fa-user fa-2x" aria-hidden="true"></i>
 
           <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
-          <p><b>Guest Attending: </b> {{ $ctrl.party.usersAttending }}</p>
           <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
+          <p><b>Guest Attending: </b> {{ $ctrl.party.usersAttending }}</p>
         </div>
       </div>
 
-          <div class="food-list row">
-            <i class="fa fa-cutlery fa-2x" aria-hidden="true"></i>
-            <p><b>Food List:</b></p>
-            <p>Help me out by bringing some stuff!</p>
-              <table>
-                <thead>
-                  <tr>
-
-                      <th data-field="name">Item Name</th>
-                      <th data-field="have">Accounted For</th>
-                      <th data-field="need">Still Need</th>
-                      <th data-field="claim">Claim</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Chips</td>
-                    <td>2</td>
-                    <td>4</td>
-                    <td><a ui-sref="" class="btn btn yellow lighten-2 black-text">Claim!</a></td>
-                  </tr>
-                  <tr>
-                    <td>Beer (12 pack)</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td><a ui-sref="" class="btn btn yellow lighten-2 black-text">Claim!</a></td>
-                  </tr>
-                  <tr>
-                    <td>Ice Cream</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td><a ui-sref="" class="btn btn yellow lighten-2 black-text">Claim!</a></td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-      </div>
-
-    <a ui-sref="parties" class="btn btn yellow lighten-2 black-text">Back</a>
-    <a ng-click="$ctrl.edit(party)" class="btn yellow lighten-2 black-text">Edit</a>
+    <a ui-sref="parties" class="showButton btn btn yellow lighten-2 black-text">Back</a>
+    <a ng-click="$ctrl.edit(party)" class="showButton btn yellow lighten-2 black-text">Edit</a>
     </div>
 
 

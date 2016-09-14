@@ -38,8 +38,8 @@ angular.module('myApp')
       </div>
 
       <div id="geocoder">
-        <input id="address" type="textbox" value="Atlanta, GA">
-        <input id="geocodeSubmit" type="button" value="Geocode">
+        <input id="address" type="textbox" value="Party Address">
+        <input id="geocodeSubmit" type="button" value="Confirm">
       </div>
 
       <div id="geocodeMap"></div>

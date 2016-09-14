@@ -22,7 +22,9 @@ angular.module('myApp')
       </div>
       <hr>
     </div>
-    <a ui-sref="party-new" class="btn btn yellow lighten-2 black-text">New</a>
+    <div class="newButton center">
+    <a ui-sref="party-new" class="btn btn yellow lighten-2 black-text">Create a New Party!</a>
+    </div>
     </div>
   `,
   controller: function(partyService, $state) {
