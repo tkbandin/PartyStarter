@@ -36,6 +36,7 @@ router.post('/', authenticate, function(req, res, next) {
   var party = new Party({
     name: req.body.name,
     'time.start': req.body.time.start,
+    'time.end': req.body.time.end,
     date: req.body.date,
     'location.address': req.body.location.address,
     'location.lat': req.body.location.lat,
@@ -86,8 +87,11 @@ router.put('/:id', authenticate, function(req, res, next) {
     if (!req.user._id.equals(party.organizer)) return next(makeError(res, 'Unauthorized', 401));
     party.name = req.body.name,
     party.time.start = req.body.time.start,
+    party.time.end = req.body.time.end,
     party.date = req.body.date,
-    party.address = req.body.address,
+    party.location.address = req.body.location.address,
+    party.location.lat = req.body.location.lat,
+    party.location.lng = req.body.location.lng,
     party.description = req.body.description,
     party.foodList.chosen = req.body.foodList.chosen ? true : false,
     party.foodList.list = req.body.foodList.list,
