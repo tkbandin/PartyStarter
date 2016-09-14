@@ -14,19 +14,35 @@ var PartySchema = new mongoose.Schema({
     lng: { type: String, required: false }
    },
   description: { type: String, required: true },
-  foodList: {
-    // Boolean for choosing this option
-    chosen: { type: Boolean, required: true },
-    list: [Food.schema]
-  },
-  playlist: {
-    // Boolean for choosing this option
-    chosen: { type: Boolean, required: true }
-  },
-  entertainment: {
-    // Boolean for choosing this option
-    chosen:   { type: Boolean, required: true },
-    category: { type: String }
+  // foodList: {
+  //   // Boolean for choosing this option
+  //   chosen: { type: Boolean, required: true },
+  //   list: [Food.schema]
+  // },
+  // playlist: {
+  //   // Boolean for choosing this option
+  //   chosen: { type: Boolean, required: true }
+  // },
+  // entertainment: {
+  //   // Boolean for choosing this option
+  //   chosen:   { type: Boolean, required: true },
+  //   category: { type: String }
+  // },
+  details: {
+    over18: { type: Boolean },
+    over21: { type: Boolean },
+    byoBeer: { type: Boolean },
+    byoFood: { type: Boolean },
+    movie: { type: Boolean },
+    // dancing: { type: Boolean },
+    music: { type: Boolean },
+    outdoors: { type: Boolean },
+    // swimming: { type: Boolean },
+    birthday: { type: Boolean }
+    // attire: {
+    //   formal: { type: Boolean },
+    //   casual: { type: Boolean }
+    // }
   },
   organizer: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   guests:   [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]

@@ -1,7 +1,7 @@
 angular.module('myApp')
 .component('partyNew', {
   template: `
-    <div class="main-landing">
+    <div class="main-landing new-landing">
     <h3>New</h3>
 
     <form ng-submit="$ctrl.save()">
@@ -20,6 +20,14 @@ angular.module('myApp')
                class="form-control"
                name="startTime"
                ng-model="$ctrl.party.time.start">
+      </div>
+
+      <div class="form-group">
+        <label for="time.start">End Time</label>
+        <input type="text"
+               class="form-control"
+               name="endTime"
+               ng-model="$ctrl.party.time.end">
       </div>
 
       <div class="form-group">
@@ -44,16 +52,47 @@ angular.module('myApp')
                ng-model="$ctrl.party.description">
       </div>
 
-      <div class="form-group">
-        <input type="checkbox" id='foodList.chosen' class="form-control" name="foodList.chosen" ng-model="$ctrl.party.foodList.chosen"><label for="foodList.chosen">Food List</label>
-      </div>
+      <div class="form-group detail-choices">
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.over18' class="form-control" name="details.over18" ng-model="$ctrl.party.details.over18"><label for="details.over18">18 and older</label>
+        </div>
 
-      <div class="form-group">
-        <input type="checkbox" id='playlist.chosen' class="form-control" name="playlist.chosen" ng-model="$ctrl.party.playlist.chosen"><label for="playlist.chosen">Playlist</label>
-      </div>
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.over21' class="form-control" name="details.over21" ng-model="$ctrl.party.details.over21"><label for="details.over21">21 and older</label>
+        </div>
 
-      <div class="form-group">
-        <input type="checkbox" id='entertainment.chosen' class="form-control" name="entertainment.chosen" ng-model="$ctrl.party.entertainment.chosen"><label for="entertainment.chosen">Entertainment</label>
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.byoBeer' class="form-control" name="details.byoBeer" ng-model="$ctrl.party.details.byoBeer"><label for="details.byoBeer">Bring your own beer</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.byoFood' class="form-control" name="details.byoFood" ng-model="$ctrl.party.details.byoFood"><label for="details.byoFood">Bring your own food</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.movie' class="form-control" name="details.movie" ng-model="$ctrl.party.details.movie"><label for="details.movie">Movie</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.music' class="form-control" name="details.music" ng-model="$ctrl.party.details.music"><label for="details.music">Music</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.outdoors' class="form-control" name="details.outdoors" ng-model="$ctrl.party.details.outdoors"><label for="details.outdoors">Outdoors</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.birthday' class="form-control" name="details.birthday" ng-model="$ctrl.party.details.birthday"><label for="details.birthday">Birthday Party</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.attire.formal' class="form-control" name="details.attire.formal" ng-model="$ctrl.party.details.attire.formal"><label for="details.attire.formal">Formal Attire</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.attire.casual' class="form-control" name="details.attire.casual" ng-model="$ctrl.party.details.attire.casual"><label for="details.attire.casual">Casual Attire</label>
+        </div>
+
       </div>
 
       <a ui-sref="parties" class="btn yellow lighten-2 black-text">Back</a>
@@ -68,7 +107,8 @@ angular.module('myApp')
     newPartyController.party = {
       name: '',
       time: {
-        start: ''
+        start: '',
+        end: ''
       },
       date: '',
       location: {
@@ -77,15 +117,31 @@ angular.module('myApp')
         lng: ''
       },
       description: '',
-      foodList: {
-        chosen: false
+      // foodList: {
+      //   chosen: false
+      // },
+      // playlist: {
+      //   chosen: false
+      // },
+      // entertainment: {
+      //   chosen: false
+      // }
+      details: {
+        over18: false,
+        over21: false,
+        byoBeer: false,
+        byoFood: false,
+        movie: false,
+        // dancing: false,
+        music: false,
+        outdoors: false,
+        // swimming: false,
+        birthday: false
+        // attire: {
+        //   formal: false,
+        //   casual: false
+        // }
       },
-      playlist: {
-        chosen: false
-      },
-      entertainment: {
-        chosen: false
-      }
     };
 
     newPartyController.save = function() {

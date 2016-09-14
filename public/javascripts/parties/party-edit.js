@@ -1,7 +1,7 @@
 angular.module('myApp')
 .component('partyEdit', {
 template: `
-    <div class="main-landing">
+    <div class="main-landing edit-landing">
     <h3>Edit</h3>
 
     <form ng-submit="$ctrl.save()">
@@ -20,6 +20,14 @@ template: `
                class="form-control"
                name="startTime"
                ng-model="$ctrl.party.time.start">
+      </div>
+
+      <div class="form-group">
+        <label for="time.start">End Time</label>
+        <input type="text"
+               class="form-control"
+               name="endTime"
+               ng-model="$ctrl.party.time.end">
       </div>
 
       <div class="form-group">
