@@ -111,6 +111,7 @@ nav ul li a {
   flex-direction: row;
   padding: 0, 20px, 0, 20px;
   margin: 10px;
+  background-color: rgb(239,233,231);
 
 }
 
@@ -127,29 +128,29 @@ nav ul li a {
 }
 
 #party-show .party-info {
-  background-color: rgb(239, 233, 231);
+  /*background-color: rgb(239, 233, 231);*/
   width: 70%;
 }
 
 #party-show .party-location {
-  background-color: rgba(232, 197, 71, 0.5);
-  height: 400px;
-  width: 400px;
+  /*background-color: rgb(239,233,231);*/
+  height: 450px;
+
 }
 
 #party-show .food-list {
-  background-color: rgb(239,233,231);
+  /*background-color: rgb(239,233,231);*/
   height: auto;
   width: 70%;
 }
 
 #party-show .party-people {
-  background-color: rgba(232, 197, 71, 0.5);
+  background-color: rgb(239,233,231);
   width: 30%;
 }
 
 #party-show .party-music {
-  background-color: rgba(232, 197, 71, 0.5);
+  background-color: rgb(239,233,231);
   width: 30%;
 }
 

@@ -2,18 +2,20 @@ angular.module('myApp')
 .component('partyShow', {
   template: `
     <div id="party-show">
-      <div class="party-header z-depth-1">
-        <i class="fa fa-birthday-cake" aria-hidden="true"></i>
-        <i class="fa fa-heart" aria-hidden="true"></i>
-        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-        <h3>Party Name: {{ $ctrl.party.name }}</h3>
+      <div class="party-header z-depth-1 indigo-text">
+        <div class="icons indigo-text">
+            <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        </div>
+        <h3>{{ $ctrl.party.name }}</h3>
+        <p><b>Organized by: </b>{{ $ctrl.party.organizer.username }}</p>
         <p><b>Date: </b>{{ $ctrl.party.date }}</p>
         <p><b>Description: </b>{{ $ctrl.party.description }}</p>
-        <a ng-click="$ctrl.edit(party)" class="btn yellow lighten-2 black-text">Edit Party</a>
       </div>
-      <div class="party-body">
 
-        <div class="party-info">
+      <div class="party-body row red-text accent-2">
+        <div class="party-info column">
           <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i><p><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
             <div class="party-location">
               <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
@@ -22,18 +24,19 @@ angular.module('myApp')
             </div>
         </div>
 
-        <div class="party-people">
+        <div class="party-people column">
           <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-          <p><b>Organizer: </b>{{ $ctrl.party.organizer.username }}</p>
+
           <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
           <p><b>Guest Attending: </b> {{ $ctrl.party.usersAttending }}</p>
           <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
         </div>
       </div>
 
-          <div class="food-list">
+          <div class="food-list row">
             <i class="fa fa-cutlery fa-2x" aria-hidden="true"></i>
-            <p> food list will be displayed here</p>
+            <p><b>Food List:</b></p>
+            <p>Help me out by bringing some stuff!</p>
               <table>
                 <thead>
                   <tr>
@@ -49,16 +52,19 @@ angular.module('myApp')
                     <td>Chips</td>
                     <td>2</td>
                     <td>4</td>
+                    <td><a ui-sref="" class="btn btn yellow lighten-2 black-text">Claim!</a></td>
                   </tr>
                   <tr>
                     <td>Beer (12 pack)</td>
                     <td>2</td>
                     <td>2</td>
+                    <td><a ui-sref="" class="btn btn yellow lighten-2 black-text">Claim!</a></td>
                   </tr>
                   <tr>
                     <td>Ice Cream</td>
                     <td>1</td>
                     <td>2</td>
+                    <td><a ui-sref="" class="btn btn yellow lighten-2 black-text">Claim!</a></td>
                   </tr>
                 </tbody>
               </table>
