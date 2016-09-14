@@ -125,15 +125,31 @@ angular.module('myApp')
         lng: ''
       },
       description: '',
-      foodList: {
-        chosen: false
+      // foodList: {
+      //   chosen: false
+      // },
+      // playlist: {
+      //   chosen: false
+      // },
+      // entertainment: {
+      //   chosen: false
+      // }
+      details: {
+        over18: false,
+        over21: false,
+        byoBeer: false,
+        byoFood: false,
+        movie: false,
+        dancing: false,
+        music: false,
+        outdoors: false,
+        swimming: false,
+        birthday: false,
+        attire: {
+          formal: false,
+          casual: false
+        }
       },
-      playlist: {
-        chosen: false
-      },
-      entertainment: {
-        chosen: false
-      }
     };
 
     newPartyController.save = function() {
