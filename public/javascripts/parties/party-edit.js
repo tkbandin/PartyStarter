@@ -52,16 +52,39 @@ template: `
                ng-model="$ctrl.party.description">
       </div>
 
-      <div class="form-group">
-        <input type="checkbox" id='foodList.chosen' class="form-control" name="foodList.chosen" ng-model="$ctrl.party.foodList.chosen"><label for="foodList.chosen">Food List</label>
-      </div>
+     <div class="form-group detail-choices">
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.over18' class="form-control" name="details.over18" ng-model="$ctrl.party.details.over18"><label for="details.over18">18 and older</label>
+        </div>
 
-      <div class="form-group">
-        <input type="checkbox" id='playlist.chosen' class="form-control" name="playlist.chosen" ng-model="$ctrl.party.playlist.chosen"><label for="playlist.chosen">Playlist</label>
-      </div>
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.over21' class="form-control" name="details.over21" ng-model="$ctrl.party.details.over21"><label for="details.over21">21 and older</label>
+        </div>
 
-      <div class="form-group">
-        <input type="checkbox" id='entertainment.chosen' class="form-control" name="entertainment.chosen" ng-model="$ctrl.party.entertainment.chosen"><label for="entertainment.chosen">Entertainment</label>
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.byoBeer' class="form-control" name="details.byoBeer" ng-model="$ctrl.party.details.byoBeer"><label for="details.byoBeer">Bring your own beer</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.byoFood' class="form-control" name="details.byoFood" ng-model="$ctrl.party.details.byoFood"><label for="details.byoFood">Bring your own food</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.movie' class="form-control" name="details.movie" ng-model="$ctrl.party.details.movie"><label for="details.movie">Movie</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.music' class="form-control" name="details.music" ng-model="$ctrl.party.details.music"><label for="details.music">Music</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.outdoors' class="form-control" name="details.outdoors" ng-model="$ctrl.party.details.outdoors"><label for="details.outdoors">Outdoors</label>
+        </div>
+
+        <div class="detail-choice-box">
+          <input type="checkbox" id='details.birthday' class="form-control" name="details.birthday" ng-model="$ctrl.party.details.birthday"><label for="details.birthday">Birthday Party</label>
+        </div>
+
       </div>
 
       <a ui-sref="parties" class="btn yellow lighten-2 black-text">Back</a>

@@ -50,13 +50,13 @@ router.post('/', authenticate, function(req, res, next) {
     'details.byoBeer': req.body.details.byoBeer ? true : false,
     'details.byoFood': req.body.details.byoFood ? true : false,
     'details.movie': req.body.details.movie ? true : false,
-    'details.dancing': req.body.details.dancing ? true : false,
+    // 'details.dancing': req.body.details.dancing ? true : false,
     'details.music': req.body.details.music ? true : false,
     'details.outdoors': req.body.details.outdoors ? true : false,
-    'details.swimming': req.body.details.swimming ? true : false,
+    // 'details.swimming': req.body.details.swimming ? true : false,
     'details.birthday': req.body.details.birthday ? true : false,
-    'details.attire.formal': req.body.details.attire.formal ? true : false,
-    'details.attire.casual': req.body.details.attire.casual ? true : false,
+    // 'details.attire.formal': req.body.details.attire.formal ? true : false,
+    // 'details.attire.casual': req.body.details.attire.casual ? true : false,
     organizer: req.user._id
   });
   console.log('Party to save:', party);
@@ -108,6 +108,18 @@ router.put('/:id', authenticate, function(req, res, next) {
     party.foodList.chosen = req.body.foodList.chosen ? true : false,
     party.playlist.chosen = req.body.playlist.chosen ? true : false,
     party.entertainment.chosen = req.body.entertainment.chosen ? true : false,
+    party.details.over18 = req.body.details.over18 ? true : false,
+    party.details.over21 = req.body.details.over21 ? true : false,
+    party.details.byoBeer = req.body.details.byoBeer ? true : false,
+    party.details.byoFood = req.body.details.byoFood ? true : false,
+    party.details.movie = req.body.details.movie ? true : false,
+    // party.details.dancing = req.body.details.dancing ? true : false,
+    party.details.music = req.body.details.music ? true : false,
+    party.details.outdoors = req.body.details.outdoors ? true : false,
+    // party.details.swimming = req.body.details.swimming ? true : false,
+    party.details.birthday = req.body.details.birthday ? true : false,
+    // party.details.attire.formal = req.body.details.attire.formal ? true : false,
+    // party.details.attire.casual = req.body.details.attire.casual ? true : false,
     party.organizer = req.user._id
     return party.save();
   })

@@ -223,8 +223,8 @@ nav ul li a {
   width: 30%;
 }
 
-.party-header span {
-  padding: 0 5px 0;
+#party-show .party-header .icon-span {
+  padding: 9px 5px;
 }
 
 /*** FOOTER STYLING ***/
