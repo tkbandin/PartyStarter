@@ -12,7 +12,6 @@ var session = require('express-session');
 
 // Routes
 var homeRouter    = require('./routes/index');
-var usersRouter   = require('./routes/users');
 var partiesRouter = require('./routes/parties');
 
 var app = express();
@@ -56,7 +55,6 @@ require('./config/passport/passport')(passport);
 // Routes
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
-app.use('/users', usersRouter);
 app.use('/parties', partiesRouter);
 
 // catch 404 and forward to error handler
