@@ -99,8 +99,8 @@ nav ul li a {
 
 /*** PARTY LIST PAGE ***/
 
-.party-page {
-
+.party-page .parties {
+  cursor: pointer;
 }
 
 
