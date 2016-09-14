@@ -49,15 +49,13 @@ nav ul li a {
 
 .main-landing {
   width: 60%;
-  margin: 0 auto;
   background: rgb(224,242,241);
   color: black;
   text-align: center;
-  margin-top: 70px;
+  margin: 70px auto 0;
   padding: 15px;
   border: 5px solid rgb(224,242,241);
   border-radius: 20px;
-  margin-bottom: 100px;
 }
 
 .main-landing h2 {
@@ -68,6 +66,14 @@ nav ul li a {
 
 .main-landing .md-button {
   background-color: rgb(232,197,71);
+}
+
+
+/*** NEW/EDIT LANDING STYLING ***/
+
+.new-landing, .edit-landing {
+  height: 70vh;
+  overflow-y: scroll;
 }
 
 /*** FORMS ***/
