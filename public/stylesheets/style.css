@@ -172,6 +172,10 @@ nav ul li a {
   padding: 30px;
 }
 
+.party-page .parties {
+  padding: 0 50px;
+}
+
 .party-page .parties h4 {
   cursor: pointer;
 }
