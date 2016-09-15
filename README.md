@@ -1,6 +1,6 @@
 # WDI Project 3 - PartyStarter
 
-**Project Link:** [Heroku](http://protected-shore-93183.herokuapp.com/#/home)  
+**Project Link:** [party-starter.herokuapp.com](http://party-starter.herokuapp.com/#/home)  
 **User Stories:** [Trello](https://trello.com/b/nwLwFUKM/wdi-project-3)  
 **Daily Goals:** [Trello](https://trello.com/b/xONSzT9y/week-goals)
 
