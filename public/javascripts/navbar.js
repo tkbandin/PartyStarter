@@ -39,6 +39,11 @@ angular.module('myApp')
         this.$state.go('login');
       });
     };
+
+    $(".button-collapse").sideNav({
+      closeOnClick: true
+    });
+
   }
 });
 
