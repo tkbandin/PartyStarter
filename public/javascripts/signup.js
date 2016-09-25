@@ -96,7 +96,6 @@ angular.module('myApp')
         })
         .then(() => {
           // Account created, redirect to todos
-          console.log("Auth.currentUser from signup:", Auth.currentUser);
           this.$state.go('parties');
         })
         .catch(err => {

@@ -45,7 +45,7 @@ angular.module('myApp')
     </div>
   </div>
   `,
-  controller: function(Auth, $state, $rootScope) {
+  controller: function(Auth, $state) {
     this.errors = {};
 
     this.login = function(form) {
@@ -57,7 +57,7 @@ angular.module('myApp')
           password: this.user.password
         })
         .then(() => {
-          $rootScope.$emit('LOGIN_CHECK', 'event sent from login.js');
+          // $rootScope.$emit('LOGIN_CHECK', 'event sent from login.js');
           // Logged in, redirect to parties
           $state.go('parties');
         })
@@ -68,28 +68,3 @@ angular.module('myApp')
     };
   }
 });
-
-// <div class='main-landing'>
-//   <div class='signin'>
-//     <h2>Sign In</h2>
-//     <form name="signin">
-//     <md-input-container>
-//       <label>Username</label>
-//       <input name="username" ng-model="user.username" required>
-//       <div ng-messages="signin.username.$error">
-//         <div ng-message="required">This is required!</div>
-//       </div>
-//     </md-input-container>
-//     <md-input-container>
-//       <label>Password</label>
-//       <input type="password" ng-model="user.local.password" required>
-//       <div ng-messages="sigin.password.$error">
-//         <div ng-message="required">This is required!</div>
-//       </div>
-//     </md-input-container>
-//     <br>
-//     <md-button class="md-raised" input type="submit">Sign In</button>
-//     </form>
-//   </div>
-//   <p>Don't have an account? <a href="signup.html">Create one!</a></p>
-// </div>
