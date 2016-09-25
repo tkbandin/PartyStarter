@@ -4,25 +4,25 @@ angular.module('myApp')
     <div ng-cloak class='navbar-fixed'>
       <nav class="teal lighten-5" role="navigation">
         <div class="nav-wrapper">
-          <a ng-if="!vmNavbar.isLoggedIn" ui-sref="home" class="brand-logo">PartyStarter</a>
-          <a ng-if="vmNavbar.isLoggedIn" ui-sref="parties" class="brand-logo">PartyStarter</a>
+          <a ng-if="!$ctrl.Auth.isLoggedIn()" ui-sref="home" class="brand-logo">PartyStarter</a>
+          <a ng-if="$ctrl.Auth.isLoggedIn()" ui-sref="parties" class="brand-logo">PartyStarter</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-          <ul id="nav-mobile" ng-if="!vmNavbar.isLoggedIn" class="right hide-on-med-and-down">
-            <li ng-class="{active: vmNavbar.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
-            <li ng-class="{active: vmNavbar.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
+          <ul id="nav-mobile" ng-if="!$ctrl.Auth.isLoggedIn()" class="right hide-on-med-and-down">
+            <li ng-class="{active: $ctrl.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
+            <li ng-class="{active: $ctrl.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
           </ul>
 
-          <ul id="nav-mobile" ng-if="vmNavbar.isLoggedIn" class="right hide-on-med-and-down">
-            <li><a ui-sref="parties" >Signed in as {{ vmNavbar.getUser.email }}</a></li>
-            <li><a ng-click="vmNavbar.logout()">Logout</a></li>
+          <ul id="nav-mobile" ng-if="$ctrl.Auth.isLoggedIn()" class="right hide-on-med-and-down">
+            <li><a ui-sref="parties" >Signed in as {{ $ctrl.getUser.email }}</a></li>
+            <li><a ng-click="$ctrl.logout()">Logout</a></li>
           </ul>
 
           <ul id="mobile-demo" class="side-nav">
-            <li ng-if="!vmNavbar.isLoggedIn" ng-class="{ active: vmNavbar.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
-            <li ng-if="!vmNavbar.isLoggedIn" ng-class="{ active: vmNavbar.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
-            <li ng-if="vmNavbar.isLoggedIn" ><a ui-sref="parties" >Signed in as {{ vmNavbar.getUser.email }}</a></li>
-            <li ng-if="vmNavbar.isLoggedIn" ><a ng-click="vmNavbar.logout()">Logout</a></li>
+            <li ng-if="!$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('login')  }" ><a ui-sref="login">Login</a></li>
+            <li ng-if="!$ctrl.Auth.isLoggedIn()" ng-class="{ active: $ctrl.$state.includes('signup') }" ><a ui-sref="signup">Sign Up</a></li>
+            <li ng-if="$ctrl.Auth.isLoggedIn()" ><a ui-sref="parties" >Signed in as {{ $ctrl.getUser.email }}</a></li>
+            <li ng-if="$ctrl.Auth.isLoggedIn()" ><a ng-click="$ctrl.logout()">Logout</a></li>
           </ul>
 
 
@@ -32,35 +32,16 @@ angular.module('myApp')
       </nav>
     </div>
   `,
-  bindToController: true,
-  controllerAs: 'vmNavbar',
-  controller: function(Auth, $state, $rootScope) {
-    var vmNavbar = this;
-    vmNavbar.$state = $state;
-    vmNavbar.Auth = Auth;
-    vmNavbar.isLoggedIn = vmNavbar.Auth.isLoggedIn();
-    vmNavbar.getUser = vmNavbar.Auth.getCurrentUserSync();
-    console.log('Auth:', Auth);
-    console.log(vmNavbar.isLoggedIn);
+  controller: function(Auth, $state) {
+    this.Auth = Auth;
+    this.$state = $state;
 
-    $rootScope.$on('LOGIN_CHECK', function(res){
-      console.log('Triggered Event');
-      console.log('getUser:', vmNavbar.getUser);
-      console.log(vmNavbar.isLoggedIn);
-      vmNavbar.isLoggedIn = Auth.isLoggedIn();
-      vmNavbar.getUser = Auth.getCurrentUserSync();
-    });
-
-    vmNavbar.logout = function() {
-      Auth.logout()
+    this.logout = function() {
+      this.Auth.logout()
       .then( res => {
-        vmNavbar.isLoggedIn = Auth.isLoggedIn();
-        $state.go('home');
+        this.$state.go('login');
       });
     };
-
-    $(".button-collapse").sideNav();
-
   }
 });
 
