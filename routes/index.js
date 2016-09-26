@@ -40,7 +40,7 @@ router.post('/login', function(req, res, next) {
     }
     req.login(user, function(err) {
       if (err) return res.status(401).json(error);
-      res.json( { email: user.local.email } );
+      res.json( { email: user.local.email });
     });
   })(req, res, next);
 });

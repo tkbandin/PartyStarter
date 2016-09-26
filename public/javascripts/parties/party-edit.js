@@ -140,11 +140,9 @@ template: `
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
           editPartyController.marker.setMap(null);
-          console.log("RESULTS:", results);
           editPartyController.party.location.address = results[0].formatted_address;
           editPartyController.party.location.lat = results[0].geometry.location.lat();
           editPartyController.party.location.lng = results[0].geometry.location.lng();
-          console.log("Party location:", editPartyController.party.location);
           resultsMap.setCenter(results[0].geometry.location);
           editPartyController.marker = new google.maps.Marker({
             map: resultsMap,

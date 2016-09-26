@@ -43,13 +43,6 @@ angular.module('myApp')
       $state.go('party-show', { id: party._id });
     };
 
-    // this.toggle = function(party) {
-    //   partyService.toggle(party)
-    //   .then( res => {
-    //     this.getParties();
-    //   });
-    // };
-
     this.delete = function(party) {
       partyService.delete(party)
       .then( res => {

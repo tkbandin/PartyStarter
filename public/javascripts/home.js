@@ -16,11 +16,3 @@ angular.module('myApp')
     this.name = 'Party App!';
   }
 });
-
-
-
-//Old Section Tag
-// <section class="container well text-center">
-//   <h1>Welcome to the</h1>
-//   <h1>{{ $ctrl.name }}</h1>
-// </section>

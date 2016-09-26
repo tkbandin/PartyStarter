@@ -82,10 +82,11 @@ angular.module('myApp')
   </div>
   `,
   controller: function(Auth, $state) {
+    this.Auth = Auth;
+    this.$state = $state;
+
     this.register = function(form) {
       this.submitted = true;
-      this.Auth = Auth;
-      this.$state = $state;
 
       if (form.$valid) {
         return this.Auth.createUser({
@@ -95,22 +96,16 @@ angular.module('myApp')
         })
         .then(() => {
           // Account created, redirect to todos
-          this.$state.go('home');  // Change this state later
+          this.$state.go('parties');
         })
         .catch(err => {
-          console.log(err);
-          // err = err.data;
+          err = err.data;
           this.errors = {};
-          err.message
-          form['email'].$setValidity('mongoose', false);
-          this.errors['email'] = err.message;
           // Update validity of form fields that match the mongoose errors
-          // angular.forEach(err.errors, (error, field) => {
-          //   console.log('error:', error);
-          //   console.log('field:', field);
-          //   form[field].$setValidity('mongoose', false);
-          //   this.errors[field] = error.message;
-          // });
+          angular.forEach(err.errors, (error, field) => {
+            form[field].$setValidity('mongoose', false);
+            this.errors[field] = error.message;
+          });
         });
       }
     };
