@@ -57,7 +57,6 @@ angular.module('myApp')
           password: this.user.password
         })
         .then(() => {
-          // $rootScope.$emit('LOGIN_CHECK', 'event sent from login.js');
           // Logged in, redirect to parties
           $state.go('parties');
         })

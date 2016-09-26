@@ -97,30 +97,30 @@ router.put('/:id', authenticate, function(req, res, next) {
   .then(function(party) {
     if (!party) return next(makeError(res, 'Document not found', 404));
     if (!req.user._id.equals(party.organizer)) return next(makeError(res, 'Unauthorized', 401));
-    party.name = req.body.name,
-    party.time.start = req.body.time.start,
-    party.time.end = req.body.time.end,
-    party.date = req.body.date,
-    party.location.address = req.body.location.address,
-    party.location.lat = req.body.location.lat,
-    party.location.lng = req.body.location.lng,
-    party.description = req.body.description,
-    party.foodList.chosen = req.body.foodList.chosen ? true : false,
-    party.playlist.chosen = req.body.playlist.chosen ? true : false,
-    party.entertainment.chosen = req.body.entertainment.chosen ? true : false,
-    party.details.over18 = req.body.details.over18 ? true : false,
-    party.details.over21 = req.body.details.over21 ? true : false,
-    party.details.byoBeer = req.body.details.byoBeer ? true : false,
-    party.details.byoFood = req.body.details.byoFood ? true : false,
-    party.details.movie = req.body.details.movie ? true : false,
-    // party.details.dancing = req.body.details.dancing ? true : false,
-    party.details.music = req.body.details.music ? true : false,
-    party.details.outdoors = req.body.details.outdoors ? true : false,
-    // party.details.swimming = req.body.details.swimming ? true : false,
-    party.details.birthday = req.body.details.birthday ? true : false,
-    // party.details.attire.formal = req.body.details.attire.formal ? true : false,
-    // party.details.attire.casual = req.body.details.attire.casual ? true : false,
-    party.organizer = req.user._id
+    party.name = req.body.name;
+    party.time.start = req.body.time.start;
+    party.time.end = req.body.time.end;
+    party.date = req.body.date;
+    party.location.address = req.body.location.address;
+    party.location.lat = req.body.location.lat;
+    party.location.lng = req.body.location.lng;
+    party.description = req.body.description;
+    // party.foodList.chosen = req.body.foodList.chosen ? true : false;
+    // party.playlist.chosen = req.body.playlist.chosen ? true : false;
+    // party.entertainment.chosen = req.body.entertainment.chosen ? true : false;
+    party.details.over18 = req.body.details.over18 ? true : false;
+    party.details.over21 = req.body.details.over21 ? true : false;
+    party.details.byoBeer = req.body.details.byoBeer ? true : false;
+    party.details.byoFood = req.body.details.byoFood ? true : false;
+    party.details.movie = req.body.details.movie ? true : false;
+    // party.details.dancing = req.body.details.dancing ? true : false;
+    party.details.music = req.body.details.music ? true : false;
+    party.details.outdoors = req.body.details.outdoors ? true : false;
+    // party.details.swimming = req.body.details.swimming ? true : false;
+    party.details.birthday = req.body.details.birthday ? true : false;
+    // party.details.attire.formal = req.body.details.attire.formal ? true : false;
+    // party.details.attire.casual = req.body.details.attire.casual ? true : false;
+    party.organizer = req.user._id;
     return party.save();
   })
   .then(function(party) {

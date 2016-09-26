@@ -138,7 +138,6 @@ angular.module('myApp')
     };
 
     newPartyController.save = function() {
-      console.log()
       partyService.create(newPartyController.party)
       .then( res => {
         $state.go('parties');
