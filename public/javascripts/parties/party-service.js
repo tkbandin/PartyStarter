@@ -17,6 +17,10 @@ angular.module('myApp')
     return $http.post('/parties', party);
   };
 
+  this.updateGuestList = function(party, guest) {
+    return $http.put('/parties/' + party._id + '/guests', guest);
+  };
+
   this.update = function(party) {
     return $http.put('/parties/' + party._id, party);
   };

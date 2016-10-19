@@ -14,6 +14,7 @@ angular.module('myApp')
             <i ng-if="$ctrl.party.details.birthday" class="fa fa-birthday-cake" aria-hidden="true" title="Birthday party"></i>
         </div>
         <h3>{{ $ctrl.party.name }}</h3>
+        <button ng-click="$ctrl.addGuestToParty()" class="showButton btn btn yellow lighten-2 black-text">Attend!</a>
         <p><b>Organized by: </b>{{ $ctrl.party.organizer.username }}</p>
         <p class="party-description"><b>Description: </b>{{ $ctrl.party.description }}</p>
       </div>
@@ -90,6 +91,16 @@ angular.module('myApp')
       });
 
     });
+
+    this.addGuestToParty = function () {
+      var guestToAdd = this.Auth.getCurrentUserSync();
+      // this.party.guests.push(guestToAdd);
+      partyService.updateGuestList(this.party, guestToAdd)
+      .then( res => {
+        console.log("RES:", res);
+        this.party.guests = res.data.guests ? res.data.guests : "";
+      });
+    };
 
   }
 });

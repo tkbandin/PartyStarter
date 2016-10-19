@@ -91,8 +91,31 @@ router.get('/:id', authenticate, function(req, res, next) {
   });
 });
 
+
+// UPDATE ONLY PARTY GUEST LIST
+router.put('/:id/guests', authenticate, function(req, res, next) {
+  console.log("req.body.email:", req.body.email);
+  User.find({'local.email': userEmail})
+  .then(function(foundUser) {
+    console.log("Found user:", foundUser);
+    Party.findById(req.params.id);
+  })
+  // .then(function(party) {
+  //   if (!party) return next(makeError(res, 'Document not found', 404));
+  //   // party.guests = req.body.guests;
+  //   return party.save();
+  // })
+  .then(function(party) {
+    res.json(party);
+  }, function(err) {
+    return next(err);
+  });
+})
+
+
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
+  console.log("req.body:", req.body);
   Party.findById(req.params.id)
   .then(function(party) {
     if (!party) return next(makeError(res, 'Document not found', 404));
