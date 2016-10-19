@@ -15,26 +15,42 @@ angular.module('myApp')
         </div>
         <h3>{{ $ctrl.party.name }}</h3>
         <p><b>Organized by: </b>{{ $ctrl.party.organizer.username }}</p>
-        <p><b>Date: </b>{{ $ctrl.party.date }}</p>
-        <p><b>Description: </b>{{ $ctrl.party.description }}</p>
+        <p class="party-description"><b>Description: </b>{{ $ctrl.party.description }}</p>
       </div>
 
       <div class="party-body row red-text accent-2">
         <div class="party-info column">
-          <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i><p><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
-            <div class="party-location">
-              <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-              <p><b>Location: </b>{{ $ctrl.party.location.address }}</p>
-              <div id="showmap"></div>
+          <div class="party-time detail-section">
+            <div class="icon">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
             </div>
+            <div class="details">
+              <p><b>Date: </b>{{ $ctrl.party.date }}</p>
+              <p><b>Time: </b>{{ $ctrl.party.time.start }} to {{ $ctrl.party.time.end }}</p>
+            </div>
+          </div>
+          <div class="party-location detail-section">
+            <div class="icon">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <div class="details">
+              <p><b>Location: </b>{{ $ctrl.party.location.address }}</p>
+            </div>
+            <div id="showmap"></div>
+          </div>
         </div>
 
-        <div class="party-people column">
-          <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-
-          <p><b>Created: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
-          <p><b>Last Updated: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
-          <p><b>Guest Attending: </b> {{ $ctrl.party.usersAttending }}</p>
+        <div>
+          <div class="party-people column detail-section">
+            <div class="icon">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+            <div class="details">
+              <p><b>Planned On: </b>{{ $ctrl.party.updatedAt | date : "medium" }}</p>
+              <p><b>Updated On: </b>{{ $ctrl.party.createdAt | date : "medium" }}</p>
+              <p><b>Guests Attending: </b> {{ $ctrl.party.usersAttending }}</p>
+            </div>
+          </div>
         </div>
       </div>
 
