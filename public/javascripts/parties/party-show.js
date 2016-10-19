@@ -39,13 +39,15 @@ angular.module('myApp')
       </div>
 
     <a ui-sref="parties" class="showButton btn btn yellow lighten-2 black-text">Back</a>
-    <a ng-click="$ctrl.edit(party)" class="showButton btn yellow lighten-2 black-text">Edit</a>
+    <a ng-if="$ctrl.Auth.getCurrentUserSync().email==$ctrl.party.organizer.local.email" ng-click="$ctrl.edit(party)" class="showButton btn yellow lighten-2 black-text">Edit</a>
     </div>
 
 
   `,
-  controller: function(partyService, $state, $stateParams) {
+  controller: function(partyService, $state, $stateParams, Auth) {
     this.party = null;
+
+    this.Auth = Auth;
 
     this.edit = function() {
       $state.go('party-edit', { id: this.party._id });
@@ -55,6 +57,8 @@ angular.module('myApp')
     .then( res => {
       this.party = res.data;
       this.party.date = moment(this.party.date).format('MM-DD-YYYY');
+      console.log(this.party.organizer.local.email);
+      console.log(Auth.getCurrentUserSync().email);
 
       var mapOptions = {
         zoom: 12,
