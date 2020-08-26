@@ -7,7 +7,9 @@ var path = require("path");
 
 var http = require("http");
 
-var bodyParser = require("body-parser"); // Get our API routes
+var bodyParser = require("body-parser");
+
+var getDB = require("./server/getDB"); // Get our API routes
 
 
 var api = require("./server/routes/api");
@@ -45,3 +47,8 @@ var server = http.createServer(app);
 server.listen(port, function () {
   return console.log("API running on localhost:".concat(port));
 });
+/**
+ * Connect to MongoDB
+ */
+
+getDB();
