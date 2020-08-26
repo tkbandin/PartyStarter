@@ -1,5 +1,19 @@
 # Party2
 
+## CityU Stuff
+
+Run angular part:
+
+`ng serve`
+
+Run express, will build angular before each build:
+
+`npm start`
+
+Run express without building angular:
+
+`npm run quickstart`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
 ## Development server
