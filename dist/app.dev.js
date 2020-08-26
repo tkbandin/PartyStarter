@@ -26,16 +26,17 @@ var homeRouter = require("./routes/index");
 var partiesRouter = require("./routes/parties");
 
 var app = express(); // Connect to database
-// if (process.env.MONGODB_URI) {
-//   mongoose.connect(process.env.MONGODB_URI);
-// }
-// else {
 
-mongoose.connect("mongodb+srv://partymash-admin:cityuproject123!@cluster0.6hwhq.mongodb.net/partymash?retryWrites=true&w=majority", {
+var mongodb_options = {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}); // mongoose.connect('mongodb://localhost/partymash');
-// }
+};
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI, mongodb_options);
+} else {
+  mongoose.connect("mongodb://localhost/partymash", mongodb_options);
+}
 
 mongoose.connection.on("error", function (err) {
   console.error("\nMongoDB connection error: " + err);
