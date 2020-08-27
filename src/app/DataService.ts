@@ -24,4 +24,20 @@ export class DataService {
         return response as Party[];
       });
   }
+
+  public addOneGoing(id: String): Promise<void> {
+    const url = this._getUrl(`/parties/${id}/going`);
+    return this.http
+      .put<string>(url, {})
+      .toPromise()
+      .then((response) => {});
+  }
+
+  public minusOneGoing(id: String): Promise<void> {
+    const url = this._getUrl(`/parties/${id}/going`);
+    return this.http
+      .delete<string>(url, {})
+      .toPromise()
+      .then((response) => {});
+  }
 }

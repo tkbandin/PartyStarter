@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "../DataService";
 
 export class Party {
+  _id: String;
   title: String;
   description: String;
   pictureUrl: String;
@@ -11,6 +12,8 @@ export class Party {
   date: Date;
   startTime: String;
   endTime: String;
+  going: number;
+  isAttending: boolean = false;
 }
 
 @Component({
@@ -29,5 +32,19 @@ export class PartyResultsComponent implements OnInit {
       console.log(parties);
       this.parties = parties;
     });
+  }
+
+  addGoing(party: Party) {
+    console.log(party);
+    party.going = party.going + 1;
+    party.isAttending = true;
+    this.dataService.addOneGoing(party._id);
+  }
+
+  removeGoing(party: Party) {
+    console.log(party);
+    party.going = party.going - 1;
+    party.isAttending = false;
+    this.dataService.minusOneGoing(party._id);
   }
 }

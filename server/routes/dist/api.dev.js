@@ -12,4 +12,5 @@ router.get("/", function (req, res) {
   res.send("api works");
 });
 router.route("/parties").get(partiesCtrl.getParties);
+router.route("/parties/:partyId/going").put(partiesCtrl.putPartyGoing)["delete"](partiesCtrl.deletePartyGoing);
 module.exports = router;

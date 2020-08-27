@@ -15,6 +15,7 @@ var PartySchema = new Schema({
   hasFood: Boolean,
   date: Date,
   startTime: String,
-  endTime: String
+  endTime: String,
+  going: Number
 });
 module.exports = mongoose.model("Party", PartySchema);

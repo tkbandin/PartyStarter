@@ -27,7 +27,10 @@ app.use(express["static"](path.join(__dirname, "dist/party2"))); // app.use(expr
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
 
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE"); // update to match the domain you will make the request from
+
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  console.log(req.method + " " + req.originalUrl);
   next();
 }); // Set our api routes
 

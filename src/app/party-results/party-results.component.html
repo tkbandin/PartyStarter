@@ -1,6 +1,6 @@
 <div id="home-page">
     <div class='main-landing z-depth-1'>
-        <h1>Parties</h1>
+        <h1>PartyMash</h1>
         <div id="results"></div>
 
         <div class="result" *ngFor="let party of parties">
@@ -9,6 +9,15 @@
             <div class="description">{{ party.description }}</div>
             <div class="date">{{ party.date | date:'mediumDate' }}</div>
             <div class="time">{{ party.startTime }} - {{ party.endTime }}</div>
+            <button *ngIf="!party.isAttending" class="btn btn-large going-button" (click)="addGoing( party )">
+                Yeah, I'm Going!
+            </button>
+            <button *ngIf="party.isAttending" class="btn btn-large btn-danger going-button"
+                (click)="removeGoing( party )">
+                Eh, Never mind...
+            </button>
+
+            Going so far: {{ party.going }}
         </div>
     </div>
 </div>

@@ -14,6 +14,7 @@ const PartySchema = new Schema({
   date: Date,
   startTime: String,
   endTime: String,
+  going: Number,
 });
 
 module.exports = mongoose.model("Party", PartySchema);

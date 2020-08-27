@@ -8,5 +8,9 @@ router.get("/", (req, res) => {
 });
 
 router.route("/parties").get(partiesCtrl.getParties);
+router
+  .route("/parties/:partyId/going")
+  .put(partiesCtrl.putPartyGoing)
+  .delete(partiesCtrl.deletePartyGoing);
 
 module.exports = router;

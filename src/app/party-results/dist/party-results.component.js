@@ -10,6 +10,7 @@ exports.PartyResultsComponent = exports.Party = void 0;
 var core_1 = require("@angular/core");
 var Party = /** @class */ (function () {
     function Party() {
+        this.isAttending = false;
     }
     return Party;
 }());
@@ -25,6 +26,18 @@ var PartyResultsComponent = /** @class */ (function () {
             console.log(parties);
             _this.parties = parties;
         });
+    };
+    PartyResultsComponent.prototype.addGoing = function (party) {
+        console.log(party);
+        party.going = party.going + 1;
+        party.isAttending = true;
+        this.dataService.addOneGoing(party._id);
+    };
+    PartyResultsComponent.prototype.removeGoing = function (party) {
+        console.log(party);
+        party.going = party.going - 1;
+        party.isAttending = false;
+        this.dataService.minusOneGoing(party._id);
     };
     PartyResultsComponent = __decorate([
         core_1.Component({

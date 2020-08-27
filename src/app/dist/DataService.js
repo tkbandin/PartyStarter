@@ -26,6 +26,19 @@ var DataService = /** @class */ (function () {
             return response;
         });
     };
+    DataService.prototype.addOneGoing = function (id) {
+        var url = this._getUrl("/parties/" + id + "/going");
+        return this.http
+            .put(url, {})
+            .toPromise()
+            .then(function (response) { });
+    };
+    DataService.prototype.minusOneGoing = function (id) {
+        var url = this._getUrl("/parties/" + id + "/going");
+        return this.http["delete"](url, {})
+            .toPromise()
+            .then(function (response) { });
+    };
     DataService = __decorate([
         core_1.Injectable({
             providedIn: "root"
