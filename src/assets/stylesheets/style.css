@@ -6,7 +6,7 @@ body {
   height: 100%;
   margin: 0;
   background-color: rgb(17, 19, 68);
-  background: url('/assets/img/pineapples.jpeg') no-repeat center center fixed;
+  background: url('/assets/img/party.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -45,15 +45,19 @@ nav ul li a {
 
 
 /*** MAIN LANDING STYLING ***/
+h1 {
+  color: rgb(232, 197, 71)
+}
 
 .main-landing {
   width: 60%;
-  background: rgb(224, 242, 241);
-  color: black;
+  background: rgb(0, 0, 0);
+  /* background: rgb(224, 242, 241); */
+  color: white;
   text-align: center;
   margin: 20px auto 0;
   padding: 15px;
-  border: 5px solid rgb(224, 242, 241);
+  border: 5px solid rgb(4, 27, 73);
   border-radius: 20px;
 }
 
