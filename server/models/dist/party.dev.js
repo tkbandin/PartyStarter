@@ -6,6 +6,8 @@ var Schema = mongoose.Schema;
 var PartySchema = new Schema({
   title: String,
   user: Number,
+  address: String,
+  coords: [Number],
   venue: String,
   attendeeCap: Number,
   pictureUrl: String,

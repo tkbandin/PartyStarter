@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 const PartySchema = new Schema({
   title: String,
   user: Number,
+  address: String,
+  coords: [Number],
   venue: String,
   attendeeCap: Number,
   pictureUrl: String,
