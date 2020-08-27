@@ -14,13 +14,20 @@ var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var signup_component_1 = require("./signup/signup.component");
 var home_component_1 = require("./home/home.component");
+var party_results_component_1 = require("./party-results/party-results.component");
+var http_1 = require("@angular/common/http");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            declarations: [app_component_1.AppComponent, signup_component_1.SignupComponent, home_component_1.HomeComponent],
-            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule, forms_1.FormsModule],
+            declarations: [
+                app_component_1.AppComponent,
+                signup_component_1.SignupComponent,
+                home_component_1.HomeComponent,
+                party_results_component_1.PartyResultsComponent,
+            ],
+            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule, forms_1.FormsModule, http_1.HttpClientModule],
             // imports: [BrowserModule, RouterModule.forRoot([])],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

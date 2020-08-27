@@ -1,20 +1,25 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SignupComponent } from './signup/signup.component';
-import { HomeComponent } from './home/home.component';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { SignupComponent } from "./signup/signup.component";
+import { PartyResultsComponent } from "./party-results/party-results.component";
+import { HomeComponent } from "./home/home.component";
+import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: 'signup',
+    path: "signup",
     component: SignupComponent,
   },
   {
-    path: '',
+    path: "parties",
+    component: PartyResultsComponent,
+  },
+  {
+    path: "",
     component: HomeComponent,
   },
 ];
-console.log('routes');
+console.log("routes");
 console.log(routes);
 
 @NgModule({

@@ -22,7 +22,14 @@ app.use(bodyParser.urlencoded({
 })); // Point static path to dist
 
 app.use(express["static"](path.join(__dirname, "dist/party2"))); // app.use(express.static(path.join(__dirname, "../public")));
-// Set our api routes
+// allows cors
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+}); // Set our api routes
 
 app.use("/api", api); // Catch all other routes and return the index file
 

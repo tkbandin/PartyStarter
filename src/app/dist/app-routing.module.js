@@ -10,19 +10,24 @@ exports.AppRoutingModule = void 0;
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var signup_component_1 = require("./signup/signup.component");
+var party_results_component_1 = require("./party-results/party-results.component");
 var home_component_1 = require("./home/home.component");
 var router_1 = require("@angular/router");
 var routes = [
     {
-        path: 'signup',
+        path: "signup",
         component: signup_component_1.SignupComponent
     },
     {
-        path: '',
+        path: "parties",
+        component: party_results_component_1.PartyResultsComponent
+    },
+    {
+        path: "",
         component: home_component_1.HomeComponent
     },
 ];
-console.log('routes');
+console.log("routes");
 console.log(routes);
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
