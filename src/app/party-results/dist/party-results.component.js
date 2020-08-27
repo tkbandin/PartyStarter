@@ -20,7 +20,6 @@ var PartyResultsComponent = /** @class */ (function () {
     }
     PartyResultsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.parties = [{ title: "foo" }, { title: "bar" }];
         this.dataService.getParties().then(function (parties) {
             console.log("Got parties:");
             console.log(parties);

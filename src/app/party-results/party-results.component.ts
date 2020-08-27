@@ -3,6 +3,14 @@ import { DataService } from "../DataService";
 
 export class Party {
   title: String;
+  description: String;
+  pictureUrl: String;
+  address: String;
+  coords: Number[];
+  venue: String;
+  date: Date;
+  startTime: String;
+  endTime: String;
 }
 
 @Component({
@@ -16,7 +24,6 @@ export class PartyResultsComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.parties = [{ title: "foo" }, { title: "bar" }];
     this.dataService.getParties().then((parties) => {
       console.log("Got parties:");
       console.log(parties);

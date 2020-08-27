@@ -1,0 +1,13 @@
+.result {
+    clear: both;
+    text-align: left;
+    padding-left: 200px;
+    margin-bottom: 20px;
+}
+
+.result .picture {
+    width: 180px;
+    float: left;
+    margin-right: 20px;
+    margin-left: -200px;
+}

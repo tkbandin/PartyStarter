@@ -3,8 +3,12 @@
         <h1>Parties</h1>
         <div id="results"></div>
 
-        <div class="card" *ngFor="let party of parties">
-            {{ party.title }}
+        <div class="result" *ngFor="let party of parties">
+            <img src="{{ party.pictureUrl }}" class="picture" />
+            <h3>{{ party.title }}</h3>
+            <div class="description">{{ party.description }}</div>
+            <div class="date">{{ party.date | date:'mediumDate' }}</div>
+            <div class="time">{{ party.startTime }} - {{ party.endTime }}</div>
         </div>
     </div>
 </div>
