@@ -47,4 +47,51 @@ export class PartyResultsComponent implements OnInit {
     party.isAttending = false;
     this.dataService.minusOneGoing(party._id);
   }
+
+  showMap(party: Party) {
+    const location = {
+      lat: party.coords[1],
+      lng: party.coords[0],
+    };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: location,
+      zoom: 12,
+    });
+
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      title: party.title,
+    });
+
+    // const infoWindow = new google.maps.InfoWindow();
+    // // Try HTML5 geolocation.
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition(
+    //     function (position) {
+    //       var pos = {
+    //         lat: position.coords.latitude,
+    //         lng: position.coords.longitude,
+    //       };
+
+    //       infoWindow.setPosition(pos);
+    //       infoWindow.setContent("Location found.");
+    //       infoWindow.open(map);
+    //       map.setCenter(pos);
+    //     },
+    //     function () {
+    //       console.log("error!!!");
+    //       // handleLocationError(true, infoWindow, map.getCenter());
+    //     }
+    //   );
+    // } else {
+    //   // Browser doesn't support Geolocation
+    //   console.log("browser no location");
+    //   // handleLocationError(false, infoWindow, map.getCenter());
+    // }
+    $("#dialog").dialog({
+      width: 650,
+      height: 680,
+    });
+  }
 }

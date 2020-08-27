@@ -1,165 +1,294 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Title</title>
+    <base href="/" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/stylesheets/angular-material.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/stylesheets/materialize.min.css"
+    />
+    <link
+      href="/assets/stylesheets/angular-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Google Fonts and Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bree+Serif|Domine|Shrikhand"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/stylesheets/style.css"
+    />
 
-<head>
-  <title>Title</title>
-  <base href="/">
-  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/angular-material.min.css">
-  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/materialize.min.css">
-  <link href="/assets/stylesheets/angular-datepicker.min.css" rel="stylesheet" type="text/css" />
-  <!-- Google Fonts and Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Domine|Shrikhand" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+    <!-- Start of Async Drift Code -->
+    <script>
+      "use strict";
 
-  <!-- Start of Async Drift Code -->
-  <script>
-    "use strict";
+      !(function () {
+        var t = (window.driftt = window.drift = window.driftt || []);
+        if (!t.init) {
+          if (t.invoked)
+            return void (
+              window.console &&
+              console.error &&
+              console.error("Drift snippet included twice.")
+            );
+          (t.invoked = !0),
+            (t.methods = [
+              "identify",
+              "config",
+              "track",
+              "reset",
+              "debug",
+              "show",
+              "ping",
+              "page",
+              "hide",
+              "off",
+              "on",
+            ]),
+            (t.factory = function (e) {
+              return function () {
+                var n = Array.prototype.slice.call(arguments);
+                return n.unshift(e), t.push(n), t;
+              };
+            }),
+            t.methods.forEach(function (e) {
+              t[e] = t.factory(e);
+            }),
+            (t.load = function (t) {
+              var e = 3e5,
+                n = Math.ceil(new Date() / e) * e,
+                o = document.createElement("script");
+              (o.type = "text/javascript"),
+                (o.async = !0),
+                (o.crossorigin = "anonymous"),
+                (o.src =
+                  "https://js.driftt.com/include/" + n + "/" + t + ".js");
+              var i = document.getElementsByTagName("script")[0];
+              i.parentNode.insertBefore(o, i);
+            });
+        }
+      })();
+      drift.SNIPPET_VERSION = "0.3.1";
+      drift.load("ckkgfm8u26te");
+    </script>
+    <!-- End of Async Drift Code -->
+  </head>
+  <app-root></app-root>
 
-    ! function () {
-      var t = window.driftt = window.drift = window.driftt || [];
-      if (!t.init) {
-        if (t.invoked) return void(window.console && console.error && console.error("Drift snippet included twice."));
-        t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide",
-            "off", "on"
-          ],
-          t.factory = function (e) {
-            return function () {
-              var n = Array.prototype.slice.call(arguments);
-              return n.unshift(e), t.push(n), t;
-            };
-          }, t.methods.forEach(function (e) {
-            t[e] = t.factory(e);
-          }), t.load = function (t) {
-            var e = 3e5,
-              n = Math.ceil(new Date() / e) * e,
-              o = document.createElement("script");
-            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src =
-              "https://js.driftt.com/include/" + n + "/" + t + ".js";
-            var i = document.getElementsByTagName("script")[0];
-            i.parentNode.insertBefore(o, i);
-          };
-      }
-    }();
-    drift.SNIPPET_VERSION = '0.3.1';
-    drift.load('ckkgfm8u26te');
-  </script>
-  <!-- End of Async Drift Code -->
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular-material.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/materialize.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular-materialize.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular-animate.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular-aria.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular-messages.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular-ui-router.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/moment.min.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/lib/angular-datepicker.min.js"
+    defer
+  ></script>
+  <script src="https://use.fontawesome.com/7bd9923aab.js" defer></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Geolocation</title>
 
-</head>
-<app-root></app-root>
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
-<script type="text/javascript" src="/assets/javascripts/lib/angular.min.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/jquery.min.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/angular-material.min.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/materialize.min.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/angular-materialize.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/angular-animate.min.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/angular-aria.min.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/angular-messages.min.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/angular-ui-router.min.js" defer></script>
-<script type="text/javascript" src='/assets/javascripts/lib/moment.min.js' defer></script>
-<script type="text/javascript" src="/assets/javascripts/lib/angular-datepicker.min.js" defer></script>
-<script src="https://use.fontawesome.com/7bd9923aab.js" defer></script>
-<!DOCTYPE html>
-<html>
- 
+      <meta charset="utf-8" />
+      <style>
+        /* Always set the map height explicitly to define the size of the div 
+       * element that contains the map. */
+        #map {
+          width: 600px;
+          height: 600px;
+          margin: 0;
+          padding: 0;
+        }
 
-<head>
-      <title>Geolocation</title>
-     
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-     
-  <meta charset="utf-8">
-      <style>
-    /* Always set the map height explicitly to define the size of the div 
-       * element that contains the map. */
-    #map {
-      height: 100%;
-    }
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+    </head>
 
-    /* Optional: Makes the sample page fill the window. */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-    </head>
- 
+    <body>
+      <div id="dialog" title="Map">
+        <div id="map"></div>
+      </div>
 
-<body>
-      <div id="map"></div>
-      <script>
-    // Note: This example requires that you consent to location sharing when 
-    // prompted by your browser. If you see the error "The Geolocation service 
-    // failed.", it means you probably did not give permission for the browser to 
-    // locate you. 
-    var map, infoWindow;
+      <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+        var map, infoWindow;
 
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-          lat: -34.397,
-          lng: 150.644
-        },
-        zoom: 6
-      });
-      infoWindow = new google.maps.InfoWindow;
+        function initMap() {
+          //
+        }
 
-      // Try HTML5 geolocation. 
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
           infoWindow.setPosition(pos);
-          infoWindow.setContent('Location found.');
+          infoWindow.setContent(
+            browserHasGeolocation
+              ? "Error: The Geolocation service failed."
+              : "Error: Your browser doesn't support geolocation."
+          );
           infoWindow.open(map);
-          map.setCenter(pos);
-        }, function () {
-          handleLocationError(true, infoWindow, map.getCenter());
-        });
-      } else {
-        // Browser doesn't support Geolocation 
-        handleLocationError(false, infoWindow, map.getCenter());
-      }
-    }
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-      infoWindow.open(map);
-    }
-  </script>
-      <script defer    
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz_NlkQaNPGurPVANjOVMTiGpJ3onsiMM&callback=initMap">
-  </script>
-    </body>
-
-</html>
-<!-- Components -->
-<script type="text/javascript" src="/assets/javascripts/client.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/main.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/navbar.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/footer.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/home.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/about.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/auth.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/login.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/signup.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/parties/party-service.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/parties/parties.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/parties/party-show.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/parties/party-new.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/parties/party-edit.js" defer></script>
-<script type="text/javascript" src="/assets/javascripts/map.js" defer></script>
-
+        }
+      </script>
+      <script
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz_NlkQaNPGurPVANjOVMTiGpJ3onsiMM&callback=initMap"
+      ></script>
+    </body>
+  </html>
+  <!-- Components -->
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/client.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/main.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/navbar.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/footer.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/home.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/about.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/auth.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/login.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/signup.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/parties/party-service.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/parties/parties.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/parties/party-show.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/parties/party-new.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/parties/party-edit.js"
+    defer
+  ></script>
+  <script
+    type="text/javascript"
+    src="/assets/javascripts/map.js"
+    defer
+  ></script>
 </html>

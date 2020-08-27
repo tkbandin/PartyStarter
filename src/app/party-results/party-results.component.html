@@ -1,23 +1,33 @@
 <div id="home-page">
-    <div class='main-landing z-depth-1'>
-        <h1>PartyMash</h1>
-        <div id="results"></div>
+  <div class="main-landing z-depth-1">
+    <h1>PartyMash</h1>
+    <div id="results"></div>
 
-        <div class="result" *ngFor="let party of parties">
-            <img src="{{ party.pictureUrl }}" class="picture" />
-            <h3>{{ party.title }}</h3>
-            <div class="description">{{ party.description }}</div>
-            <div class="date">{{ party.date | date:'mediumDate' }}</div>
-            <div class="time">{{ party.startTime }} - {{ party.endTime }}</div>
-            <button *ngIf="!party.isAttending" class="btn btn-large going-button" (click)="addGoing( party )">
-                Yeah, I'm Going!
-            </button>
-            <button *ngIf="party.isAttending" class="btn btn-large btn-danger going-button"
-                (click)="removeGoing( party )">
-                Eh, Never mind...
-            </button>
+    <div class="result" *ngFor="let party of parties">
+      <img src="{{ party.pictureUrl }}" class="picture" />
+      <h3>{{ party.title }}</h3>
+      <div class="description">{{ party.description }}</div>
+      <div class="date">{{ party.date | date: "mediumDate" }}</div>
+      <div class="time">{{ party.startTime }} - {{ party.endTime }}</div>
+      <div>Going so far: {{ party.going }}</div>
+      <button
+        *ngIf="!party.isAttending"
+        class="btn btn-large going-button"
+        (click)="addGoing(party)"
+      >
+        Yeah, I'm Going!
+      </button>
+      <button
+        *ngIf="party.isAttending"
+        class="btn btn-large btn-danger going-button not"
+        (click)="removeGoing(party)"
+      >
+        Eh, Never mind...
+      </button>
 
-            Going so far: {{ party.going }}
-        </div>
+      <button class="btn btn-large map-button" (click)="showMap(party)">
+        View on Map
+      </button>
     </div>
+  </div>
 </div>
